@@ -31,6 +31,8 @@ export default class AnterosMenuItem extends Component {
                     newChildren.push(React.createElement(AnterosMenuItem, {
                         key: lodash.uniqueId(),
                         icon: child.props.icon,
+                        route: child.props.route,
+                        id: child.props.id,
                         caption: child.props.caption,
                         active: child.props.active,
                         onSelectMenuItem: child.props.onSelectMenuItem,
@@ -66,7 +68,7 @@ export default class AnterosMenuItem extends Component {
         }
 
         return (
-            <li className={classItem} onClick={this.toggleExpanded}>
+            <li className={classItem} onClick={this.toggleExpanded} id={this.props.id}>
                 <a href={this.props.href} style={{ paddingLeft: (((this.props.level - 1) * 10) + 10) + "px" }}>
                     {icon}<img src={this.props.image} /> {this.props.caption} {arrowIcon}
                 </a>

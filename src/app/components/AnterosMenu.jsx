@@ -16,6 +16,8 @@ export default class AnterosMenu extends Component {
           key: lodash.uniqueId(),
           icon: child.props.icon,
           caption: child.props.caption,
+          route: child.props.route,
+          id: child.props.id,
           active: child.props.active,
           onSelectMenuItem: child.props.onSelectMenuItem,
           level: 1

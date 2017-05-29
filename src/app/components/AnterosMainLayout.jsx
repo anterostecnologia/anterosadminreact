@@ -20,6 +20,7 @@ import {
   Route, Link, Switch, NavLink
 } from 'react-router-dom';
 import AnterosSecurityRoute from "./AnterosSecurityRoute";
+import ImagesView from "../containers/ImagesView";
 
 
 class AnterosMainLayout extends Component {
@@ -32,9 +33,7 @@ class AnterosMainLayout extends Component {
   }
 
   onSelectMenuItem(menuItem) {
-    console.log(this.props);
-    this.props.history.push('/home/security');
-    console.log(menuItem);
+    this.props.history.push(menuItem.props.route);
   }
 
   onHandleLogout() {
@@ -70,7 +69,8 @@ class AnterosMainLayout extends Component {
 
           <AnterosMenu logo={require('../assets/img/security-menu-1.png')}>
             <AnterosMenuItem active={true} icon="fa fa-home blue" caption="Basic UI">
-              <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home red" caption="Buttons"></AnterosMenuItem>
+              <AnterosMenuItem id="mniButtons" route="/home/buttons" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home red" caption="Buttons"></AnterosMenuItem>
+              <AnterosMenuItem id="mniImages" route="/home/images" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-file-image-o blue" caption="Images"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home red" caption="Dropdowns"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home green" caption="Panels"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Tabs & Accordions"></AnterosMenuItem>
@@ -91,7 +91,7 @@ class AnterosMainLayout extends Component {
             <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home" caption="Tables"> </AnterosMenuItem>
             <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-piechart" caption="Charts"> </AnterosMenuItem>
             <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home" caption="Widgets"> </AnterosMenuItem>
-            <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home" caption="Dashboards"> </AnterosMenuItem>
+            <AnterosMenuItem id="mniDashBoards" route="/home/security" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home" caption="Dashboards"> </AnterosMenuItem>
             <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home" caption="Maps"> </AnterosMenuItem>
           </AnterosMenu>
 
@@ -100,6 +100,7 @@ class AnterosMainLayout extends Component {
           <AnterosMainContainer >
             <Switch>
               <AnterosSecurityRoute path='/home/security' component={SecurityControl} isLoggedIn={this.props.isLoggedIn} />
+              <AnterosSecurityRoute path='/home/images' component={ImagesView} isLoggedIn={this.props.isLoggedIn} />
             </Switch>
             {this.props.children}
           </AnterosMainContainer>
