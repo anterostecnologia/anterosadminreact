@@ -7,13 +7,13 @@ export default class AnterosButton extends Component {
         this.onClick = this.onClick.bind(this);
     }
 
-    onClick(event){
+    onClick(event) {
         event.preventDefault();
-        if (!this.props.disabled && this.props.onButtonClick){
+        if (!this.props.disabled && this.props.onButtonClick) {
             this.props.onButtonClick(event);
         }
 
-        if (!this.props.disabled && this.props.onClick){
+        if (!this.props.disabled && this.props.onClick) {
             this.props.onClick(event);
         }
     }
@@ -53,6 +53,27 @@ export default class AnterosButton extends Component {
             }
         }
 
+        if (this.props.info) {
+            className += " btn-info";
+            if (this.props.outline) {
+                className += "-outline";
+            }
+        }
+
+        if (this.props.link) {
+            className += " btn-link";
+            if (this.props.outline) {
+                className += "-outline";
+            }
+        }
+
+        if (this.props.warning) {
+            className += " btn-warning";
+            if (this.props.outline) {
+                className += "-outline";
+            }
+        }
+
         if (this.props.secondary) {
             className += " btn-secondary";
             if (this.props.outline) {
@@ -72,7 +93,7 @@ export default class AnterosButton extends Component {
             className += " btn-block";
         }
 
-        if (this.props.disabled){
+        if (this.props.disabled) {
             className += " disabled";
         }
 
@@ -98,12 +119,12 @@ export default class AnterosButton extends Component {
             }
         }
 
-        let dataToggle,ariaHaspopup,ariaExpanded;
-        if (this.props.dropdown){
+        let dataToggle, ariaHaspopup, ariaExpanded;
+        if (this.props.dropdown) {
             dataToggle = "dropdown";
             ariaHaspopup = "true";
             ariaExpanded = "true";
-            className+= " dropdown-toggle";
+            className += " dropdown-toggle";
         }
 
         let icon;
@@ -112,59 +133,64 @@ export default class AnterosButton extends Component {
         }
 
         return (
-            <button data-toggle={dataToggle} aria-haspopup={ariaHaspopup} aria-expanded={ariaExpanded} 
-                    data-balloon-length={this.props.hintSize} data-balloon={this.props.hint} data-balloon-pos={this.props.hintPosition}
-                    onClick={this.onClick} style={style} 
-                    type="button" className={className}>
-                    {icon}<img src={this.props.image}/> {this.props.caption}
+            <button data-toggle={dataToggle} aria-haspopup={ariaHaspopup} aria-expanded={ariaExpanded}
+                data-balloon-length={this.props.hintSize} data-balloon={this.props.hint} data-balloon-pos={this.props.hintPosition}
+                onClick={this.onClick} style={style}
+                type="button" className={className}>
+                {icon}<img src={this.props.image} /> {this.props.caption}
             </button>
         )
     }
 }
 
 AnterosButton.propTypes = {
-  disabled: React.PropTypes.bool,
-  oval: React.PropTypes.bool,
-  success: React.PropTypes.bool,
-  large: React.PropTypes.bool,
-  small: React.PropTypes.bool,
-  primary: React.PropTypes.bool,
-  danger: React.PropTypes.bool,
-  secondary: React.PropTypes.bool,
-  pillLeft: React.PropTypes.bool,
-  pillRight: React.PropTypes.bool,
-  block: React.PropTypes.bool,
-  backgroundColor: React.PropTypes.string,
-  borderColor: React.PropTypes.string,
-  color: React.PropTypes.string,
-  dropdown: React.PropTypes.bool,
-  icon: React.PropTypes.string,
-  image: React.PropTypes.string,
-  caption: React.PropTypes.string,
-  onButtonClick: React.PropTypes.func,
-  hint: React.PropTypes.string,
-  hintPosition: React.PropTypes.string,
-  hintSize: React.PropTypes.string
+    disabled: React.PropTypes.bool,
+    oval: React.PropTypes.bool,
+    success: React.PropTypes.bool,
+    info: React.PropTypes.bool,
+    link: React.PropTypes.bool,
+    warning: React.PropTypes.bool,
+    large: React.PropTypes.bool,
+    small: React.PropTypes.bool,
+    primary: React.PropTypes.bool,
+    danger: React.PropTypes.bool,
+    secondary: React.PropTypes.bool,
+    pillLeft: React.PropTypes.bool,
+    pillRight: React.PropTypes.bool,
+    block: React.PropTypes.bool,
+    backgroundColor: React.PropTypes.string,
+    borderColor: React.PropTypes.string,
+    color: React.PropTypes.string,
+    dropdown: React.PropTypes.bool,
+    icon: React.PropTypes.string,
+    image: React.PropTypes.string,
+    caption: React.PropTypes.string,
+    onButtonClick: React.PropTypes.func,
+    hint: React.PropTypes.string,
+    hintPosition: React.PropTypes.string,
+    hintSize: React.PropTypes.string
 };
 
 AnterosButton.defaultProps = {
-  disabled: false,
-  oval: false,
-  success: false,
-  large: false,
-  small: false,
-  primary: false,
-  danger: false,
-  secondary: false,
-  pillLeft: false,
-  pillRight: false,
-  block: false,
-  backgroundColor: undefined,
-  borderColor: undefined,
-  color: undefined,
-  dropdown: false,
-  icon: undefined,
-  image: undefined,
-  caption: undefined,
-  hintSize : "fit"
+    disabled: false,
+    oval: false,
+    success: false,
+    warning: false,
+    info: false,
+    large: false,
+    small: false,
+    primary: false,
+    danger: false,
+    secondary: false,
+    pillLeft: false,
+    pillRight: false,
+    block: false,
+    backgroundColor: undefined,
+    borderColor: undefined,
+    color: undefined,
+    dropdown: false,
+    icon: undefined,
+    image: undefined,
+    caption: undefined,
+    hintSize: "fit"
 };
