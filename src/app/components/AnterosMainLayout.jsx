@@ -21,6 +21,7 @@ import {
 } from 'react-router-dom';
 import AnterosSecurityRoute from "./AnterosSecurityRoute";
 import ImagesView from "../containers/ImagesView";
+import ButtonsView from "../containers/ButtonsView";
 
 
 class AnterosMainLayout extends Component {
@@ -101,6 +102,7 @@ class AnterosMainLayout extends Component {
             <Switch>
               <AnterosSecurityRoute path='/home/security' component={SecurityControl} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/images' component={ImagesView} isLoggedIn={this.props.isLoggedIn} />
+             <AnterosSecurityRoute path='/home/buttons' component={ButtonsView} isLoggedIn={this.props.isLoggedIn} />
             </Switch>
             {this.props.children}
           </AnterosMainContainer>
