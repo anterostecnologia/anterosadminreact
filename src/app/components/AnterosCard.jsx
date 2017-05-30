@@ -6,8 +6,8 @@ class AnterosCard extends Component {
     render() {
 
         let newChildren = [];
-        let headerActions = [];
-        let footerActions = [];
+        let headerActions;
+        let footerActions;
         if (this.props.children) {
             let _this = this;
             let arrChildren = React.Children.toArray(this.props.children);
@@ -46,7 +46,7 @@ class AnterosCard extends Component {
         return (
             <div>
                 <div id={this.props.id} className={className} style={{ ...this.props.style, height: this.props.height, width: this.props.width }}>
-                    {this.props.showHeader==true ? (<div className="card-header">
+                    {this.props.showHeader == true ? (<div className="card-header">
                         <div className="header-block">
                             <div className="caption">
                                 <p className="title"> {this.props.title} </p>
@@ -60,7 +60,7 @@ class AnterosCard extends Component {
                     <div className="card-block">
                         {newChildren}
                     </div>
-                    {this.props.footer || (footerActions && footerActions.length > 0 && this.props.showFooter) ? <div className="card-footer"> {this.props.footer} {footerActions} </div> : false}
+                    {(footerActions && this.props.showFooter) ? <div className="card-footer">{footerActions}</div> : false}
                 </div>
             </div>
         )

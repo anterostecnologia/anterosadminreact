@@ -21,6 +21,8 @@ import {
 } from 'react-router-dom';
 import AnterosSecurityRoute from "./AnterosSecurityRoute";
 import ImagesView from "../containers/ImagesView";
+import ButtonsView from "../containers/ButtonsView";
+import CardsView from "../containers/CardsView";
 
 
 class AnterosMainLayout extends Component {
@@ -69,8 +71,9 @@ class AnterosMainLayout extends Component {
 
           <AnterosMenu logo={require('../assets/img/security-menu-1.png')}>
             <AnterosMenuItem active={true} icon="fa fa-home blue" caption="Basic UI">
-              <AnterosMenuItem id="mniButtons" route="/home/buttons" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home red" caption="Buttons"></AnterosMenuItem>
+              <AnterosMenuItem id="mniButtons" route="/home/buttons" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-file-image-o blue" caption="Buttons"></AnterosMenuItem>
               <AnterosMenuItem id="mniImages" route="/home/images" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-file-image-o blue" caption="Images"></AnterosMenuItem>
+              <AnterosMenuItem id="mniCards" route="/home/cards" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-file-image-o blue" caption="Cards"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home red" caption="Dropdowns"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home green" caption="Panels"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Tabs & Accordions"></AnterosMenuItem>
@@ -101,6 +104,8 @@ class AnterosMainLayout extends Component {
             <Switch>
               <AnterosSecurityRoute path='/home/security' component={SecurityControl} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/images' component={ImagesView} isLoggedIn={this.props.isLoggedIn} />
+              <AnterosSecurityRoute path='/home/buttons' component={ButtonsView} isLoggedIn={this.props.isLoggedIn} />
+              <AnterosSecurityRoute path='/home/cards' component={CardsView} isLoggedIn={this.props.isLoggedIn} />
             </Switch>
             {this.props.children}
           </AnterosMainContainer>
