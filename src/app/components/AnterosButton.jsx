@@ -24,6 +24,10 @@ export default class AnterosButton extends Component {
             className += " btn-oval";
         }
 
+        if (this.props.circle){
+            className += " btn-circle";
+        }
+
         if (this.props.success) {
             className += " btn-success";
             if (this.props.outline) {

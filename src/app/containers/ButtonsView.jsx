@@ -116,8 +116,36 @@ export default class ButtonView extends Component {
 
             <div className="row">
                 <div className="col-6">
-                    <AnterosCard title="Button group">
-
+                    <AnterosCard title="Circle buttons">
+                        <div class="col-lg-6 col-sm-6 col-xs-12">
+                            <div class="white-box">
+                                <h3 className="box-title">Normal Circle Buttons</h3>
+                                <AnterosButton circle small icon="fa fa-check" />
+                                <AnterosButton circle primary small icon="fa fa-list" />
+                                <AnterosButton circle success small icon="fa fa-link" />
+                                <AnterosButton circle info small icon="fa fa-check" />
+                                <AnterosButton circle warning small icon="fa fa-times" />
+                                <AnterosButton circle danger small icon="fa fa-heart" />
+                                <br></br>
+                                <br></br>
+                                <h3 className="box-title">Large Circle Buttons</h3>
+                                <AnterosButton circle icon="fa fa-check" />
+                                <AnterosButton circle primary icon="fa fa-list" />
+                                <AnterosButton circle success icon="fa fa-link" />
+                                <AnterosButton circle info icon="fa fa-check" />
+                                <AnterosButton circle warning icon="fa fa-times" />
+                                <AnterosButton circle danger icon="fa fa-heart" />
+                                <br></br>
+                                <br></br>
+                                <h3 className="box-title">Extra Large Circle Buttons</h3>
+                                <AnterosButton circle large icon="fa fa-check" />
+                                <AnterosButton circle primary large icon="fa fa-list" />
+                                <AnterosButton circle success large icon="fa fa-link" />
+                                <AnterosButton circle info large icon="fa fa-check" />
+                                <AnterosButton circle warning large icon="fa fa-times" />
+                                <AnterosButton circle danger large icon="fa fa-heart" />
+                            </div>
+                        </div>
                     </AnterosCard>
                 </div>
                 <div className="col-6">
