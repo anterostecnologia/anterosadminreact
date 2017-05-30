@@ -13,7 +13,7 @@ export default class ButtonView extends Component {
 
                 <div className="col-6">
                     <AnterosCard title="Button colors">
-                        <section class="section">
+                        <section className="section">
                             <AnterosButton primary caption="Primary" />
                             <AnterosButton secondary caption="Secondary" />
                             <AnterosButton success caption="Success" />
@@ -27,7 +27,7 @@ export default class ButtonView extends Component {
 
                 <div className="col-6">
                     <AnterosCard title="Outline buttons">
-                        <section class="section">
+                        <section className="section">
                             <AnterosButton primary outline caption="Primary" />
                             <AnterosButton secondary outline caption="Secondary" />
                             <AnterosButton success outline caption="Success" />
@@ -46,7 +46,7 @@ export default class ButtonView extends Component {
                 <div className="col-6">
                     <AnterosCard title="Button sizing">
                         <AnterosCard title="Large buttons" >
-                            <section class="section">
+                            <section className="section">
                                 <AnterosButton large primary caption="Primary" />
                                 <AnterosButton large secondary caption="Secondary" />
                                 <AnterosButton large success caption="Success" />
@@ -57,7 +57,7 @@ export default class ButtonView extends Component {
                         </AnterosCard>
 
                         <AnterosCard title="Small buttons" >
-                            <section class="section">
+                            <section className="section">
                                 <AnterosButton small primary caption="Primary" />
                                 <AnterosButton small secondary caption="Secondary" />
                                 <AnterosButton small success caption="Success" />
@@ -68,7 +68,7 @@ export default class ButtonView extends Component {
                         </AnterosCard>
 
                         <AnterosCard title="Block buttons" >
-                            <section class="section">
+                            <section className="section">
                                 <AnterosButton large primary block caption="Block level button" />
                                 <AnterosButton small secondary block caption="Block level button" />
                             </section>
@@ -80,7 +80,7 @@ export default class ButtonView extends Component {
                 <div className="col-6">
                     <AnterosCard title="Button types">
                         <AnterosCard title="Pill left" >
-                            <section class="section">
+                            <section className="section">
                                 <AnterosButton primary pillLeft caption="Primary" />
                                 <AnterosButton secondary pillLeft caption="Secondary" />
                                 <AnterosButton success pillLeft caption="Success" />
@@ -90,7 +90,7 @@ export default class ButtonView extends Component {
                             </section>
                         </AnterosCard>
                         <AnterosCard title="Pill right" >
-                            <section class="section">
+                            <section className="section">
                                 <AnterosButton primary pillRight caption="Primary" />
                                 <AnterosButton secondary pillRight caption="Secondary" />
                                 <AnterosButton success pillRight caption="Success" />
@@ -100,7 +100,7 @@ export default class ButtonView extends Component {
                             </section>
                         </AnterosCard>
                         <AnterosCard title="Oval" >
-                            <section class="section">
+                            <section className="section">
                                 <AnterosButton primary oval caption="Primary" />
                                 <AnterosButton secondary oval caption="Secondary" />
                                 <AnterosButton success oval caption="Success" />
@@ -117,8 +117,8 @@ export default class ButtonView extends Component {
             <div className="row">
                 <div className="col-6">
                     <AnterosCard title="Circle buttons">
-                        <div class="col-lg-6 col-sm-6 col-xs-12">
-                            <div class="white-box">
+                        <div className="col-lg-6 col-sm-6 col-xs-12">
+                            <div className="white-box">
                                 <h3 className="box-title">Normal Circle Buttons</h3>
                                 <AnterosButton circle small icon="fa fa-check" />
                                 <AnterosButton circle primary small icon="fa fa-list" />
