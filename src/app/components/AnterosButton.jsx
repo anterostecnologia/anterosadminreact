@@ -136,9 +136,21 @@ export default class AnterosButton extends Component {
             icon = (<i className={this.props.icon}></i>);
         }
 
+        let balloonProps = {};
+        if (this.props.hintSize){
+            balloonProps = {"data-balloon-length":this.props.hintSize};
+        }
+        if (this.props.hint){
+            balloonProps = {...balloonProps,"data-balloon":this.props.hint};
+        }
+        if (this.props.hintPosition){
+            balloonProps = {...balloonProps,"data-balloon-pos":this.props.hintPosition};
+        }
+
+
         return (
             <button data-toggle={dataToggle} aria-haspopup={ariaHaspopup} aria-expanded={ariaExpanded}
-                data-balloon-length={this.props.hintSize} data-balloon={this.props.hint} data-balloon-pos={this.props.hintPosition}
+                {...balloonProps}
                 onClick={this.onClick} style={style}
                 type="button" className={className}>
                 {icon}<img src={this.props.image} /> {this.props.caption}
@@ -195,6 +207,5 @@ AnterosButton.defaultProps = {
     dropdown: false,
     icon: undefined,
     image: undefined,
-    caption: undefined,
-    hintSize: "fit"
+    caption: undefined    
 };
