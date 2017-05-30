@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AnterosCard from "../components/AnterosCard";
 import AnterosButton from '../components/AnterosButton';
 
-export default class ImageView extends Component {
+export default class ButtonView extends Component {
     render() {
         return (<AnterosCard title="Buttons">
             <div className="row">
