@@ -41,11 +41,10 @@ export default class ButtonView extends Component {
             </div>
 
 
-            <div className="row">
-
+            <div className="row" height="640px">
                 <div className="col-6">
-                    <AnterosCard title="Button sizing">
-                        <AnterosCard title="Large buttons" >
+                    <AnterosCard title="Button sizing" height="524p">
+                        <AnterosCard title="Large buttons" height="100%">
                             <section className="section">
                                 <AnterosButton large primary caption="Primary" />
                                 <AnterosButton large secondary caption="Secondary" />
@@ -78,7 +77,7 @@ export default class ButtonView extends Component {
                 </div>
 
                 <div className="col-6">
-                    <AnterosCard title="Button types">
+                    <AnterosCard title="Button types" height="615px">
                         <AnterosCard title="Pill left" >
                             <section className="section">
                                 <AnterosButton primary pillLeft caption="Primary" />
@@ -149,9 +148,8 @@ export default class ButtonView extends Component {
                     </AnterosCard>
                 </div>
                 <div className="col-6">
-                    <AnterosCard title="Button dropdowns">
-                        <AnterosCard height="250px" title="Dropdowns" >
-
+                    <AnterosCard title="Button dropdowns" height="473px">
+                        <AnterosCard title="Dropdowns" >
                             <AnterosDropdownButton primary caption="Primary">
                                 <AnterosDropdownMenu>
                                     <AnterosDropdownMenuItem caption="Item 1" />
