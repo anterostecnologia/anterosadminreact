@@ -147,7 +147,7 @@ export default class AnterosImageMagnifier extends Component {
 
     render() {
         return (
-            <img {...this.props} src={this.props.image.src} ref={ref => this.image = ref}/>
+            <img src={this.props.image.src} ref={ref => this.image = ref}/>
         );
     }
 }

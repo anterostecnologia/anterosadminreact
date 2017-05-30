@@ -27,36 +27,299 @@ export default class ImageView extends Component {
                 <AnterosImage marginRight={20} maxWidth={100} circle src={require('../assets/img/flower.jpg')} />
                 <AnterosImage marginRight={20} maxWidth={150} circle src={require('../assets/img/flower.jpg')} />
 
-                <div className="row">
-                    <div className="col-sm-6">
-                        <div style={{ height: "300px", width: "300px" }}>
-                            <div className="anterosimg-circle effect1"><a href="#">
-                                <div className="spinner"></div>
-                                <div className="img"><img src={require("../assets/img/2.jpg")} alt="img" /></div>
-                                <div className="info">
-                                    <div className="info-back">
-                                        <h3>Heading here</h3>
-                                        <p>Description goes here</p>
-                                    </div>
-                                </div></a></div>
+                <AnterosCard title="Effect 1" >
+                    <div className="row">
+                        <div className="col-sm-2">
+                            <AnterosImage effect={1} src={require("../assets/img/2.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
                         </div>
 
-                    </div>
-
-                    <div className="col-sm-6">
-                        <div style={{ height: "200px", width: "200px" }}>
-                            <div className="ih-item anterosimg-circle colored effect1"><a href="#">
-                                <div className="spinner"></div>
-                                <div className="img"><img src={require("../assets/img/5.jpg")} alt="img" /></div>
-                                <div className="info">
-                                    <div className="info-back">
-                                        <h3>Heading here</h3>
-                                        <p>Description goes here</p>
-                                    </div>
-                                </div></a></div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={1} colored src={require("../assets/img/5.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
                         </div>
                     </div>
-                </div>
+                </AnterosCard>
+                <AnterosCard title="Effect 2" >
+                    <div className="row">
+                        <div className="col-sm-2">
+                            <AnterosImage effect={2} leftToRight src={require("../assets/img/4.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={2} leftToRight colored src={require("../assets/img/5.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={2} rightToLeft src={require("../assets/img/6.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={2} rightToLeft colored src={require("../assets/img/7.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-2">
+                            <AnterosImage effect={2} topToBottom src={require("../assets/img/1.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={2} topToBottom colored src={require("../assets/img/2.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={2} bottomToTop src={require("../assets/img/3.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={2} bottomToTop colored src={require("../assets/img/4.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                    </div>
+                </AnterosCard>
+                <AnterosCard title="Effect 3">
+                    <div className="row">
+                        <div className="col-sm-2">
+                            <AnterosImage effect={3} leftToRight src={require("../assets/img/4.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={3} leftToRight colored src={require("../assets/img/5.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={3} rightToLeft src={require("../assets/img/6.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={3} rightToLeft colored src={require("../assets/img/7.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-2">
+                            <AnterosImage effect={3} bottomToTop src={require("../assets/img/3.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={3} bottomToTop colored src={require("../assets/img/4.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={3} topToBottom src={require("../assets/img/1.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={3} topToBottom colored src={require("../assets/img/2.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                    </div>
+                </AnterosCard>
+
+                <AnterosCard title="Effect 4">
+                    <div className="row">
+                        <div className="col-sm-2">
+                            <AnterosImage effect={4} leftToRight src={require("../assets/img/4.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={4} leftToRight colored src={require("../assets/img/5.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={4} rightToLeft src={require("../assets/img/6.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={4} rightToLeft colored src={require("../assets/img/7.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-2">
+                            <AnterosImage effect={4} topToBottom src={require("../assets/img/1.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={4} topToBottom colored src={require("../assets/img/2.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={4} bottomToTop src={require("../assets/img/3.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={4} bottomToTop colored src={require("../assets/img/4.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                    </div>
+                </AnterosCard>
+                <AnterosCard title="Effect 5">
+                    <div className="row">
+                        <div className="col-sm-6">
+                            <AnterosImage effect={5} src={require("../assets/img/1.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-6">
+                            <AnterosImage effect={5} colored src={require("../assets/img/3.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                    </div>
+                </AnterosCard>
+                <AnterosCard title="Effect 6">
+                    <div className="row">
+                        <div className="col-sm-2">
+                            <AnterosImage effect={6} scaleUp src={require("../assets/img/6.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={6} scaleUp colored src={require("../assets/img/5.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={6} scaleDown src={require("../assets/img/6.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-2">
+                            <AnterosImage effect={6} scaleDown colored src={require("../assets/img/7.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={6} scaleDownUp src={require("../assets/img/1.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={6} scaleDownUp colored src={require("../assets/img/2.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                    </div>
+                </AnterosCard>
+
+                <AnterosCard title="Effect 7">
+                    <div className="row">
+                        <div className="col-sm-2">
+                            <AnterosImage effect={7} leftToRight src={require("../assets/img/4.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={7} leftToRight colored src={require("../assets/img/5.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={7} rightToLeft src={require("../assets/img/6.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={7} rightToLeft colored src={require("../assets/img/7.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-2">
+                            <AnterosImage effect={7} topToBottom src={require("../assets/img/1.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={7} topToBottom colored src={require("../assets/img/2.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={7} bottomToTop src={require("../assets/img/3.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                        <div className="col-sm-2">
+                            <AnterosImage effect={7} bottomToTop colored src={require("../assets/img/4.jpg")}>
+                                <h3>Heading here</h3>
+                                <p>Description goes here</p>
+                            </AnterosImage>
+                        </div>
+                    </div>
+                </AnterosCard>
             </AnterosCard>
 
             <AnterosCard title="Zooming animations">
@@ -74,7 +337,7 @@ export default class ImageView extends Component {
                     }}
                     cursorOffset={{ x: 80, y: -80 }} />
             </AnterosCard>
-        </AnterosCard>);
+        </AnterosCard >);
     }
 }
 
