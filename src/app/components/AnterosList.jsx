@@ -274,52 +274,52 @@ export class AnterosListItem extends Component {
 
 
 AnterosList.propTypes = {
-    alignRight: React.PropTypes.bool,
-    alignLeft: React.PropTypes.bool,
-    alignCenter: React.PropTypes.bool,
-    justify: React.PropTypes.bool,
     activeBackColor: React.PropTypes.string,
     activeColor: React.PropTypes.string,
+    alignCenter: React.PropTypes.bool,
+    alignLeft: React.PropTypes.bool,
+    alignRight: React.PropTypes.bool,
     backgroundColor: React.PropTypes.string,
     color: React.PropTypes.string,
-    onSelectListItem: React.PropTypes.func,
     height: React.PropTypes.string,
-    width: React.PropTypes.string
+    justify: React.PropTypes.bool,
+    onSelectListItem: React.PropTypes.func,
+    width: React.PropTypes.string,
 };
 
 
 AnterosListItem.propTypes = {
-    hide: React.PropTypes.bool,
-    disabled: React.PropTypes.bool,
     active: React.PropTypes.bool,
-    success: React.PropTypes.bool,
-    warning: React.PropTypes.bool,
-    danger: React.PropTypes.bool,
-    info: React.PropTypes.bool,
-    alignRight: React.PropTypes.bool,
-    alignLeft: React.PropTypes.bool,
-    alignCenter: React.PropTypes.bool,
-    justify: React.PropTypes.bool,
     activeBackColor: React.PropTypes.string,
     activeColor: React.PropTypes.string,
+    alignCenter: React.PropTypes.bool,
+    alignLeft: React.PropTypes.bool,
+    alignRight: React.PropTypes.bool,
     backgroundColor: React.PropTypes.string,
+    caption: React.PropTypes.string,
     color: React.PropTypes.string,
+    danger: React.PropTypes.bool,
+    disabled: React.PropTypes.bool,
+    hide: React.PropTypes.bool,
+    href: React.PropTypes.string,
+    icon: React.PropTypes.string,
+    id: React.PropTypes.number.isRequired,
+    image: React.PropTypes.string,
     imageCircle: React.PropTypes.bool,
     imageHeight: React.PropTypes.string,
     imageWidth: React.PropTypes.string,
-    icon: React.PropTypes.string,
-    image: React.PropTypes.string,
-    caption: React.PropTypes.string,
+    info: React.PropTypes.bool,
+    justify: React.PropTypes.bool,
     onSelectListItem: React.PropTypes.func,
-    href: React.PropTypes.string,
-    id: React.PropTypes.number.isRequired
+    success: React.PropTypes.bool,
+    warning: React.PropTypes.bool
 };
 
 AnterosListItem.defaultProps = {
-    disabled: false,
     active: false,
-    icon: undefined,
-    image: undefined,
     caption: undefined,
-    href: undefined
+    disabled: false,
+    href: undefined,
+    icon: undefined,
+    image: undefined
 }

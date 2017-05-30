@@ -748,20 +748,22 @@ body {
   .card.card-default > .card-header {
     background-color: #eceff1;
     color: inherit; }
+    .card.card-default > .card-header .title{
+      color: #4f5f6f; } 
   .card.card-primary {
     border-color: #3FA9F4; 
     }
     .card.card-primary > .card-header {
       background-color: #3FA9F4;
       border-color: #3FA9F4; }
-    .card.card-primary .card-header .title{
+    .card.card-primary > .card-header .title{
       color: white; }  
   .card.card-success {
     border-color: #4bcf99; }    
     .card.card-success > .card-header {
       background-color: #4bcf99; 
       border-color: #4bcf99; }
-    .card.card-success .card-header .title{
+    .card.card-success > .card-header .title{
       color: white; } 
   .card.card-info {
     border-color: #76D4F5; }    
@@ -784,7 +786,7 @@ body {
     .card.card-inverse > .card-header {
       background-color: #131e26; 
       border-color: #131e26; }
-  .card.card-inverse .card-header .title{
+  .card.card-inverse > .card-header .title{
       color: white; }     
   .card .title-block,
   .card .card-title-block {

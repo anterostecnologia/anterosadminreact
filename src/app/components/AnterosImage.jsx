@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './AnterosImage.css';
+import { If, Then, Else } from "../utils/AnterosControlStatements";
+import { buildClassNames } from "../utils/AnterosUtils";
 
 
 export default class AnterosImage extends Component {
@@ -28,75 +30,113 @@ export default class AnterosImage extends Component {
             scale = (this.props.zoomScale ? this.props.zoomScale : 1);
         }
 
-        let customStyle = {
-            maxWidth: this.props.maxWidth,
-            marginRight: this.props.marginRight,
-            marginLeft: this.props.marginLeft,
-            marginTop: this.props.marginTop,
-            marginBottom: this.props.marginBottom,
-            WebkitTransition: "0.4s ease",
-            transition: "0.4s ease",
-            transform: "scale(" + scale + ")",
-            WebkitTransform: "scale(" + scale + ")"
-        };
-
         let className = (this.props.className ? this.props.className : "");
-        if (this.props.rounded) {
-            className += " anterosimg-rounded";
-        }
-        if (this.props.thumbnail) {
-            className += " anterosimg-thumbnail";
-        }
-        if (this.props.circle) {
-            className += " anterosimg-circle";
-        }
+        className = buildClassNames(
+            (this.props.rounded ? "anterosimg-rounded" : ""),
+            (this.props.thumbnail ? "anterosimg-thumbnail" : ""),
+            (this.props.circle ? "anterosimg-circle" : ""),
+            (this.props.square ? "anterosimg-square" : "")
+        );
 
         if (this.props.effect) {
-            let width = (this.props.width ? this.props.width : "200px");
+
+            let width = (this.props.width ? this.props.width : (this.props.circle ? "200px" : "300px"));
             let height = (this.props.height ? this.props.height : "200px");
-            let className = "ih-item anterosimg-circle effect"+this.props.effect;
-            if (this.props.colored) {
-                className += " colored";
+
+            let style = {
+                width: width,
+                height: height,
+                margin: this.props.margin
+            };
+            if (this.props.marginBottom) {
+                style = { ...style, marginBottom: this.props.marginBottom }
             }
-            if (this.props.leftToRight){
-                className += " left_to_right";
+            if (this.props.marginTop) {
+                style = { ...style, marginBottom: this.props.marginTop }
             }
-            if (this.props.rightToLeft){
-                className += " right_to_left";
+            if (this.props.marginLeft) {
+                style = { ...style, marginBottom: this.props.marginLeft }
             }
-            if (this.props.topToBottom){
-                className += " top_to_bottom";
+            if (this.props.marginRight) {
+                style = { ...style, marginBottom: this.props.marginRight }
             }
-            if (this.props.bottomToTop){
-                className += " bottom_to_top";
-            }
-            if (this.props.scaleUp){
-                className += " scale_up";
-            }
-            if (this.props.scaleDown){
-                className += " scale_down";
-            }
-            if (this.props.scaleDownUp){
-                className += " scale_down_up";
-            }
-            return (<div style={{ height: height, width: width }}>
+
+            let className = buildClassNames("ih-item ",
+                (this.props.circle ? "anterosimg-circle" : ""),
+                (this.props.square ? "anterosimg-square" : ""),
+                " effect" + this.props.effect,
+                (this.props.colored ? "colored" : ""),
+                (this.props.leftToRight ? "left_to_right" : ""),
+                (this.props.rightToLeft ? "right_to_left" : ""),
+                (this.props.topToBottom ? "top_to_bottom" : ""),
+                (this.props.bottomToTop ? "bottom_to_top" : ""),
+                (this.props.scaleUp ? "scale_up" : ""),
+                (this.props.fromTopAndBottom?"from_top_and_bottom":""),
+                (this.props.scaleDown ? "scale_down" : ""),
+                (this.props.scaleDownUp ? "scale_down_up" : ""),
+                (this.props.fromLeftAndRight ? "from_left_and_right" : ""),
+                (this.props.leftAndRight ? "left_and_right" : "")
+            );
+
+            return (<div style={style}>
                 <div className={className}>
                     <a href="#">
-                        {this.props.effect==1?<div className="spinner"></div>:null}
-                        <div className="img"><img ref={ref => this.image = ref} src={this.props.src} alt="img" /></div>
-                        <div className="info">
-                            <div className="info-back">
-                                {this.props.children}
-                            </div>
-                        </div>
+                        {this.props.effect == 1 && this.props.circle ? <div className="spinner"></div> : null}
+                        <If condition={this.props.effect == 8}>
+                            <Then>
+                                <div>
+                                    <div className="img-container">
+                                        <div className="img"><img ref={ref => this.image = ref} src={this.props.src} alt="img" />
+                                        </div>
+                                    </div>
+                                    <div className="info-container">
+                                        <div className="info">
+                                            <div className="info-back">
+                                                {this.props.children}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Then>
+                            <Else>
+                                <div>
+                                    <div className="img"><img ref={ref => this.image = ref} src={this.props.src} alt="img" /></div>
+                                    <div className="info">
+                                        <div className="info-back">
+                                            {this.props.children}
+                                        </div>
+                                    </div>
+                                </div>
+                            </Else>
+                        </If>
                     </a>
                 </div>
             </div>);
         } else {
+            let style = {
+                maxWidth: this.props.maxWidth,
+                margin: this.props.margin,
+                WebkitTransition: "0.4s ease",
+                transition: "0.4s ease",
+                transform: "scale(" + scale + ")",
+                WebkitTransform: "scale(" + scale + ")"
+            };
+            if (this.props.marginBottom) {
+                style = { ...style, marginBottom: this.props.marginBottom }
+            }
+            if (this.props.marginTop) {
+                style = { ...style, marginBottom: this.props.marginTop }
+            }
+            if (this.props.marginLeft) {
+                style = { ...style, marginBottom: this.props.marginLeft }
+            }
+            if (this.props.marginRight) {
+                style = { ...style, marginBottom: this.props.marginRight }
+            }
             return (<img ref={ref => this.image = ref}
                 className={className}
                 src={this.props.src}
-                style={customStyle}
+                style={style}
                 onMouseOut={this.onMouseOut}
                 onMouseOver={this.onMouseOver}>
                 {this.props.children}
