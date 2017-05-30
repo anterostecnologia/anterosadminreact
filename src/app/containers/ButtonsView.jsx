@@ -149,7 +149,7 @@ export default class ButtonView extends Component {
                 </div>
                 <div className="col-6">
                     <AnterosCard title="Button dropdowns" height="473px">
-                        <AnterosCard title="Dropdowns" >
+                        <AnterosCard title="Dropdowns" height="250px">
                             <AnterosDropdownButton primary caption="Primary">
                                 <AnterosDropdownMenu>
                                     <AnterosDropdownMenuItem caption="Item 1" />
