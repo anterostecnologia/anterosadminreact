@@ -119,6 +119,25 @@ export default class CardView extends Component {
                 </div>
             </AnterosCard >
 
+            <AnterosCard title="Cards Background variants">
+            </AnterosCard>
+
+            <AnterosCard title="Cards Images">
+                <AnterosCard danger showHeader={false} >
+                    <AnterosImage height="500px" src={require('../assets/img/cards1.jpg')} />
+                    <h4 className="card-title">Card title</h4>
+                </AnterosCard>
+            </AnterosCard>
+
+            <AnterosCard title="Cards Image Overlays">
+            </AnterosCard>
+
+            <AnterosCard title="Cards Group">
+            </AnterosCard>
+
+            <AnterosCard title="Cards Decks">
+            </AnterosCard>
+
         </AnterosCard >);
     }
 }
