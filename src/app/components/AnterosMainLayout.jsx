@@ -84,7 +84,7 @@ class AnterosMainLayout extends Component {
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Panels"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Navs"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Menus"></AnterosMenuItem>
-              <AnterosMenuItem id="mniProgressBar" route="/home/progressbar" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Progress Bars"></AnterosMenuItem>
+              <AnterosMenuItem id="mniProgressBar" route="/home/progressbar" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-tasks green" caption="Progress Bars"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Pagination"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Labels & badges"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Modals"></AnterosMenuItem>
