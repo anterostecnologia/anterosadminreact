@@ -4,6 +4,9 @@ import AnterosButton from '../components/AnterosButton';
 import AnterosDropdownButton from '../components/AnterosDropdownButton';
 import AnterosDropdownMenu from '../components/AnterosDropdownMenu';
 import AnterosDropdownMenuItem from '../components/AnterosDropdownMenuItem';
+import AnterosFloatingButton, { AnterosFloatingButtonItem } from "../components/AnterosFloatingButton";
+import AnterosRadialButton from "../components/AnterosRadialButton";
+
 
 export default class ButtonView extends Component {
     render() {
@@ -199,6 +202,24 @@ export default class ButtonView extends Component {
                             </AnterosDropdownButton>
 
                         </AnterosCard>
+                    </AnterosCard>
+                </div>
+            </div>
+
+            <div className="row">
+                <div className="col-6">
+                    <AnterosCard height="250px" title="Floating button">
+                        <AnterosFloatingButton icon="fa fa-plus" hint="Menu" autoClose={true}>
+                            <AnterosFloatingButtonItem icon="fa fa-pencil" hint="Editar" backgroundColor="#f1c40f" onButtonClick={() => console.log("Clicou no botão editar")} />
+                            <AnterosFloatingButtonItem icon="fa fa-eraser" hint="Remover" backgroundColor="#e74c3c" onButtonClick={() => console.log("Clicou no botão remover")} />
+                            <AnterosFloatingButtonItem icon="fa fa-search" hint="Localizar" backgroundColor="#7cb342" onButtonClick={() => console.log("Clicou no botão localizar")} />
+                            <AnterosFloatingButtonItem icon="fa fa-print" hint="Imprimir" onButtonClick={() => console.log("Clicou no botão imprimir")} />
+                        </AnterosFloatingButton>
+                    </AnterosCard>
+                </div>
+                <div className="col-6">
+                    <AnterosCard height="250px" title="Radial button">
+                        <AnterosRadialButton />
                     </AnterosCard>
                 </div>
             </div>
