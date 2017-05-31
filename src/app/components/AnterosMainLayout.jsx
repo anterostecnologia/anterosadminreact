@@ -24,6 +24,7 @@ import ImagesView from "../containers/ImagesView";
 import ButtonsView from "../containers/ButtonsView";
 import CardsView from "../containers/CardsView";
 import ProgressBarView from "../containers/ProgressBarView";
+import SwitchesView from "../containers/SwitchesView"; 
 
 
 class AnterosMainLayout extends Component {
@@ -79,7 +80,7 @@ class AnterosMainLayout extends Component {
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home green" caption="Panels"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Tabs & Accordions"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Lists"></AnterosMenuItem>
-              <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Switches"></AnterosMenuItem>
+              <AnterosMenuItem id="mniSwitches" route="/home/switches" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Switches & Toggle"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Spinners"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Panels"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Navs"></AnterosMenuItem>
@@ -108,6 +109,7 @@ class AnterosMainLayout extends Component {
               <AnterosSecurityRoute path='/home/buttons' component={ButtonsView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/cards' component={CardsView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/progressbar' component={ProgressBarView} isLoggedIn={this.props.isLoggedIn} />
+              <AnterosSecurityRoute path='/home/switches' component={SwitchesView} isLoggedIn={this.props.isLoggedIn} />
             </Switch>
             {this.props.children}
           </AnterosMainContainer>
