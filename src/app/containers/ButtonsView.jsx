@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import AnterosCard from "../components/AnterosCard";
 import AnterosButton from '../components/AnterosButton';
+import AnterosButtonGroup from '../components/AnterosButtonGroup';
 import AnterosDropdownButton from '../components/AnterosDropdownButton';
 import AnterosDropdownMenu from '../components/AnterosDropdownMenu';
 import AnterosDropdownMenuItem from '../components/AnterosDropdownMenuItem';
 import AnterosFloatingButton, { AnterosFloatingButtonItem } from "../components/AnterosFloatingButton";
 import AnterosRadialButton from "../components/AnterosRadialButton";
+import AnterosDropdownDivider from "../components/AnterosDropdownDivider";
 
 
 export default class ButtonView extends Component {
@@ -205,6 +207,121 @@ export default class ButtonView extends Component {
                     </AnterosCard>
                 </div>
             </div>
+            <div className="row">
+                <div className="col-6">
+                    <AnterosCard title="Buttons group" height="500px">
+                        <section className="section">
+                            <p>Basic Example</p>
+                            <AnterosButtonGroup>
+                                <AnterosButton secondary>Left</AnterosButton>
+                                <AnterosButton secondary>Middle</AnterosButton>
+                                <AnterosButton secondary>Right</AnterosButton>
+                            </AnterosButtonGroup>
+                            <AnterosButtonGroup>
+                                <AnterosButton primary>Left</AnterosButton>
+                                <AnterosButton primary>Middle</AnterosButton>
+                                <AnterosButton primary>Right</AnterosButton>
+                            </AnterosButtonGroup>
+                            <p></p>
+                            <p>Button Group Sizing</p>
+                            <AnterosButtonGroup large>
+                                <AnterosButton secondary>1</AnterosButton>
+                                <AnterosButton secondary>2</AnterosButton>
+                                <AnterosButton secondary>3</AnterosButton>
+                                <AnterosButton secondary>4</AnterosButton>
+                            </AnterosButtonGroup>
+                            <AnterosButtonGroup large>
+                                <AnterosButton secondary>5</AnterosButton>
+                                <AnterosButton secondary>6</AnterosButton>
+                                <AnterosButton secondary>7</AnterosButton>
+                            </AnterosButtonGroup>
+                            <AnterosButtonGroup large>
+                                <AnterosButton secondary large>8</AnterosButton>
+                            </AnterosButtonGroup>
+                            <p></p>
+                            <AnterosButtonGroup small>
+                                <AnterosButton primary>1</AnterosButton>
+                                <AnterosButton primary>2</AnterosButton>
+                                <AnterosButton primary>3</AnterosButton>
+                                <AnterosButton primary>4</AnterosButton>
+                            </AnterosButtonGroup>
+                            <AnterosButtonGroup small>
+                                <AnterosButton primary>5</AnterosButton>
+                                <AnterosButton primary>6</AnterosButton>
+                                <AnterosButton primary>7</AnterosButton>
+                            </AnterosButtonGroup>
+                            <AnterosButtonGroup small>
+                                <AnterosButton primary>8</AnterosButton>
+                            </AnterosButtonGroup>
+                            <p></p>
+                            <p>Nesting</p>
+                            <AnterosButtonGroup>
+                                <AnterosButton secondary>1</AnterosButton>
+                                <AnterosButton secondary>2</AnterosButton>
+                                <AnterosDropdownButton secondary caption="Dropdown">
+                                    <AnterosDropdownMenu>
+                                        <AnterosDropdownMenuItem caption="Action" />
+                                        <AnterosDropdownMenuItem caption="Another action" />
+                                        <AnterosDropdownMenuItem caption="Something else here" />
+                                        <AnterosDropdownDivider />
+                                        <AnterosDropdownMenuItem caption="Separated link" />
+                                    </AnterosDropdownMenu>
+                                </AnterosDropdownButton>
+                            </AnterosButtonGroup>
+                            <p></p>
+                            <AnterosButtonGroup small>
+                                <AnterosButton primary small>1</AnterosButton>
+                                <AnterosButton primary small>2</AnterosButton>
+                                <AnterosDropdownButton primary small caption="Dropdown">
+                                    <AnterosDropdownMenu>
+                                        <AnterosDropdownMenuItem caption="Action" />
+                                        <AnterosDropdownMenuItem caption="Another action" />
+                                        <AnterosDropdownMenuItem caption="Something else here" />
+                                        <AnterosDropdownDivider />
+                                        <AnterosDropdownMenuItem caption="Separated link" />
+                                    </AnterosDropdownMenu>
+                                </AnterosDropdownButton>
+                            </AnterosButtonGroup>
+                        </section>
+
+                    </AnterosCard>
+                </div>
+                <div className="col-6">
+                    <AnterosCard title="Social buttons" height="500px">
+                        <div className="col-6">
+                            <p>Social buttons</p>
+                            <AnterosButton facebook />
+                            <AnterosButton twitter />
+                            <AnterosButton googlePlus />
+                            <AnterosButton linkedin />
+                            <AnterosButton instagram />
+                            <AnterosButton pinterest />
+                            <AnterosButton dribbble />
+                            <AnterosButton youtube />
+                            <p>Circle</p>
+                            <AnterosButton facebook circle />
+                            <AnterosButton twitter circle />
+                            <AnterosButton googlePlus circle />
+                            <AnterosButton linkedin circle />
+                            <AnterosButton instagram circle />
+                            <AnterosButton pinterest circle />
+                            <AnterosButton dribbble circle />
+                            <AnterosButton youtube circle />
+                            <p>Rounded</p>
+                            <AnterosButton facebook oval />
+                            <AnterosButton twitter oval />
+                            <AnterosButton googlePlus oval />
+                            <AnterosButton linkedin oval />
+                            <AnterosButton instagram oval />
+                            <AnterosButton pinterest oval />
+                            <AnterosButton dribbble oval />
+                            <AnterosButton youtube oval />
+                        </div>
+                    </AnterosCard>
+                </div>
+            </div>
+
+
 
             <div className="row">
                 <div className="col-6">

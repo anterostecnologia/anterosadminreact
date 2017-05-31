@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import lodash from 'lodash';
 import { AnterosError } from "./AnterosExceptions";
+import { buildClassNames } from "../utils/AnterosUtils";
 
 
 export default class AnterosList extends Component {
@@ -51,7 +52,7 @@ export default class AnterosList extends Component {
             if (!record.hasOwnProperty('text') || (!record.text)) {
                 throw new AnterosError("Foi encontrado um registro sem o texto no dataSource passado para a Lista.");
             }
-            let active = (record.active==undefined?false:record.active);
+            let active = (record.active == undefined ? false : record.active);
             if (_this.state.activeIndex >= 0) {
                 active = false;
                 if (_this.state.activeIndex == index) {
@@ -150,7 +151,7 @@ export default class AnterosList extends Component {
                 onSelectListItem: (child.props.onSelectListItem == undefined ? _this.props.onSelectListItem : child.props.onSelectListItem),
                 href: child.props.href
             },
-                (child.props?child.props.children:undefined)
+                (child.props ? child.props.children : undefined)
             ));
             index++;
         });
@@ -197,49 +198,20 @@ export class AnterosListItem extends Component {
         if (this.props.hide)
             return null;
 
-        let className = "list-group-item list-group-item-action";
-        if (this.props.className) {
-            className += " " + this.props.className;
-        }
-
-        if (this.props.active) {
-            className += " active"
-        }
-
-        if (this.props.disabled) {
-            className += " disabled";
-        }
-
-        if (this.props.success) {
-            className += " list-group-item-success"
-        }
-
-        if (this.props.info) {
-            className += " list-group-item-info"
-        }
-
-        if (this.props.warning) {
-            className += " list-group-item-warning"
-        }
-
-        if (this.props.danger) {
-            className += " list-group-item-danger"
-        }
-
-        if (this.props.alignRight) {
-            className += " justify-content-end";
-        }
-
-        if (this.props.alignLeft) {
-            className += " justify-content-start";
-        }
-        if (this.props.alignCenter) {
-            className += " justify-content-center";
-        }
-
-        if (this.props.justify) {
-            className += " justify-content-between";
-        }
+        let className = buildClassNames(
+            "list-group-item list-group-item-action",
+            (this.props.className ? this.props.className : ""),
+            (this.props.active ? "active" : ""),
+            (this.props.disabled ? "disabled" : ""),
+            (this.props.success ? "list-group-item-success" : ""),
+            (this.props.info ? "list-group-item-info" : ""),
+            (this.props.warning ? "list-group-item-warning" : ""),
+            (this.props.danger ? "list-group-item-danger" : ""),
+            (this.props.alignRight ? "justify-content-end" : ""),
+            (this.props.alignLeft ? "justify-content-start" : ""),
+            (this.props.alignCenter ? "justify-content-center" : ""),
+            (this.props.justify ? "justify-content-between" : ""),
+            (this.props.justify ? "justify-content-between" : ""));
 
         let icon;
         if (this.props.icon) {

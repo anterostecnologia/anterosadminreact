@@ -101,6 +101,48 @@ export default class AnterosButton extends Component {
             className += " disabled";
         }
 
+        let customIcon = this.props.icon;
+
+        if (this.props.facebook){
+            className += " btn-facebook"; 
+            customIcon = "fa fa-facebook";
+        }
+
+        if (this.props.twitter){
+            className += " btn-twitter"; 
+            customIcon = "fa fa-twitter";
+        }
+
+        if (this.props.googlePlus){
+            className += " btn-googleplus"; 
+            customIcon = "fa fa-google-plus";
+        }
+
+        if (this.props.linkedin){
+            className += " btn-linkedin"; 
+            customIcon = "fa fa-linkedin";
+        }
+
+        if (this.props.instagram){
+            className += " btn-instagram"; 
+            customIcon = "fa fa-instagram";
+        }
+
+        if (this.props.pinterest){
+            className += " btn-pinterest"; 
+            customIcon = "fa fa-pinterest";
+        }
+
+        if (this.props.dribbble){
+            className += " btn-dribbble"; 
+            customIcon = "fa fa-dribbble";
+        }
+
+         if (this.props.youtube){
+            className += " btn-youtube"; 
+            customIcon = "fa fa-youtube";
+        }
+
         let style;
 
         if (this.props.backgroundColor) {
@@ -132,8 +174,8 @@ export default class AnterosButton extends Component {
         }
 
         let icon;
-        if (this.props.icon) {
-            icon = (<i className={this.props.icon}></i>);
+        if (customIcon) {
+            icon = (<i className={customIcon}></i>);
         }
 
         let balloonProps = {};
@@ -153,7 +195,7 @@ export default class AnterosButton extends Component {
                 {...balloonProps}
                 onClick={this.onClick} style={style}
                 type="button" className={className}>
-                {icon}<img src={this.props.image} /> {this.props.caption}
+                {icon}<img src={this.props.image} /> {this.props.caption}{this.props.children}
             </button>
         )
     }
@@ -184,7 +226,15 @@ AnterosButton.propTypes = {
     onButtonClick: React.PropTypes.func,
     hint: React.PropTypes.string,
     hintPosition: React.PropTypes.string,
-    hintSize: React.PropTypes.string
+    hintSize: React.PropTypes.string,
+    facebook: React.PropTypes.bool,
+    twitter: React.PropTypes.bool,
+    googlePlus: React.PropTypes.bool,
+    linkedin: React.PropTypes.bool,
+    instagram: React.PropTypes.bool,
+    pinterest: React.PropTypes.bool,
+    dribbble: React.PropTypes.bool,
+    youtube: React.PropTypes.bool
 };
 
 AnterosButton.defaultProps = {
@@ -209,3 +259,5 @@ AnterosButton.defaultProps = {
     image: undefined,
     caption: undefined    
 };
+
+
