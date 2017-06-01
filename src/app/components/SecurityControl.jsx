@@ -25,8 +25,6 @@ import AnterosCheckboxSlide from "./AnterosCheckboxSlide";
 import AnterosCheckbox from "./AnterosCheckbox";
 import AnterosRadioGroup, { AnterosRadio } from "./AnterosRadioGroup";
 import AnterosLabel from "./AnterosLabel";
-import AnterosFloatingButton, { AnterosFloatingButtonItem } from "./AnterosFloatingButton";
-import AnterosRadialButton from "./AnterosRadialButton";
 import Exemplo from "./Exemplo";
 import AnterosStarRating from "./AnterosStarRating";
 import AnterosSelect, { AnterosSelectOption } from "./AnterosSelect";
@@ -888,26 +886,12 @@ export default class SecurityControl extends Component {
 				</div>
 
 				<div className="row">
-					<div className="col-md-4">
-						<AnterosCheckboxToggle value="Toggle" info onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
-						<AnterosCheckboxToggle value="Toggle checked" warning checked onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
-						<AnterosCheckboxToggle value="Toggle disabled" disabled onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
-						<AnterosCheckboxToggle value="Toggle checked disabled" checked disabled onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
-						<AnterosCheckboxToggle value="Toggle large" large success onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
-						<AnterosCheckboxToggle value="Toggle extraLarge" extraLarge danger onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
 
-					</div>
 					<div className="col-md-4">
-						<AnterosCheckboxSlide value="Slide" info onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
-						<AnterosCheckboxSlide value="Slide checked" warning checked onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
-						<AnterosCheckboxSlide value="Slide disabled" disabled onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
-						<AnterosCheckboxSlide value="Slide checked disabled" checked disabled onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
 						<AnterosCheckbox value="Meeting new girls" checked rounded onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
 						<AnterosCheckbox value="Meeting new girls" onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
 						<AnterosCheckbox value="Meeting new girls" onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
 
-					</div>
-					<div className="col-md-4">
 						<AnterosRadioGroup name="radios" onRadioChange={(value, i) => console.log(value + " - " + i)}>
 							<AnterosRadio value="Option one" />
 							<AnterosRadio value="Option two checked" checked />
@@ -935,23 +919,7 @@ export default class SecurityControl extends Component {
 
 
 
-				<div className="row">
-					<div className="col-6">
-						<AnterosCard height="250px" title="Floating button">
-							<AnterosFloatingButton icon="fa fa-plus" hint="Menu" autoClose={true}>
-								<AnterosFloatingButtonItem icon="fa fa-pencil" hint="Editar" backgroundColor="#f1c40f" onButtonClick={() => console.log("Clicou no botão editar")} />
-								<AnterosFloatingButtonItem icon="fa fa-eraser" hint="Remover" backgroundColor="#e74c3c" onButtonClick={() => console.log("Clicou no botão remover")} />
-								<AnterosFloatingButtonItem icon="fa fa-search" hint="Localizar" backgroundColor="#7cb342" onButtonClick={() => console.log("Clicou no botão localizar")} />
-								<AnterosFloatingButtonItem icon="fa fa-print" hint="Imprimir" onButtonClick={() => console.log("Clicou no botão imprimir")} />
-							</AnterosFloatingButton>
-						</AnterosCard>
-					</div>
-					<div className="col-6">
-						<AnterosCard height="250px" title="Radial button">
-							<AnterosRadialButton />
-						</AnterosCard>
-					</div>
-				</div>
+
 
 				<AnterosCard height="800px" style={{ overflow: "none" }} title="Components">
 					<AnterosStarRating size={30} value={2.5} edit={false} />

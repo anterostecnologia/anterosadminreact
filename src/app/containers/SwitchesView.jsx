@@ -31,7 +31,7 @@ export default class ButtonView extends Component {
                 </section>
             </AnterosCard>
 
-            <AnterosCard title="Toggle">
+            <AnterosCard title="Toggle round">
                 <section className="section">
                     <div className="row">
                         <div className="col-6">
@@ -62,8 +62,8 @@ export default class ButtonView extends Component {
                         <div className="col-6">
                             <AnterosCard title="Toggle enabled/disabled">
                                 <section className="section">
-                                    <AnterosCheckboxToggle value="Toggle" info  />
-                                    <AnterosCheckboxToggle value="Toggle checked" warning checked  />
+                                    <AnterosCheckboxToggle value="Toggle" info />
+                                    <AnterosCheckboxToggle value="Toggle checked" warning checked />
                                     <AnterosCheckboxToggle value="Toggle disabled" disabled />
                                     <AnterosCheckboxToggle value="Toggle checked disabled" disabled checked />
                                 </section>
@@ -75,6 +75,69 @@ export default class ButtonView extends Component {
                                 <section className="section">
                                     <AnterosCheckboxToggle value="Toggle" success onCheckboxChange={(value, checked) => alert(value + " " + checked)} />
                                     <AnterosCheckboxToggle value="Toggle checked" extraLarge warning checked onCheckboxChange={(value, checked) => alert(value + " " + checked)} />
+                                </section>
+                            </AnterosCard>
+                        </div>
+                    </div>
+                </section>
+            </AnterosCard>
+            <AnterosCard title="Toggle square">
+                <section className="section">
+                    <div className="row">
+                        <div className="col-6">
+                            <AnterosCard title="Toggle colors" height="315px">
+                                <section className="section">
+                                    <AnterosCheckboxToggle square value="Primary" checked primary />
+                                    <AnterosCheckboxToggle square value="Success" checked success />
+                                    <AnterosCheckboxToggle square value="Info" checked info />
+                                    <AnterosCheckboxToggle square value="Warning" checked warning />
+                                    <AnterosCheckboxToggle square value="Danger" checked danger />
+
+                                </section>
+                            </AnterosCard>
+                        </div>
+
+                        <div className="col-6">
+                            <AnterosCard title="Toggle size" height="315px">
+                                <section className="section">
+                                    <AnterosCheckboxToggle square value="Toggle small" small primary checked labelWidth="100px"/>
+                                    <AnterosCheckboxToggle square value="Toggle normal" primary checked labelWidth="100px"/>
+                                    <AnterosCheckboxToggle square value="Toggle large" large success labelWidth="100px"/>
+                                    <AnterosCheckboxToggle square value="Toggle extraLarge" extraLarge danger checked labelWidth="100px"/>
+                                </section>
+                            </AnterosCard>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-6">
+                            <AnterosCard title="Toggle enabled/disabled" height="305px">
+                                <section className="section">
+                                    <AnterosCheckboxToggle square value="Toggle" info labelWidth="100px"/>
+                                    <AnterosCheckboxToggle square value="Toggle checked" warning checked labelWidth="100px"/>
+                                    <AnterosCheckboxToggle square value="Toggle disabled" disabled labelWidth="100px"/>
+                                    <AnterosCheckboxToggle square value="Toggle checked disabled" disabled checked labelWidth="100px"/>
+                                </section>
+                            </AnterosCard>
+                        </div>
+
+                        <div className="col-6">
+                            <AnterosCard title="Toggle event" height="305px">
+                                <section className="section">
+                                    <AnterosCheckboxToggle square value="Toggle" labelWidth="100px" success onCheckboxChange={(value, checked) => alert(value + " " + checked)} />
+                                    <AnterosCheckboxToggle square value="Toggle checked" labelWidth="100px" extraLarge warning checked onCheckboxChange={(value, checked) => alert(value + " " + checked)} />
+                                </section>
+                            </AnterosCard>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-12">
+                            <AnterosCard title="Toggle with text">
+                                <section className="section">
+                                    <AnterosCheckboxToggle square checkedValue="Yes" uncheckedValue="No" labelWidth="100px" info dangerOff />
+                                    <AnterosCheckboxToggle square checkedValue="Explicit" uncheckedValue="Implicit" labelWidth="100px"  warning dangerOff checked />
+                                    <AnterosCheckboxToggle square labelWidth="100px" checkedValue="Enabled" uncheckedValue="Disabled" primary infoOff disabled />
+                                    <AnterosCheckboxToggle square labelWidth="100px" disabled checked />
                                 </section>
                             </AnterosCard>
                         </div>

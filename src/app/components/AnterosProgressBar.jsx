@@ -20,7 +20,7 @@ export default class AnterosProgressBar extends Component {
 
         return (<div className="progress">
             <div className={className} role="progressbar" style={{ width: this.props.value + "%" }} aria-valuenow={this.props.value} aria-valuemin={this.props.min} aria-valuemax={this.props.max}>
-                {this.props.showText==true ? this.props.value + "%" : ""}
+                <span style={{verticalAlign: "middle"}}>{this.props.showText==true ? this.props.value + "%" : ""}</span>
             </div>
         </div>)
     }

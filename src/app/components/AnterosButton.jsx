@@ -165,12 +165,20 @@ export default class AnterosButton extends Component {
             }
         }
 
-        let dataToggle, ariaHaspopup, ariaExpanded;
+        let dataToggle, ariaHaspopup, ariaExpanded, ariaControls, href;
         if (this.props.dropdown) {
             dataToggle = "dropdown";
             ariaHaspopup = "true";
             ariaExpanded = "true";
             className += " dropdown-toggle";
+        }
+
+        if (this.props.collapseContent){
+            dataToggle = "collapse";
+            ariaExpanded = "true";
+            ariaControls=this.props.collapseContent;
+            href="#"+this.props.collapseContent;
+            className += " collapsed";
         }
 
         let icon;
@@ -190,8 +198,9 @@ export default class AnterosButton extends Component {
         }
 
 
+
         return (
-            <button data-toggle={dataToggle} aria-haspopup={ariaHaspopup} aria-expanded={ariaExpanded}
+            <button data-toggle={dataToggle} aria-haspopup={ariaHaspopup} aria-expanded={ariaExpanded} aria-controls={ariaControls} href={href}
                 {...balloonProps}
                 onClick={this.onClick} style={style}
                 type="button" className={className}>

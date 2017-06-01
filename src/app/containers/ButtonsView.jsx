@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AnterosCard from "../components/AnterosCard";
+import AnterosCard, { HeaderActions } from "../components/AnterosCard";
 import AnterosButton from '../components/AnterosButton';
 import AnterosButtonGroup from '../components/AnterosButtonGroup';
 import AnterosDropdownButton from '../components/AnterosDropdownButton';
@@ -8,16 +8,37 @@ import AnterosDropdownMenuItem from '../components/AnterosDropdownMenuItem';
 import AnterosFloatingButton, { AnterosFloatingButtonItem } from "../components/AnterosFloatingButton";
 import AnterosRadialButton from "../components/AnterosRadialButton";
 import AnterosDropdownDivider from "../components/AnterosDropdownDivider";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/styles';
+import AnterosCollapseContent from '../components/AnterosCollapseContent';
 
+const BUTTONS_COLORS = '<AnterosButton primary caption="Primary" />\n\
+<AnterosButton secondary caption="Secondary" />\n\
+<AnterosButton success caption="Success" />\n\
+<AnterosButton info caption="Info" />\n\
+<AnterosButton warning caption="Warning" />\n\
+<AnterosButton danger caption="Danger" />\n\
+<AnterosButton link caption="Button Link" />';
+
+const BUTTONS_OUTLINE = '<AnterosButton primary outline caption="Primary" />\n\
+<AnterosButton secondary outline caption="Secondary" />\n\
+<AnterosButton success outline caption="Success" />\n\
+<AnterosButton info outline caption="Info" />\n\
+<AnterosButton warning outline caption="Warning" />\n\
+<AnterosButton danger outline caption="Danger" />'
 
 export default class ButtonView extends Component {
     render() {
         return (<AnterosCard title="Buttons">
 
             <div className="row">
-
                 <div className="col-6">
                     <AnterosCard title="Button colors">
+                        <HeaderActions>
+                            <AnterosButton circle small link icon="fa fa-code"
+                                hint="Show code" hintPosition="left"
+                                collapseContent="idShowButtonsColors" />
+                        </HeaderActions>
                         <section className="section">
                             <AnterosButton primary caption="Primary" />
                             <AnterosButton secondary caption="Secondary" />
@@ -27,11 +48,21 @@ export default class ButtonView extends Component {
                             <AnterosButton danger caption="Danger" />
                             <AnterosButton link caption="Button Link" />
                         </section>
+                        <AnterosCollapseContent id="idShowButtonsColors"
+                            style={{ border: "1px solid #cfd8dc", backgroundColor: "rgb(248, 248, 255)", marginTop: "10px" }}>
+                            <br></br>
+                            <SyntaxHighlighter style={docco}>{BUTTONS_COLORS}</SyntaxHighlighter>
+                        </AnterosCollapseContent>
                     </AnterosCard>
                 </div>
 
                 <div className="col-6">
                     <AnterosCard title="Outline buttons">
+                        <HeaderActions>
+                            <AnterosButton circle small link icon="fa fa-code"
+                                hint="Show code" hintPosition="left"
+                                collapseContent="idShowButtonsOutline" />
+                        </HeaderActions>
                         <section className="section">
                             <AnterosButton primary outline caption="Primary" />
                             <AnterosButton secondary outline caption="Secondary" />
@@ -40,6 +71,11 @@ export default class ButtonView extends Component {
                             <AnterosButton warning outline caption="Warning" />
                             <AnterosButton danger outline caption="Danger" />
                         </section>
+                        <AnterosCollapseContent id="idShowButtonsOutline"
+                            style={{ border: "1px solid #cfd8dc", backgroundColor: "rgb(248, 248, 255)", marginTop: "10px" }}>
+                            <br></br>
+                            <SyntaxHighlighter style={docco}>{BUTTONS_OUTLINE}</SyntaxHighlighter>
+                        </AnterosCollapseContent>
                     </AnterosCard>
                 </div>
 
@@ -317,6 +353,23 @@ export default class ButtonView extends Component {
                             <AnterosButton dribbble oval />
                             <AnterosButton youtube oval />
                         </div>
+                    </AnterosCard>
+                </div>
+            </div>
+
+            <div className="row">
+                <div className="col-6">
+                    <AnterosCard title="Buttons with icons and images">
+                        <AnterosButton outline icon="fa fa-heart m-r-5">Love</AnterosButton>
+                        <AnterosButton outline secondary icon="fa fa-heart m-r-5">Love</AnterosButton>
+                        <AnterosButton info icon="fa fa-heart m-l-5">Love</AnterosButton>
+                        <AnterosButton success icon="fa fa-check">Success</AnterosButton>
+                        <AnterosButton primary oval icon="fa fa-envelope-o">Mail</AnterosButton>
+                        <br></br>
+                        <br></br>
+                        <AnterosButton primary image={require('../assets/img/box-open.png')}>Open box</AnterosButton>
+                        <AnterosButton success oval image={require('../assets/img/folder-open.png')}>Open folder</AnterosButton>
+                        <AnterosButton secondary pillLeft image={require('../assets/img/search.png')}>Search</AnterosButton>
                     </AnterosCard>
                 </div>
             </div>
