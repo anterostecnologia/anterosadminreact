@@ -3,9 +3,9 @@ import AnterosCard from "../components/AnterosCard";
 
 export default class RibbonView extends Component {
     render() {
-        return (<AnterosCard title="Ribbons">
+        return (<AnterosCard caption="Ribbons">
 
-            <AnterosCard title="Ribbons default">
+            <AnterosCard caption="Ribbons default">
                 <div className="row">
 
                     <div className="col-lg-2 col-sm-4">
@@ -65,7 +65,7 @@ export default class RibbonView extends Component {
                 </div>
             </AnterosCard >
 
-            <AnterosCard title="Ribbons right align">
+            <AnterosCard caption="Ribbons right align">
                 <div className="row">
 
                     <div className="col-lg-2 col-sm-4">
@@ -125,7 +125,7 @@ export default class RibbonView extends Component {
                 </div>
             </AnterosCard >
 
-            <AnterosCard title="Vertical ribbons">
+            <AnterosCard caption="Vertical ribbons">
                 <div className="row">
 
                     <div className="col-lg-2 col-sm-4">

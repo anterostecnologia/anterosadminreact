@@ -29,11 +29,11 @@ const BUTTONS_OUTLINE = '<AnterosButton primary outline caption="Primary" />\n\
 
 export default class ButtonView extends Component {
     render() {
-        return (<AnterosCard title="Buttons">
+        return (<AnterosCard caption="Buttons">
 
             <div className="row">
                 <div className="col-6">
-                    <AnterosCard title="Button colors">
+                    <AnterosCard caption="Button colors">
                         <HeaderActions>
                             <AnterosButton circle small link icon="fa fa-code"
                                 hint="Show code" hintPosition="left"
@@ -57,7 +57,7 @@ export default class ButtonView extends Component {
                 </div>
 
                 <div className="col-6">
-                    <AnterosCard title="Outline buttons">
+                    <AnterosCard caption="Outline buttons">
                         <HeaderActions>
                             <AnterosButton circle small link icon="fa fa-code"
                                 hint="Show code" hintPosition="left"
@@ -84,8 +84,8 @@ export default class ButtonView extends Component {
 
             <div className="row" height="640px">
                 <div className="col-6">
-                    <AnterosCard title="Button sizing" height="524p">
-                        <AnterosCard title="Large buttons" height="100%">
+                    <AnterosCard caption="Button sizing" height="524p">
+                        <AnterosCard caption="Large buttons" height="100%">
                             <section className="section">
                                 <AnterosButton large primary caption="Primary" />
                                 <AnterosButton large secondary caption="Secondary" />
@@ -96,7 +96,7 @@ export default class ButtonView extends Component {
                             </section>
                         </AnterosCard>
 
-                        <AnterosCard title="Small buttons" >
+                        <AnterosCard caption="Small buttons" >
                             <section className="section">
                                 <AnterosButton small primary caption="Primary" />
                                 <AnterosButton small secondary caption="Secondary" />
@@ -107,7 +107,7 @@ export default class ButtonView extends Component {
                             </section>
                         </AnterosCard>
 
-                        <AnterosCard title="Block buttons" >
+                        <AnterosCard caption="Block buttons" >
                             <section className="section">
                                 <AnterosButton large primary block caption="Block level button" />
                                 <AnterosButton small secondary block caption="Block level button" />
@@ -118,8 +118,8 @@ export default class ButtonView extends Component {
                 </div>
 
                 <div className="col-6">
-                    <AnterosCard title="Button types" height="615px">
-                        <AnterosCard title="Pill left" >
+                    <AnterosCard caption="Button types" height="615px">
+                        <AnterosCard caption="Pill left" >
                             <section className="section">
                                 <AnterosButton primary pillLeft caption="Primary" />
                                 <AnterosButton secondary pillLeft caption="Secondary" />
@@ -129,7 +129,7 @@ export default class ButtonView extends Component {
                                 <AnterosButton danger pillLeft caption="Danger" />
                             </section>
                         </AnterosCard>
-                        <AnterosCard title="Pill right" >
+                        <AnterosCard caption="Pill right" >
                             <section className="section">
                                 <AnterosButton primary pillRight caption="Primary" />
                                 <AnterosButton secondary pillRight caption="Secondary" />
@@ -139,7 +139,7 @@ export default class ButtonView extends Component {
                                 <AnterosButton danger pillRight caption="Danger" />
                             </section>
                         </AnterosCard>
-                        <AnterosCard title="Oval" >
+                        <AnterosCard caption="Oval" >
                             <section className="section">
                                 <AnterosButton primary oval caption="Primary" />
                                 <AnterosButton secondary oval caption="Secondary" />
@@ -156,7 +156,7 @@ export default class ButtonView extends Component {
 
             <div className="row">
                 <div className="col-6">
-                    <AnterosCard title="Circle buttons">
+                    <AnterosCard caption="Circle buttons">
                         <div className="col-lg-6 col-sm-6 col-xs-12">
                             <div className="white-box">
                                 <h3 className="box-title">Normal Circle Buttons</h3>
@@ -189,8 +189,8 @@ export default class ButtonView extends Component {
                     </AnterosCard>
                 </div>
                 <div className="col-6">
-                    <AnterosCard title="Button dropdowns" height="473px">
-                        <AnterosCard title="Dropdowns" height="250px">
+                    <AnterosCard caption="Button dropdowns" height="473px">
+                        <AnterosCard caption="Dropdowns" height="250px">
                             <AnterosDropdownButton primary caption="Primary">
                                 <AnterosDropdownMenu>
                                     <AnterosDropdownMenuItem caption="Item 1" />
@@ -245,7 +245,7 @@ export default class ButtonView extends Component {
             </div>
             <div className="row">
                 <div className="col-6">
-                    <AnterosCard title="Buttons group" height="500px">
+                    <AnterosCard caption="Buttons group" height="500px">
                         <section className="section">
                             <p>Basic Example</p>
                             <AnterosButtonGroup>
@@ -323,7 +323,7 @@ export default class ButtonView extends Component {
                     </AnterosCard>
                 </div>
                 <div className="col-6">
-                    <AnterosCard title="Social buttons" height="500px">
+                    <AnterosCard caption="Social buttons" height="500px">
                         <div className="col-6">
                             <p>Social buttons</p>
                             <AnterosButton facebook />
@@ -359,7 +359,7 @@ export default class ButtonView extends Component {
 
             <div className="row">
                 <div className="col-6">
-                    <AnterosCard title="Buttons with icons and images">
+                    <AnterosCard caption="Buttons with icons and images">
                         <AnterosButton outline icon="fa fa-heart m-r-5">Love</AnterosButton>
                         <AnterosButton outline secondary icon="fa fa-heart m-r-5">Love</AnterosButton>
                         <AnterosButton info icon="fa fa-heart m-l-5">Love</AnterosButton>
@@ -378,7 +378,7 @@ export default class ButtonView extends Component {
 
             <div className="row">
                 <div className="col-6">
-                    <AnterosCard height="250px" title="Floating button">
+                    <AnterosCard height="250px" caption="Floating button">
                         <AnterosFloatingButton icon="fa fa-plus" hint="Menu" autoClose={true}>
                             <AnterosFloatingButtonItem icon="fa fa-pencil" hint="Editar" backgroundColor="#f1c40f" onButtonClick={() => console.log("Clicou no botão editar")} />
                             <AnterosFloatingButtonItem icon="fa fa-eraser" hint="Remover" backgroundColor="#e74c3c" onButtonClick={() => console.log("Clicou no botão remover")} />
@@ -388,7 +388,7 @@ export default class ButtonView extends Component {
                     </AnterosCard>
                 </div>
                 <div className="col-6">
-                    <AnterosCard height="250px" title="Radial button">
+                    <AnterosCard height="250px" caption="Radial button">
                         <AnterosRadialButton />
                     </AnterosCard>
                 </div>

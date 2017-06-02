@@ -42,7 +42,6 @@ import AnterosEmojiArea from "./AnterosEmojiArea";
 import AnterosPassword from "./AnterosPassword";
 import AnterosSpinner from "./AnterosSpinner";
 import AnterosSlider from "./AnterosSlider";
-import AnterosImageCropper from "./AnterosImageCropper";
 import AnterosDataTable, { Columns, AnterosDataTableColumn } from "./AnterosDataTable";
 import clients from '../../app/assets/data/clients.json';
 
@@ -156,8 +155,6 @@ const select =
 		{ id: 1, text: "Opção 8", disabled: false, keyWordsToSearch: "frosting" },
 	]
 
-const src = 'http://i.imgur.com/Baf0DlW.png';
-
 export default class SecurityControl extends Component {
 
 
@@ -175,7 +172,6 @@ export default class SecurityControl extends Component {
 		this.handlePageChanged = this.handlePageChanged.bind(this);
 		this.handleDelete = this.handleDelete.bind(this);
 		this.handleAddition = this.handleAddition.bind(this);
-		this.cropImage = this.cropImage.bind(this);
 		this.renderIpAddress = this.renderIpAddress.bind(this);
 		this.onSelectRecord = this.onSelectRecord.bind(this);
 		this.onUnSelectRecord = this.onUnSelectRecord.bind(this);
@@ -188,8 +184,6 @@ export default class SecurityControl extends Component {
 			total: 30,
 			current: 2,
 			visiblePages: 3,
-			src: src,
-			cropResult: null,
 			tags: [
 				{ id: 184, name: 'Thailand' },
 				{ id: 86, name: 'India' }
@@ -266,15 +260,7 @@ export default class SecurityControl extends Component {
 		this.setState({ ...this.state, tags })
 	}
 
-	cropImage() {
-		if (typeof this.cropper.getCroppedCanvas() === 'undefined') {
-			return;
-		}
-		this.setState({
-			...this.state,
-			cropResult: this.cropper.getCroppedCanvas().toDataURL(),
-		});
-	}
+	
 
 
 	findNodeById(nodes, id) {
@@ -365,7 +351,7 @@ export default class SecurityControl extends Component {
 
 	render() {
 		return (
-			<AnterosCard title="Segurança" id="mainCard">
+			<AnterosCard caption="Segurança" id="mainCard">
 				<HeaderActions>
 					<AnterosButton small success oval image={require('../assets/img/action.png')} caption="Adicionar" hint="Teste hint 23232 32 3 23 23 2" hintSize="fit" hintPosition="up" />
 					<AnterosButton small primary oval icon="fa fa-pencil" caption="Editar" />
@@ -373,7 +359,7 @@ export default class SecurityControl extends Component {
 				</HeaderActions>
 
 				<AnterosButton icon="fa fa-plus" caption="Remover" />
-				<AnterosCard title="Tables">
+				<AnterosCard caption="Tables">
 
 					<AnterosDataTable dataSource={clients} height="500px" enablePaging={true}
 						onSelectRecord={this.onSelectRecord} onUnSelectRecord={this.onUnSelectRecord}
@@ -442,12 +428,12 @@ export default class SecurityControl extends Component {
 
 				<div className="row">
 					<div className="col-6">
-						<AnterosCard title="List">
+						<AnterosCard caption="List">
 							<AnterosList width="400px" height="300px" dataSource={dataList} component={CustomComponent} />
 						</AnterosCard>
 					</div>
 					<div className="col-6">
-						<AnterosCard title="List">
+						<AnterosCard caption="List">
 							<AnterosList width="400px" height="300px" alignCenter>
 								<AnterosListItem id={1} caption="Item1" danger disabled />
 								<AnterosListItem id={2}>
@@ -513,7 +499,7 @@ export default class SecurityControl extends Component {
 				</AnterosAccordion>
 
 
-				<AnterosCard title="Step wizard">
+				<AnterosCard caption="Step wizard">
 					<AnterosStepWizard steps={steps} />
 				</AnterosCard>
 
@@ -798,24 +784,24 @@ export default class SecurityControl extends Component {
 				<div>
 					<div className="row">
 						<div className="col-md-4">
-							<AnterosCard title="Basic message">
+							<AnterosCard caption="Basic message">
 								<AnterosButton primary caption="Try Alert!" onButtonClick={(e) => AnterosSweetAlert('Any fool can use a computer').catch(AnterosSweetAlert.noop)} />
 							</AnterosCard>
 						</div>
 						<div className="col-md-4">
-							<AnterosCard title="Title with a text under">
+							<AnterosCard caption="Title with a text under">
 								<AnterosButton primary caption="Try Alert!" onButtonClick={(e) => AnterosSweetAlert('The Internet?', 'That thing is still around?', 'question').catch(AnterosSweetAlert.noop)} />
 							</AnterosCard>
 						</div>
 						<div className="col-md-4">
-							<AnterosCard title="Success message!">
+							<AnterosCard caption="Success message!">
 								<AnterosButton primary caption="Try Alert!" onButtonClick={(e) => AnterosSweetAlert('Good job!', 'You clicked the button!', 'success').catch(AnterosSweetAlert.noop)} />
 							</AnterosCard>
 						</div>
 					</div>
 					<div className="row">
 						<div className="col-md-4">
-							<AnterosCard title="Warning message!">
+							<AnterosCard caption="Warning message!">
 								<AnterosButton primary caption="Try Alert!" onButtonClick={(e) => {
 									AnterosSweetAlert({
 										title: 'Are you sure?',
@@ -832,7 +818,7 @@ export default class SecurityControl extends Component {
 							</AnterosCard>
 						</div>
 						<div className="col-md-4">
-							<AnterosCard title="Cancel message!">
+							<AnterosCard caption="Cancel message!">
 								<AnterosButton primary caption="Try Alert!" onButtonClick={(e) => {
 									AnterosSweetAlert({
 										title: 'Are you sure?',
@@ -857,14 +843,14 @@ export default class SecurityControl extends Component {
 							</AnterosCard>
 						</div>
 						<div className="col-md-4">
-							<AnterosCard title="Info message!">
+							<AnterosCard caption="Info message!">
 								<AnterosButton primary caption="Try Alert!" />
 							</AnterosCard>
 						</div>
 					</div>
 					<div className="row">
 						<div className="col-md-4">
-							<AnterosCard title="Custom image message!">
+							<AnterosCard caption="Custom image message!">
 								<AnterosButton primary caption="Try Alert!" onButtonClick={(e) => {
 									AnterosSweetAlert({
 										title: 'Sweet!',
@@ -878,7 +864,7 @@ export default class SecurityControl extends Component {
 							</AnterosCard>
 						</div>
 						<div className="col-md-4">
-							<AnterosCard title="Input message!">
+							<AnterosCard caption="Input message!">
 								<AnterosButton primary caption="Try Alert!" />
 							</AnterosCard>
 						</div>
@@ -989,7 +975,7 @@ export default class SecurityControl extends Component {
 					<AnterosSlider pips={{ mode: 'range', density: 3 }} range={{ min: 0, max: 200 }} start={[30, 100]} tooltips info />
 				</AnterosCard>
 
-				<AnterosCard title="Ribbons">
+				<AnterosCard caption="Ribbons">
 					<div className="row">
 						<div className="col-lg-2 col-sm-4">
 							<div className="example">
@@ -1261,38 +1247,7 @@ export default class SecurityControl extends Component {
 						</div>
 					</div>
 				</AnterosCard>
-				<AnterosCard title="Crop Image">
-					<div className="row">
-						<div className="col-md-9">
-							<div className="img-container">
-								<AnterosImageCropper
-									style={{ height: 400, width: '100%' }}
-
-									preview=".img-preview"
-									guides={false}
-									src={this.state.src}
-									ref={cropper => { this.cropper = cropper; }}
-								/>
-							</div>
-						</div>
-						<div className="col-md-3">
-							<div className="docs-preview clearfix">
-								<div className="img-preview preview-lg" style={{ width: "256px", height: "144px" }}></div>
-								<div className="img-preview preview-md" style={{ width: "128px", height: "72px" }}></div>
-								<div className="img-preview preview-sm" style={{ width: "64px", height: "36px" }}></div>
-								<div className="img-preview preview-xs" style={{ width: "32px", height: "18px" }}></div>
-							</div>
-						</div>
-					</div>
-					<div className="row" style={{ margin: "20px" }}>
-						<div className="col-md-3">
-							<AnterosButton success onClick={this.cropImage} caption="Crop image" />
-						</div>
-						<div className="col-md-9">
-							<img style={{ width: '30%' }} src={this.state.cropResult} />
-						</div>
-					</div>
-				</AnterosCard>
+				
 
 
 			</AnterosCard >

@@ -4,11 +4,11 @@ import AnterosProgressBar from '../components/AnterosProgressBar';
 
 export default class ButtonView extends Component {
     render() {
-        return (<AnterosCard title="Progress Bar">
+        return (<AnterosCard caption="Progress Bar">
 
             <div className="row">
                 <div className="col-md-6">
-                    <AnterosCard title="Progress Bar colors">
+                    <AnterosCard caption="Progress Bar colors">
                         <section className="section">
                             <AnterosProgressBar value="20" max={100} min={0} />
                             <AnterosProgressBar success value="40" max="100" />
@@ -20,7 +20,7 @@ export default class ButtonView extends Component {
                 </div>
 
                 <div className="col-md-6">
-                    <AnterosCard title="Progress Bar values">
+                    <AnterosCard caption="Progress Bar values">
                         <section className="section">
                             <AnterosProgressBar value="20" max={100} min={0} showText={true} />
                             <AnterosProgressBar success value="40" max="100" showText={true} />
@@ -34,7 +34,7 @@ export default class ButtonView extends Component {
 
             <div className="row">
                 <div className="col-6">
-                    <AnterosCard title="Progress Bar striped">
+                    <AnterosCard caption="Progress Bar striped">
                         <section className="section">
                             <AnterosProgressBar striped value="20" max={100} min={0} />
                             <AnterosProgressBar striped success value="40" max="100" />
@@ -46,7 +46,7 @@ export default class ButtonView extends Component {
                 </div>
 
                 <div className="col-6">
-                    <AnterosCard title="Progress Bar striped and animated">
+                    <AnterosCard caption="Progress Bar striped and animated">
                         <section className="section">
                             <AnterosProgressBar striped animated value="20" max={100} min={0} showText={true} />
                             <AnterosProgressBar striped animated success value="40" max="100" showText={true} />

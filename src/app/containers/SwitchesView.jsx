@@ -5,13 +5,13 @@ import AnterosCheckboxToggle from '../components/AnterosCheckboxToggle';
 
 export default class ButtonView extends Component {
     render() {
-        return (<AnterosCard title="Slide &amp; Toggle">
+        return (<AnterosCard caption="Slide &amp; Toggle">
 
-            <AnterosCard title="Slide">
+            <AnterosCard caption="Slide">
                 <section className="section">
                     <div className="row">
                         <div className="col-6">
-                            <AnterosCard title="Slide enabled">
+                            <AnterosCard caption="Slide enabled">
                                 <section className="section">
                                     <AnterosCheckboxSlide value="Slide" info onCheckboxChange={(value, checked) => alert(value + " " + checked)} />
                                     <AnterosCheckboxSlide value="Slide checked" warning checked onCheckboxChange={(value, checked) => console.log(value + " " + checked)} />
@@ -20,7 +20,7 @@ export default class ButtonView extends Component {
                         </div>
 
                         <div className="col-6">
-                            <AnterosCard title="Slide disabled">
+                            <AnterosCard caption="Slide disabled">
                                 <section className="section">
                                     <AnterosCheckboxSlide value="Slide disabled" disabled />
                                     <AnterosCheckboxSlide value="Slide checked disabled" checked disabled />
@@ -31,11 +31,11 @@ export default class ButtonView extends Component {
                 </section>
             </AnterosCard>
 
-            <AnterosCard title="Toggle round">
+            <AnterosCard caption="Toggle round">
                 <section className="section">
                     <div className="row">
                         <div className="col-6">
-                            <AnterosCard title="Toggle colors">
+                            <AnterosCard caption="Toggle colors">
                                 <section className="section">
                                     <AnterosCheckboxToggle value="Primary" checked primary />
                                     <AnterosCheckboxToggle value="Success" checked success />
@@ -48,7 +48,7 @@ export default class ButtonView extends Component {
                         </div>
 
                         <div className="col-6">
-                            <AnterosCard title="Toggle size">
+                            <AnterosCard caption="Toggle size">
                                 <section className="section">
                                     <AnterosCheckboxToggle value="Toggle normal" primary checked />
                                     <AnterosCheckboxToggle value="Toggle large" large success />
@@ -60,7 +60,7 @@ export default class ButtonView extends Component {
 
                     <div className="row">
                         <div className="col-6">
-                            <AnterosCard title="Toggle enabled/disabled">
+                            <AnterosCard caption="Toggle enabled/disabled">
                                 <section className="section">
                                     <AnterosCheckboxToggle value="Toggle" info />
                                     <AnterosCheckboxToggle value="Toggle checked" warning checked />
@@ -71,7 +71,7 @@ export default class ButtonView extends Component {
                         </div>
 
                         <div className="col-6">
-                            <AnterosCard title="Toggle event">
+                            <AnterosCard caption="Toggle event">
                                 <section className="section">
                                     <AnterosCheckboxToggle value="Toggle" success onCheckboxChange={(value, checked) => alert(value + " " + checked)} />
                                     <AnterosCheckboxToggle value="Toggle checked" extraLarge warning checked onCheckboxChange={(value, checked) => alert(value + " " + checked)} />
@@ -81,11 +81,11 @@ export default class ButtonView extends Component {
                     </div>
                 </section>
             </AnterosCard>
-            <AnterosCard title="Toggle square">
+            <AnterosCard caption="Toggle square">
                 <section className="section">
                     <div className="row">
                         <div className="col-6">
-                            <AnterosCard title="Toggle colors" height="315px">
+                            <AnterosCard caption="Toggle colors" height="315px">
                                 <section className="section">
                                     <AnterosCheckboxToggle square value="Primary" checked primary />
                                     <AnterosCheckboxToggle square value="Success" checked success />
@@ -98,7 +98,7 @@ export default class ButtonView extends Component {
                         </div>
 
                         <div className="col-6">
-                            <AnterosCard title="Toggle size" height="315px">
+                            <AnterosCard caption="Toggle size" height="315px">
                                 <section className="section">
                                     <AnterosCheckboxToggle square value="Toggle small" small primary checked labelWidth="100px"/>
                                     <AnterosCheckboxToggle square value="Toggle normal" primary checked labelWidth="100px"/>
@@ -111,7 +111,7 @@ export default class ButtonView extends Component {
 
                     <div className="row">
                         <div className="col-6">
-                            <AnterosCard title="Toggle enabled/disabled" height="305px">
+                            <AnterosCard caption="Toggle enabled/disabled" height="305px">
                                 <section className="section">
                                     <AnterosCheckboxToggle square value="Toggle" info labelWidth="100px"/>
                                     <AnterosCheckboxToggle square value="Toggle checked" warning checked labelWidth="100px"/>
@@ -122,7 +122,7 @@ export default class ButtonView extends Component {
                         </div>
 
                         <div className="col-6">
-                            <AnterosCard title="Toggle event" height="305px">
+                            <AnterosCard caption="Toggle event" height="305px">
                                 <section className="section">
                                     <AnterosCheckboxToggle square value="Toggle" labelWidth="100px" success onCheckboxChange={(value, checked) => alert(value + " " + checked)} />
                                     <AnterosCheckboxToggle square value="Toggle checked" labelWidth="100px" extraLarge warning checked onCheckboxChange={(value, checked) => alert(value + " " + checked)} />
@@ -132,7 +132,7 @@ export default class ButtonView extends Component {
                     </div>
                     <div className="row">
                         <div className="col-12">
-                            <AnterosCard title="Toggle with text">
+                            <AnterosCard caption="Toggle with text">
                                 <section className="section">
                                     <AnterosCheckboxToggle square checkedValue="Yes" uncheckedValue="No" labelWidth="100px" info dangerOff />
                                     <AnterosCheckboxToggle square checkedValue="Explicit" uncheckedValue="Implicit" labelWidth="100px"  warning dangerOff checked />
