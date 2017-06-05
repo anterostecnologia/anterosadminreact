@@ -124,6 +124,8 @@ export default class AnterosImage extends Component {
             </div>);
         } else {
             let style = {
+                width: this.props.width,
+                height: this.props.height,
                 maxWidth: this.props.maxWidth,
                 margin: this.props.margin,
                 WebkitTransition: "0.4s ease",

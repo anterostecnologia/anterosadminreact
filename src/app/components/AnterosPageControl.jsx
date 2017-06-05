@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AnterosNavigatorLink from "./AnterosNavigatorLink";
 import lodash from 'lodash';
 import { AnterosError } from "./AnterosExceptions";
+import './AnterosPageControl.css';
 
 export default class AnterosPageControl extends Component {
     constructor(props) {
@@ -17,12 +18,12 @@ export default class AnterosPageControl extends Component {
     render() {
 
         let style;
-        if (this.props.height){
-            style = {height: this.props.height};            
+        if (this.props.height) {
+            style = { height: this.props.height };
         }
 
-        if (this.props.width){
-            style = {...style, width: this.props.width};
+        if (this.props.width) {
+            style = { ...style, width: this.props.width };
         }
 
 
@@ -57,7 +58,11 @@ export default class AnterosPageControl extends Component {
                     href: href,
                     disabled: child.props.disabled,
                     caption: child.props.caption,
-                    icon: child.props.icon
+                    icon: child.props.icon,
+                    image: child.props.image,
+                    imageCircle: child.props.imageCircle,
+                    imageWidth: child.props.imageWidth,
+                    imageHeight: child.props.imageHeight
                 }
                 ));
 
@@ -70,17 +75,40 @@ export default class AnterosPageControl extends Component {
             });
         }
 
-        return (
-            <div className="page-control panel" style={style}>
-                <div className="page-control-header panel-heading">
-                    <ul className="panel-default nav nav-tabs page-control-header-tabs pull-xs-left" role="tablist">
-                        {tabs}
-                    </ul>
-                </div>
-                <div className="tab-content">
-                    {contents}
-                </div>
-            </div>);
+        if (this.props.vertical) {
+            let classNameTab = "nav nav-tabs tabs-vertical";
+            return (
+                <div className="page-control">
+                    <div className={this.props.custom1?"vtabs customvtab":"vtabs"}>
+                        <ul className={classNameTab} role="tablist">
+                            {tabs}
+                        </ul>
+                        <div className="tab-content">
+                            {contents}
+                        </div>
+                    </div>
+                </div>);
+        } else {
+            let classNameTab = "nav nav-tabs";
+            if (this.props.custom1) {
+                classNameTab += " customtab";
+            } else if (this.props.custom2) {
+                classNameTab += " customtab2";
+            } else if (this.props.pill) {
+                classNameTab += " nav-pills";
+            }
+            return (
+                <div className="page-control">
+                    <div className={this.props.custom1 ? "page-control-header-custom" : "page-control-header"}>
+                        <ul className={classNameTab} role="tablist">
+                            {tabs}
+                        </ul>
+                    </div>
+                    <div className="tab-content">
+                        {contents}
+                    </div>
+                </div>);
+        }
     }
 }
 
@@ -95,9 +123,17 @@ class AnterosTabLink extends Component {
         if (this.props.active) {
             className += " active";
         }
+        let icon;
+        if (this.props.icon) {
+            icon = (<i className={this.props.icon}></i>);
+        }
+        let classNameImage;
+        if (this.props.imageCircle) {
+            classNameImage = "img-circle";
+        }
         return (
             <li className="nav-item">
-                <a className={className} data-toggle="tab" href={this.props.href} role="tab">{this.props.caption}</a>
+                <a className={className} data-toggle="tab" href={this.props.href} role="tab">{icon} <img style={{ marginLeft: "3px", marginRight: "3px" }} className={classNameImage} src={this.props.image} height={this.props.imageHeight} width={this.props.imageWidth} /> {this.props.caption}</a>
             </li>);
     }
 }

@@ -918,7 +918,7 @@ body {
   padding: 15px; 
   overflow: auto}
   .card-block .tab-content {
-    padding: 0;
+    padding: 10px;
     border-color: transparent; }
   @media (min-width: 1200px) {
     .card-block {
@@ -3277,61 +3277,6 @@ flex: 0 0 250px;
     border-radius: 0;
 }
 
-/**
-** Page control
-**/
-
-.page-control {
-  position: relative;
-  display: block;
-  margin-bottom: .75rem;
-  background-color: #fbfbfb;
-  border: 1px solid rgba(0, 0, 0, .125);
-}
-
-.page-control-header:first-child {
-  border-radius: .25rem .25rem 0 0
-}
-
-.page-control-header-tabs {
-  margin-bottom: -.37rem;
-  border-bottom: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  border-bottom: 0;
-}
-
-.page-control-header {
-  padding: 0.35rem 0.5rem;
-  background-color: #eceff1;
-  border-bottom: 1px solid rgba(0, 0, 0, .125);
-}
-
-.page-control-header::after{
-  content: "";
-  display: table;
-  clear: both
-}
-
-
-.page-control .tab-content {
-   padding: 10px;
-   border-color: transparent; 
-   overflow-x: auto;
-   max-height: calc(100% - 3.2em);
-}
-
-.nav-tabs .nav-link:hover {
-   background-color: #3FA9F4;
-   color: #ffffff;
-   border-color: #eceeef #eceeef #ddd;
-}
-
-.nav-tabs .nav-link.active {
-   color: #464a4c;
-   background-color: #fff;
-   border-color: #ddd #ddd #fff;
-}
 
 /**
 ** List group
@@ -8028,4 +7973,5 @@ https://github.com/silviomoreto/bootstrap-select/issues/1135
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
 }
+
 
