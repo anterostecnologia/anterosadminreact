@@ -19,14 +19,14 @@ export default class ImageView extends Component {
     }
 
     cropImage() {
-		if (typeof this.cropper.getCroppedCanvas() === 'undefined') {
-			return;
-		}
-		this.setState({
-			...this.state,
-			cropResult: this.cropper.getCroppedCanvas().toDataURL(),
-		});
-	}
+        if (typeof this.cropper.getCroppedCanvas() === 'undefined') {
+            return;
+        }
+        this.setState({
+            ...this.state,
+            cropResult: this.cropper.getCroppedCanvas().toDataURL(),
+        });
+    }
 
     render() {
         return (<AnterosCard caption="Images">
@@ -43,6 +43,15 @@ export default class ImageView extends Component {
                         <AnterosImage marginRight={20} maxWidth={50} thumbnail src={require('../assets/img/folha_seca.jpg')} />
                         <AnterosImage marginRight={20} maxWidth={100} thumbnail src={require('../assets/img/folha_seca.jpg')} />
                         <AnterosImage marginRight={20} maxWidth={150} thumbnail src={require('../assets/img/folha_seca.jpg')} />
+                    </AnterosCard>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-12">
+                    <AnterosCard caption="Bordered images">
+                        <AnterosImage marginRight={20} maxWidth={50} circle bordered red src={require('../assets/img/folha_seca.jpg')} />
+                        <AnterosImage marginRight={20} maxWidth={100} bordered purple src={require('../assets/img/folha_seca.jpg')} />
+                        <AnterosImage marginRight={20} maxWidth={150} bordered success src={require('../assets/img/folha_seca.jpg')} />
                     </AnterosCard>
                 </div>
             </div>

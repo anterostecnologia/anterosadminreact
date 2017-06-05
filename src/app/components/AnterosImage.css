@@ -21,6 +21,47 @@
     height: auto
 }
 
+.anterosimg-bordered {
+    padding: 3px;
+    border: 1px solid #e4eaec
+}
+
+.anterosimg-bordered-primary {
+    border-color: #3FA9F4 !important
+}
+
+.anterosimg-bordered-info {
+    border-color: #76D4F5 !important
+}
+
+.anterosimg-bordered-success {
+    border-color: #d7dde4 !important
+}
+
+.anterosimg-bordered-warning {
+    border-color: #fe974b !important
+}
+
+.anterosimg-bordered-danger {
+    border-color: #FF4444 !important
+}
+
+.anterosimg-bordered-purple {
+    border-color: #7c51d1 !important
+}
+
+.anterosimg-bordered-red {
+    border-color: #e9595b !important
+}
+
+.anterosimg-bordered-green {
+    border-color: #7dd3ae !important
+}
+
+.anterosimg-bordered-orange {
+    border-color: #ec9940 !important
+}
+
 
 
 

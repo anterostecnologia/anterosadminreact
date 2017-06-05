@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import AnterosButton from "./AnterosButton";
 import { buildClassNames } from "../utils/AnterosUtils";
-//import './AnterosCard.css';
 
 
 class AnterosCard extends Component {

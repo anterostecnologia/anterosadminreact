@@ -34,7 +34,7 @@ module.exports = {
             loader: 'babel-loader',
             exclude: /node_modules/,
             query: {
-                presets: ['es2017','es2015', 'react'],
+                presets: ['es2017', 'es2015', 'react'],
                 plugins: ['transform-object-rest-spread']
             }
         }, {
@@ -42,7 +42,7 @@ module.exports = {
             loader: 'url-loader',
         },
         { test: /\.(png|jpg)$/, loader: 'url-loader?name=images/[name].[ext]' },
-        { 
+        {
             test: /\.s[ac]ss$/,
             use: ExtractTextPlugin.extract({
                 use: ['css-loader', 'sass-loader'],

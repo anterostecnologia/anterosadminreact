@@ -35,7 +35,17 @@ export default class AnterosImage extends Component {
             (this.props.rounded ? "anterosimg-rounded" : ""),
             (this.props.thumbnail ? "anterosimg-thumbnail" : ""),
             (this.props.circle ? "anterosimg-circle" : ""),
-            (this.props.square ? "anterosimg-square" : "")
+            (this.props.square ? "anterosimg-square" : ""),
+            (this.props.bordered ? "anterosimg-bordered" : ""),
+            (this.props.bordered && this.props.primary ? "anterosimg-bordered-primary" : ""),
+            (this.props.bordered && this.props.info ? "anterosimg-bordered-info" : ""),
+            (this.props.bordered && this.props.warning ? "anterosimg-bordered-warning" : ""),
+            (this.props.bordered && this.props.danger ? "anterosimg-bordered-danger" : ""),
+            (this.props.bordered && this.props.success ? "anterosimg-bordered-success" : ""),
+            (this.props.bordered && this.props.orangle ? "anterosimg-bordered-orange" : ""),
+            (this.props.bordered && this.props.purple ? "anterosimg-bordered-purple" : ""),
+            (this.props.bordered && this.props.green ? "anterosimg-bordered-green" : ""),
+            (this.props.bordered &&this.props.red ? "anterosimg-bordered-red" : "")
         );
 
         if (this.props.effect) {
@@ -143,6 +153,42 @@ export default class AnterosImage extends Component {
             </img>);
         }
     }
+}
+
+
+AnterosImage.propTypes = {
+    maxWidth: React.PropTypes.string,
+    margin: React.PropTypes.string,
+    scale: React.PropTypes.number,
+    marginBottom: React.PropTypes.string,
+    marginLeft: React.PropTypes.string,
+    marginRight: React.PropTypes.string,
+    marginTop: React.PropTypes.string,
+    src: React.PropTypes.string.isRequired,
+    circle: React.PropTypes.bool,
+    square: React.PropTypes.bool,
+    effect: React.PropTypes.number,
+    colored: React.PropTypes.bool,
+    leftToRight: React.PropTypes.bool,
+    rightToLeft: React.PropTypes.bool,
+    topToBottom: React.PropTypes.bool,
+    bottomToTop: React.PropTypes.bool,
+    scaleUp: React.PropTypes.bool,
+    fromTopAndBottom: React.PropTypes.bool,
+    scaleDown: React.PropTypes.bool,
+    scaleDownUp: React.PropTypes.bool,
+    fromLeftAndRight: React.PropTypes.bool,
+    leftAndRight: React.PropTypes.bool,
+    bordered: React.PropTypes.bool,
+    primary: React.PropTypes.bool,
+    danger: React.PropTypes.bool,
+    info: React.PropTypes.bool,
+    warning: React.PropTypes.bool,
+    success: React.PropTypes.bool
+}
+
+
+AnterosImage.propTypes = {
 }
 
 
