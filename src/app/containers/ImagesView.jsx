@@ -902,7 +902,7 @@ export default class ImageView extends Component {
                 </AnterosCard>
             </AnterosCard>
 
-            <AnterosCard caption="Square effects" success>
+            <AnterosCard caption="Square effects" outline>
                 <AnterosCard caption="Effect 1">
                     <div className="row">
                         <div className="col-sm-6">
