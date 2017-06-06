@@ -27,6 +27,7 @@ import ProgressBarView from "../containers/ProgressBarView";
 import SwitchesView from "../containers/SwitchesView";
 import RibbonsView from "../containers/RibbonsView";
 import TabsView from "../containers/TabsView";
+import ListsView from "../containers/ListsView"
 
 
 class AnterosMainLayout extends Component {
@@ -81,8 +82,8 @@ class AnterosMainLayout extends Component {
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home red" caption="Dropdowns"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home green" caption="Panels"></AnterosMenuItem>
               <AnterosMenuItem id="mniTabs" route="/home/tabs" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Tabs & Accordions"></AnterosMenuItem>
-              <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Lists"></AnterosMenuItem>
-              <AnterosMenuItem id="mniSwitches" route="/home/switches" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-toggle-on orange" caption="Switches &amp; Toggle"></AnterosMenuItem>
+              <AnterosMenuItem id="mniLists" route="/home/lists" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-bars coral" caption="Lists"></AnterosMenuItem>
+              <AnterosMenuItem id="mniSwitches" route="/home/switches" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-toggle-on" iconColor="orange" caption="Switches &amp; Toggle"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Spinners"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Panels"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Navs"></AnterosMenuItem>
@@ -115,6 +116,7 @@ class AnterosMainLayout extends Component {
               <AnterosSecurityRoute path='/home/switches' component={SwitchesView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/ribbons' component={RibbonsView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/tabs' component={TabsView} isLoggedIn={this.props.isLoggedIn} />
+              <AnterosSecurityRoute path='/home/lists' component={ListsView} isLoggedIn={this.props.isLoggedIn} />
             </Switch>
             {this.props.children}
           </AnterosMainContainer>

@@ -97,7 +97,7 @@ export default class AnterosCheckboxToggle extends Component {
         if (this.props.id) {
             id = this.props.id;
         }
-        console.log(this.state.checked);
+        
         if (this.props.square) {
             return (<input id={id} key={id} type="checkbox" checked={this.state.checked} ref={ref => this.input = ref} onChange={this.onClick} />);
         } else {

@@ -31,6 +31,7 @@ export default class AnterosMenuItem extends Component {
                     newChildren.push(React.createElement(AnterosMenuItem, {
                         key: lodash.uniqueId(),
                         icon: child.props.icon,
+                        iconColor : child.props.iconColor,
                         route: child.props.route,
                         id: child.props.id,
                         caption: child.props.caption,
@@ -53,7 +54,7 @@ export default class AnterosMenuItem extends Component {
 
         let icon;
         if (this.props.icon) {
-            icon = (<i className={this.props.icon}></i>);
+            icon = (<i style={{color: this.props.iconColor}} className={this.props.icon}></i>);
         }
 
         let arrowIcon;
@@ -84,6 +85,7 @@ export default class AnterosMenuItem extends Component {
 AnterosMenuItem.propTypes = {
     active: React.PropTypes.bool,
     icon: React.PropTypes.string,
+    iconColor: React.PropTypes.string,
     image: React.PropTypes.string,
     caption: React.PropTypes.string,
     onSelectMenuItem: React.PropTypes.func,
