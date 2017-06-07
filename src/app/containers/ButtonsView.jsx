@@ -86,6 +86,11 @@ export default class ButtonView extends Component {
                 <div className="col-6">
                     <AnterosCard caption="Button sizing" height="524p">
                         <AnterosCard caption="Large buttons" height="100%">
+                            <HeaderActions>
+                                <AnterosButton circle small link icon="fa fa-code"
+                                    hint="Show code" hintPosition="left"
+                                    collapseContent="idShowButtonsColors" />
+                            </HeaderActions>
                             <section className="section">
                                 <AnterosButton large primary caption="Primary" />
                                 <AnterosButton large secondary caption="Secondary" />
@@ -97,6 +102,11 @@ export default class ButtonView extends Component {
                         </AnterosCard>
 
                         <AnterosCard caption="Small buttons" >
+                            <HeaderActions>
+                                <AnterosButton circle small link icon="fa fa-code"
+                                    hint="Show code" hintPosition="left"
+                                    collapseContent="idShowButtonsColors" />
+                            </HeaderActions>
                             <section className="section">
                                 <AnterosButton small primary caption="Primary" />
                                 <AnterosButton small secondary caption="Secondary" />
@@ -108,6 +118,11 @@ export default class ButtonView extends Component {
                         </AnterosCard>
 
                         <AnterosCard caption="Block buttons" >
+                            <HeaderActions>
+                                <AnterosButton circle small link icon="fa fa-code"
+                                    hint="Show code" hintPosition="left"
+                                    collapseContent="idShowButtonsColors" />
+                            </HeaderActions>
                             <section className="section">
                                 <AnterosButton large primary block caption="Block level button" />
                                 <AnterosButton small secondary block caption="Block level button" />
@@ -120,6 +135,11 @@ export default class ButtonView extends Component {
                 <div className="col-6">
                     <AnterosCard caption="Button types" height="615px">
                         <AnterosCard caption="Pill left" >
+                            <HeaderActions>
+                                <AnterosButton circle small link icon="fa fa-code"
+                                    hint="Show code" hintPosition="left"
+                                    collapseContent="idShowButtonsColors" />
+                            </HeaderActions>
                             <section className="section">
                                 <AnterosButton primary pillLeft caption="Primary" />
                                 <AnterosButton secondary pillLeft caption="Secondary" />
@@ -130,6 +150,11 @@ export default class ButtonView extends Component {
                             </section>
                         </AnterosCard>
                         <AnterosCard caption="Pill right" >
+                            <HeaderActions>
+                                <AnterosButton circle small link icon="fa fa-code"
+                                    hint="Show code" hintPosition="left"
+                                    collapseContent="idShowButtonsColors" />
+                            </HeaderActions>
                             <section className="section">
                                 <AnterosButton primary pillRight caption="Primary" />
                                 <AnterosButton secondary pillRight caption="Secondary" />
@@ -140,6 +165,11 @@ export default class ButtonView extends Component {
                             </section>
                         </AnterosCard>
                         <AnterosCard caption="Oval" >
+                            <HeaderActions>
+                                <AnterosButton circle small link icon="fa fa-code"
+                                    hint="Show code" hintPosition="left"
+                                    collapseContent="idShowButtonsColors" />
+                            </HeaderActions>
                             <section className="section">
                                 <AnterosButton primary oval caption="Primary" />
                                 <AnterosButton secondary oval caption="Secondary" />
@@ -157,6 +187,11 @@ export default class ButtonView extends Component {
             <div className="row">
                 <div className="col-6">
                     <AnterosCard caption="Circle buttons">
+                        <HeaderActions>
+                            <AnterosButton circle small link icon="fa fa-code"
+                                hint="Show code" hintPosition="left"
+                                collapseContent="idShowButtonsColors" />
+                        </HeaderActions>
                         <div className="col-lg-6 col-sm-6 col-xs-12">
                             <div className="white-box">
                                 <h3 className="box-title">Normal Circle Buttons</h3>
@@ -191,6 +226,11 @@ export default class ButtonView extends Component {
                 <div className="col-6">
                     <AnterosCard caption="Button dropdowns" height="473px">
                         <AnterosCard caption="Dropdowns" height="250px">
+                            <HeaderActions>
+                                <AnterosButton circle small link icon="fa fa-code"
+                                    hint="Show code" hintPosition="left"
+                                    collapseContent="idShowButtonsColors" />
+                            </HeaderActions>
                             <AnterosDropdownButton primary caption="Primary">
                                 <AnterosDropdownMenu>
                                     <AnterosDropdownMenuItem caption="Item 1" />
@@ -246,6 +286,11 @@ export default class ButtonView extends Component {
             <div className="row">
                 <div className="col-6">
                     <AnterosCard caption="Buttons group" height="500px">
+                        <HeaderActions>
+                            <AnterosButton circle small link icon="fa fa-code"
+                                hint="Show code" hintPosition="left"
+                                collapseContent="idShowButtonsColors" />
+                        </HeaderActions>
                         <section className="section">
                             <p>Basic Example</p>
                             <AnterosButtonGroup>
@@ -324,6 +369,11 @@ export default class ButtonView extends Component {
                 </div>
                 <div className="col-6">
                     <AnterosCard caption="Social buttons" height="500px">
+                        <HeaderActions>
+                            <AnterosButton circle small link icon="fa fa-code"
+                                hint="Show code" hintPosition="left"
+                                collapseContent="idShowButtonsColors" />
+                        </HeaderActions>
                         <div className="col-6">
                             <p>Social buttons</p>
                             <AnterosButton facebook />
@@ -360,6 +410,11 @@ export default class ButtonView extends Component {
             <div className="row">
                 <div className="col-6">
                     <AnterosCard caption="Buttons with icons and images">
+                        <HeaderActions>
+                            <AnterosButton circle small link icon="fa fa-code"
+                                hint="Show code" hintPosition="left"
+                                collapseContent="idShowButtonsColors" />
+                        </HeaderActions>
                         <AnterosButton outline icon="fa fa-heart m-r-5">Love</AnterosButton>
                         <AnterosButton outline secondary icon="fa fa-heart m-r-5">Love</AnterosButton>
                         <AnterosButton info icon="fa fa-heart m-l-5">Love</AnterosButton>
@@ -379,6 +434,11 @@ export default class ButtonView extends Component {
             <div className="row">
                 <div className="col-6">
                     <AnterosCard height="250px" caption="Floating button">
+                        <HeaderActions>
+                            <AnterosButton circle small link icon="fa fa-code"
+                                hint="Show code" hintPosition="left"
+                                collapseContent="idShowButtonsColors" />
+                        </HeaderActions>
                         <AnterosFloatingButton icon="fa fa-plus" hint="Menu" autoClose={true} openMode="click">
                             <AnterosFloatingButtonItem icon="fa fa-pencil" hint="Editar" backgroundColor="#f1c40f" onButtonClick={() => console.log("Clicou no botão editar")} />
                             <AnterosFloatingButtonItem icon="fa fa-eraser" hint="Remover" backgroundColor="#e74c3c" onButtonClick={() => console.log("Clicou no botão remover")} />
@@ -389,6 +449,11 @@ export default class ButtonView extends Component {
                 </div>
                 <div className="col-6">
                     <AnterosCard height="250px" caption="Radial button">
+                        <HeaderActions>
+                            <AnterosButton circle small link icon="fa fa-code"
+                                hint="Show code" hintPosition="left"
+                                collapseContent="idShowButtonsColors" />
+                        </HeaderActions>
                         <AnterosRadialButton />
                     </AnterosCard>
                 </div>

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import AnterosCard from "../components/AnterosCard";
+import AnterosCard,{HeaderActions} from "../components/AnterosCard";
 import AnterosLabel from "../components/AnterosLabel";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/styles';
+import AnterosCollapseContent from '../components/AnterosCollapseContent';
 
-export default class LabelView extends Component {
+export default class LabelsView extends Component {
     render() {
         return (<AnterosCard caption="Labels">
 

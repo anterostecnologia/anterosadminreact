@@ -4,6 +4,9 @@ import AnterosImage from "../components/AnterosImage";
 import AnterosImageMagnifier from "../components/AnterosImageMagnifier";
 import AnterosImageCropper from "../components/AnterosImageCropper";
 import AnterosButton from "../components/AnterosButton";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/styles';
+import AnterosCollapseContent from '../components/AnterosCollapseContent';
 
 const src = 'http://i.imgur.com/Baf0DlW.png';
 

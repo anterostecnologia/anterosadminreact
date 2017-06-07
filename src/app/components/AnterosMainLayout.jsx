@@ -30,6 +30,7 @@ import TabsView from "../containers/TabsView";
 import FloatingButtonsView from "../containers/FloatingButtonsView";
 import ListsView from "../containers/ListsView"
 import LabelsView from "../containers/LabelsView"
+import SweatAlertView from "../containers/SweatAlertView";
 
 class AnterosMainLayout extends Component {
 
@@ -79,7 +80,7 @@ class AnterosMainLayout extends Component {
               <AnterosMenuItem id="mnFButtons" route="/home/fButtons" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-file-image-o blue" caption="Floating buttons"></AnterosMenuItem>
               <AnterosMenuItem id="mniImages" route="/home/images" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-file-image-o blue" caption="Images"></AnterosMenuItem>
               <AnterosMenuItem id="mniCards" route="/home/cards" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-file-image-o blue" caption="Cards"></AnterosMenuItem>
-              <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home red" caption="Dropdowns"></AnterosMenuItem>
+              <AnterosMenuItem id="mniSAlerts" route="/home/salerts" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home red" caption="Sweat alerts"></AnterosMenuItem>
               <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home green" caption="Panels"></AnterosMenuItem>
               <AnterosMenuItem id="mniTabs" route="/home/tabs" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Tabs & Accordions"></AnterosMenuItem>
               <AnterosMenuItem id="mniLists" route="/home/lists" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-bars coral" caption="Lists"></AnterosMenuItem>
@@ -119,6 +120,7 @@ class AnterosMainLayout extends Component {
               <AnterosSecurityRoute path='/home/fButtons' component={FloatingButtonsView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/lists' component={ListsView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/labels' component={LabelsView} isLoggedIn={this.props.isLoggedIn} />
+              <AnterosSecurityRoute path='/home/salerts' component={SweatAlertView} isLoggedIn={this.props.isLoggedIn} />
             </Switch>
             {this.props.children}
           </AnterosMainContainer>

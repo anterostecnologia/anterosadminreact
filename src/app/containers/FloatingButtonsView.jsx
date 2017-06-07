@@ -5,6 +5,10 @@ import AnterosDropdownMenu from "../components/AnterosDropdownMenu";
 import AnterosDropdownMenuItem from "../components/AnterosDropdownMenuItem";
 import AnterosBadge from "../components/AnterosBadge";
 import AnterosStatusMark from "../components/AnterosStatusMark";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/styles';
+import AnterosCollapseContent from '../components/AnterosCollapseContent';
+import AnterosButton from "../components/AnterosButton";
 
 
 export default class FloatingButtonsView extends Component {
@@ -18,6 +22,11 @@ export default class FloatingButtonsView extends Component {
             </AnterosFloatingButton>
 
             <AnterosCard caption="Basic examples" withScroll={false}>
+                <HeaderActions>
+                    <AnterosButton circle small link icon="fa fa-code"
+                        hint="Show code" hintPosition="left"
+                        collapseContent="idShowButtonsColors" />
+                </HeaderActions>
                 <div className="row">
                     <div className="col-md-4">
                         <h5> Single floating button</h5>
@@ -48,6 +57,11 @@ export default class FloatingButtonsView extends Component {
             </AnterosCard>
 
             <AnterosCard caption="Menu elements" withScroll={false}>
+                <HeaderActions>
+                    <AnterosButton circle small link icon="fa fa-code"
+                        hint="Show code" hintPosition="left"
+                        collapseContent="idShowButtonsColors" />
+                </HeaderActions>
                 <div className="row">
                     <div className="col-md-4">
                         <h5>Button with dropdowns</h5>
@@ -80,6 +94,11 @@ export default class FloatingButtonsView extends Component {
             </AnterosCard>
 
             <AnterosCard caption="Inner button elements" withScroll={false}>
+                <HeaderActions>
+                    <AnterosButton circle small link icon="fa fa-code"
+                        hint="Show code" hintPosition="left"
+                        collapseContent="idShowButtonsColors" />
+                </HeaderActions>
                 <div className="row">
                     <div className="col-md-4">
                         <h5>Badges with number</h5>
@@ -135,6 +154,11 @@ export default class FloatingButtonsView extends Component {
             </AnterosCard>
 
             <AnterosCard caption="Default button colors" withScroll={false}>
+                <HeaderActions>
+                    <AnterosButton circle small link icon="fa fa-code"
+                        hint="Show code" hintPosition="left"
+                        collapseContent="idShowButtonsColors" />
+                </HeaderActions>
                 <div className="row">
                     <div className="col-md-4">
                         <h5>Default button color</h5>
@@ -188,10 +212,15 @@ export default class FloatingButtonsView extends Component {
             </AnterosCard>
 
             <AnterosCard caption="Custom colors" withScroll={false}>
+                <HeaderActions>
+                    <AnterosButton circle small link icon="fa fa-code"
+                        hint="Show code" hintPosition="left"
+                        collapseContent="idShowButtonsColors" />
+                </HeaderActions>
                 <div className="row">
                     <div className="col-md-4">
                         <h5>Custom main button color</h5>
-                        <p className="text-muted">Use color helper classes for custom colors</p>                      
+                        <p className="text-muted">Use color helper classes for custom colors</p>
                         <AnterosFloatingButton hint="Menu" autoClose={true} openMode="click" backgroundColor="#5c6bc0" color="#fff">
                             <AnterosFloatingButtonItem color="white" icon="fa fa-pencil" hint="Edit" onButtonClick={() => console.log("Clicou no botão editar")} />
                             <AnterosFloatingButtonItem color="white" icon="fa fa-eraser" hint="Remove" onButtonClick={() => console.log("Clicou no botão remover")} />
@@ -200,7 +229,7 @@ export default class FloatingButtonsView extends Component {
                     </div>
                     <div className="col-md-4">
                         <h5>Custom inner button color</h5>
-                        <p className="text-muted">Use color helper classes for custom colors</p>                      
+                        <p className="text-muted">Use color helper classes for custom colors</p>
                         <AnterosFloatingButton hint="Menu" autoClose={true} openMode="click" primary>
                             <AnterosFloatingButtonItem color="white" icon="fa fa-pencil" hint="Edit" backgroundColor="#f1c40f" onButtonClick={() => console.log("Clicou no botão editar")} />
                             <AnterosFloatingButtonItem color="white" icon="fa fa-eraser" hint="Remove" backgroundColor="#e74c3c" onButtonClick={() => console.log("Clicou no botão remover")} />
@@ -209,13 +238,13 @@ export default class FloatingButtonsView extends Component {
                     </div>
                     <div className="col-md-4">
                         <h5>Mixing button colors</h5>
-                        <p className="text-muted">Mixing all button colors</p>         
+                        <p className="text-muted">Mixing all button colors</p>
                         <AnterosFloatingButton hint="Menu" autoClose={true} openMode="click" danger backgroundColor="#f06292" color="#fff">
                             <AnterosFloatingButtonItem icon="fa fa-pencil" hint="Edit" primary onButtonClick={() => console.log("Clicou no botão editar")} />
                             <AnterosFloatingButtonItem icon="fa fa-eraser" hint="Remove" success onButtonClick={() => console.log("Clicou no botão remover")} />
                             <AnterosFloatingButtonItem icon="fa fa-search" hint="Search" info onButtonClick={() => console.log("Clicou no botão localizar")} />
                         </AnterosFloatingButton>
-                    </div>                    
+                    </div>
                 </div>
             </AnterosCard>
 
