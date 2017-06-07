@@ -27,6 +27,7 @@ import ProgressBarView from "../containers/ProgressBarView";
 import SwitchesView from "../containers/SwitchesView";
 import RibbonsView from "../containers/RibbonsView";
 import TabsView from "../containers/TabsView";
+import FloatingButtonsView from "../containers/FloatingButtonsView";
 import ListsView from "../containers/ListsView"
 import LabelsView from "../containers/LabelsView"
 
@@ -115,6 +116,7 @@ class AnterosMainLayout extends Component {
               <AnterosSecurityRoute path='/home/switches' component={SwitchesView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/ribbons' component={RibbonsView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/tabs' component={TabsView} isLoggedIn={this.props.isLoggedIn} />
+              <AnterosSecurityRoute path='/home/fButtons' component={FloatingButtonsView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/lists' component={ListsView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/labels' component={LabelsView} isLoggedIn={this.props.isLoggedIn} />
             </Switch>
