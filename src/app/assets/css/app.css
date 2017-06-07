@@ -1115,24 +1115,76 @@ h1 .label, h2 .label, h3 .label, h4 .label, h5 .label, h6 .label {
     background-color: #FF4444
 }
 
+.label-outline-danger {
+  background-color: transparent;
+  border: 1px solid #FF4444;
+  color: #FF4444
+}
+
+.label-dark {
+    background-color: #526069
+}
+
+.label-outline-dark {
+  background-color: transparent;
+  border: 1px solid #526069;
+  color: #526069
+}
+
 .label-primary {
     background-color: #3FA9F4
+}
+
+.label-outline-primary {
+  background-color: transparent;
+  border: 1px solid #3FA9F4;
+  color: #3FA9F4
 }
 
 .label-success {
     background-color: #4bcf99
 }
 
+.label-outline-success {
+  background-color: transparent;
+  border: 1px solid #4bcf99;
+  color: #4bcf99
+}
+
+.label-outline-success {
+  background-color: transparent;
+  border: 1px solid #4bcf99;
+  color: #4bcf99
+}
+
 .label-default {
     background-color: #adb7be
+}
+
+.label-outline-default {
+  background-color: transparent;
+  border: 1px solid #adb7be;
+  color: #adb7be
 }
 
 .label-warning {
     background-color: #fe974b
 }
 
+.label-outline-warning {
+  background-color: transparent;
+  border: 1px solid #fe974b;
+  color: #fe974b
+}
+
 .label-info {
     background-color: #76D4F5
+}
+
+.label-outline-info {
+  background-color: transparent;
+  border: 1px solid #76D4F5;
+  color: #76D4F5
 }
 
 .label-light-grey {
