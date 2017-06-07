@@ -471,32 +471,7 @@ export default class SecurityControl extends Component {
 
 
 
-				<AnterosAccordion id="acc1" success onSelectAccordionItem={this.onSelectAccordionItem}>
-					<AnterosAccordionItem id={1} caption="Item 1" icon="fa fa-fast-backward">
-						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-          </AnterosAccordionItem>
-					<AnterosAccordionItem id={2} caption="Item 2">
-						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-          </AnterosAccordionItem>
-					<AnterosAccordionItem id={3} caption="Item 3">
-						<div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-							<div className="btn-group mr-2" role="group" aria-label="First group">
-								<button type="button" className="btn btn-secondary">1</button>
-								<button type="button" className="btn btn-secondary">2</button>
-								<button type="button" className="btn btn-secondary">3</button>
-								<button type="button" className="btn btn-secondary">4</button>
-							</div>
-							<div className="btn-group mr-2" role="group" aria-label="Second group">
-								<button type="button" className="btn btn-secondary">5</button>
-								<button type="button" className="btn btn-secondary">6</button>
-								<button type="button" className="btn btn-secondary">7</button>
-							</div>
-							<div className="btn-group" role="group" aria-label="Third group">
-								<button type="button" className="btn btn-secondary">8</button>
-							</div>
-						</div>
-					</AnterosAccordionItem>
-				</AnterosAccordion>
+				
 
 
 				<AnterosCard caption="Step wizard">

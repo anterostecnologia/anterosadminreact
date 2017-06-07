@@ -26,13 +26,15 @@ export default class AnterosAccordion extends Component {
                 key: child.props.id,
                 disabled: child.props.disabled,
                 id: child.props.id,
-                success: child.props.success,
-                warning: child.props.warning,
-                danger: child.props.danger,
-                info: child.props.info,
+                success: (child.props.success ? child.props.success : _this.props.success),
+                warning: (child.props.warning ? child.props.warning : _this.props.warning),
+                danger: (child.props.danger ? child.props.danger : _this.props.danger),
+                info: (child.props.info ? child.props.info : _this.props.info),
+                outline: (child.props.outline ? child.props.outline : _this.props.outline),
                 backgroundColor: (child.props.backgroundColor == undefined ? _this.props.backgroundColor : child.props.backgroundColor),
                 color: (child.props.color == undefined ? _this.props.color : child.props.color),
                 icon: child.props.icon,
+                iconColor: (child.props.iconColor ? child.props.iconColor : _this.props.color),
                 image: child.props.image,
                 caption: child.props.caption,
                 ownerId: _this.props.id,
@@ -57,7 +59,7 @@ export class AnterosAccordionItem extends Component {
 
     onClick(event) {
         event.preventDefault();
-        if (this.props.onSelectAccordionItem){
+        if (this.props.onSelectAccordionItem) {
             this.props.onSelectAccordionItem(event, this);
         }
     }
@@ -66,22 +68,35 @@ export class AnterosAccordionItem extends Component {
         let className = "card card-default";
         if (this.props.success) {
             className = "card card-success";
-        }
-        if (this.props.info) {
+            if (this.props.outline) {
+                className += "card card-outline-success";
+            }
+        } else if (this.props.info) {
             className = "card card-info";
-        }
-        if (this.props.warning) {
+            if (this.props.outline) {
+                className += "card card-outline-info";
+            }
+        } else if (this.props.warning) {
             className = "card card-warning";
-        }
-        if (this.props.danger) {
+            if (this.props.outline) {
+                className += "card card-outline-warning";
+            }
+        } else if (this.props.danger) {
             className = "card card-danger";
-        }
-        if (this.props.primary) {
+            if (this.props.outline) {
+                className += "card card-outline-danger";
+            }
+        } else if (this.props.primary) {
             className = "card card-primary";
+            if (this.props.outline) {
+                className += "card card-outline-primary";
+            }
         }
+
+
         let icon;
         if (this.props.icon) {
-            icon = (<i className={this.props.icon}></i>);
+            icon = (<i className={this.props.icon} style={{ color: this.props.iconColor }}></i>);
         }
         let classNameImage;
         if (this.props.imageCircle) {
@@ -100,4 +115,21 @@ export class AnterosAccordionItem extends Component {
             </div>
         </div>);
     }
+}
+
+
+AnterosAccordionItem.propTypes = {
+    disabled: React.PropTypes.bool,
+    id: React.PropTypes.string,
+    success: React.PropTypes.bool,
+    warning: React.PropTypes.bool,
+    danger: React.PropTypes.bool,
+    info: React.PropTypes.bool,
+    backgroundColor: React.PropTypes.string,
+    color: React.PropTypes.string,
+    icon: React.PropTypes.string,
+    iconColor: React.PropTypes.string,
+    image: React.PropTypes.string,
+    caption: React.PropTypes.string,
+    onSelectAccordionItem: React.PropTypes.func
 }

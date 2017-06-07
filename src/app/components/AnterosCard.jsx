@@ -44,7 +44,7 @@ class AnterosCard extends Component {
         }
 
         return (
-            <div id={this.props.id} className={className} style={{ ...this.props.style, height: this.props.height, width: this.props.width }}>
+            <div id={this.props.id} className={className} style={{...this.props.style, height: this.props.height, width: this.props.width }}>
                 {this.props.showHeader == true ? (<div className="card-header">
                     <div className="header-block">
                         <div className="caption">
@@ -57,7 +57,7 @@ class AnterosCard extends Component {
                     </div>
                 </div>) : null}
                 {imageTop}
-                <div className={this.props.imageOverlay ? "card-img-overlay" : "card-block"}>
+                <div className={this.props.imageOverlay ? "card-img-overlay" : (this.props.withScroll==false?"card-block-without-scroll":"card-block")}>
                     {(this.props.title ? <h4 className="card-title">{this.props.title}</h4> : null)}
                     {(this.props.subTitle ? <h6 className="card-subtitle">{this.props.subTitle}</h6> : null)}
                     {(this.props.text ? <p className="card-text">{this.props.text}</p> : null)}
@@ -91,6 +91,7 @@ AnterosCard.propTypes = {
     textRight: React.PropTypes.bool,
     id: React.PropTypes.string,
     outline: React.PropTypes.bool.isRequired,
+    withScroll: React.PropTypes.bool.isRequired,
     showHeader: React.PropTypes.bool.isRequired,
     showFooter: React.PropTypes.bool.isRequired,
 };
@@ -99,7 +100,8 @@ AnterosCard.defaultProps = {
     showHeader: true,
     showFooter: true,
     outline: false,
-    cardInverse: false
+    cardInverse: false,
+    withScroll: true
 }
 
 export class HeaderActions extends Component {

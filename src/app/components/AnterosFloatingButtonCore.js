@@ -18,7 +18,7 @@
             subBtns;
         
         // Access to jQuery and DOM versions of element
-        base.$el = $(el);
+        base.$el = $(el); 
         base.el = el;
         base.$el.data("kc.fab", base);
         base.$el.addClass("jfab_wrapper");

@@ -7,6 +7,10 @@ export default class AnterosButton extends Component {
         this.onClick = this.onClick.bind(this);
     }
 
+    componentDidMount() {
+        $('[data-toggle="tooltip"]').tooltip();
+    }
+
     onClick(event) {
         event.preventDefault();
         if (!this.props.disabled && this.props.onButtonClick) {
@@ -187,14 +191,11 @@ export default class AnterosButton extends Component {
         }
 
         let balloonProps = {};
-        if (this.props.hintSize){
-            balloonProps = {"data-balloon-length":this.props.hintSize};
-        }
         if (this.props.hint){
-            balloonProps = {...balloonProps,"data-balloon":this.props.hint};
+            balloonProps = {...balloonProps,"title":this.props.hint};
         }
         if (this.props.hintPosition){
-            balloonProps = {...balloonProps,"data-balloon-pos":this.props.hintPosition};
+            balloonProps = {...balloonProps,"data-placement":this.props.hintPosition};
         }
 
 
@@ -234,7 +235,7 @@ AnterosButton.propTypes = {
     caption: React.PropTypes.string,
     onButtonClick: React.PropTypes.func,
     hint: React.PropTypes.string,
-    hintPosition: React.PropTypes.string,
+    hintPosition: React.PropTypes.oneOf(['top','right','left','bottom']),
     hintSize: React.PropTypes.string,
     facebook: React.PropTypes.bool,
     twitter: React.PropTypes.bool,
@@ -266,7 +267,8 @@ AnterosButton.defaultProps = {
     dropdown: false,
     icon: undefined,
     image: undefined,
-    caption: undefined    
+    caption: undefined,
+    hintPosition: 'top'    
 };
 
 

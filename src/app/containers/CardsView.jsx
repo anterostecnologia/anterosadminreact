@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AnterosCard, { FooterActions, AnterosCardGroup, AnterosCardDeck } from "../components/AnterosCard";
+import AnterosCard, { HeaderActions, FooterActions, AnterosCardGroup, AnterosCardDeck } from "../components/AnterosCard";
 import AnterosImage from "../components/AnterosImage";
 import AnterosButton from "../components/AnterosButton";
 
@@ -307,6 +307,31 @@ export default class CardView extends Component {
                         text="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer." />
                 </AnterosCardDeck>
             </AnterosCard>
+
+
+            <AnterosCard caption="Cards with actions">
+
+                <div className="row">
+                    <div className="col-12">
+                        <AnterosCardDeck>
+                            <AnterosCard showFooter={true} caption="Header actions">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.
+                        <HeaderActions>
+                                    <AnterosButton primary caption="Action 1" />
+                                    <AnterosButton primary caption="Action 2" />
+                                </HeaderActions>
+                            </AnterosCard>
+                            <AnterosCard primary outline showFooter={true} caption="Footer actions">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.
+                        <FooterActions>
+                                    <AnterosButton success caption="Action 1" />
+                                    <AnterosButton success caption="Action 2" />
+                                </FooterActions>
+                            </AnterosCard>
+                        </AnterosCardDeck>
+                    </div>
+                </div>
+            </AnterosCard >
 
         </AnterosCard >);
     }

@@ -367,9 +367,9 @@ export default class ButtonView extends Component {
                         <AnterosButton primary oval icon="fa fa-envelope-o">Mail</AnterosButton>
                         <br></br>
                         <br></br>
-                        <AnterosButton primary image={require('../assets/img/box-open.png')}>Open box</AnterosButton>
-                        <AnterosButton success oval image={require('../assets/img/folder-open.png')}>Open folder</AnterosButton>
-                        <AnterosButton secondary pillLeft image={require('../assets/img/search.png')}>Search</AnterosButton>
+                        <AnterosButton primary image={require('../assets/img/home_1.png')}>Home</AnterosButton>
+                        <AnterosButton success oval image={require('../assets/img/user_1.png')}>User</AnterosButton>
+                        <AnterosButton secondary pillLeft image={require('../assets/img/mail_1.png')}>E-mail</AnterosButton>
                     </AnterosCard>
                 </div>
             </div>
@@ -379,7 +379,7 @@ export default class ButtonView extends Component {
             <div className="row">
                 <div className="col-6">
                     <AnterosCard height="250px" caption="Floating button">
-                        <AnterosFloatingButton icon="fa fa-plus" hint="Menu" autoClose={true}>
+                        <AnterosFloatingButton icon="fa fa-plus" hint="Menu" autoClose={true} openMode="click">
                             <AnterosFloatingButtonItem icon="fa fa-pencil" hint="Editar" backgroundColor="#f1c40f" onButtonClick={() => console.log("Clicou no botão editar")} />
                             <AnterosFloatingButtonItem icon="fa fa-eraser" hint="Remover" backgroundColor="#e74c3c" onButtonClick={() => console.log("Clicou no botão remover")} />
                             <AnterosFloatingButtonItem icon="fa fa-search" hint="Localizar" backgroundColor="#7cb342" onButtonClick={() => console.log("Clicou no botão localizar")} />
