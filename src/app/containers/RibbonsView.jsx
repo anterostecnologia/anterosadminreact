@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import AnterosCard from "../components/AnterosCard";
+import AnterosRibbon from "../components/AnterosRibbon";
+import AnterosImage from "../components/AnterosImage";
 
 export default class RibbonView extends Component {
     render() {
@@ -7,181 +9,127 @@ export default class RibbonView extends Component {
 
             <AnterosCard caption="Ribbons default">
                 <div className="row">
-
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon">
-                                <span className="ribbon-inner">Ribbon</span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon caption="Ribbon">
+                            <AnterosImage src="http://lorempixel.com/130/130/sports/" />
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-danger">
-                                <span className="ribbon-inner">Ribbon</span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon danger caption="Ribbon">
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                            <AnterosImage src="http://lorempixel.com/130/130/sports/" />
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-success">
-                                <span className="ribbon-inner">Ribbon</span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon success caption="Ribbon">
+                            <AnterosImage src="http://lorempixel.com/130/130/sports/" />
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-primary">
-                                <span className="ribbon-inner">Ribbon</span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon primary caption="Ribbon">
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-info">
-                                <span className="ribbon-inner">Ribbon</span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon info caption="Ribbon">
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-warning">
-                                <span className="ribbon-inner">Ribbon</span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon warning caption="Ribbon">
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                        </AnterosRibbon>
                     </div>
-
                 </div>
             </AnterosCard >
 
             <AnterosCard caption="Ribbons right align">
                 <div className="row">
-
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-reverse">
-                                <span className="ribbon-inner">Ribbon</span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon reverse caption="Ribbon">
+                            <AnterosImage src="http://lorempixel.com/130/130/sports/" />
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-reverse ribbon-danger">
-                                <span className="ribbon-inner">Ribbon</span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon reverse danger caption="Ribbon">
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                            <AnterosImage src="http://lorempixel.com/130/130/sports/" />
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-reverse ribbon-success">
-                                <span className="ribbon-inner">Ribbon</span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon reverse success caption="Ribbon">
+                            <AnterosImage src="http://lorempixel.com/130/130/sports/" />
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-reverse ribbon-primary">
-                                <span className="ribbon-inner">Ribbon</span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon reverse primary caption="Ribbon">
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-reverse ribbon-info">
-                                <span className="ribbon-inner">Ribbon</span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon reverse info caption="Ribbon">
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-reverse ribbon-warning">
-                                <span className="ribbon-inner">Ribbon</span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon reverse warning caption="Ribbon">
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                        </AnterosRibbon>
                     </div>
-
                 </div>
             </AnterosCard >
 
             <AnterosCard caption="Vertical ribbons">
                 <div className="row">
-
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-vertical">
-                                <span className="ribbon-inner"><i className="fa fa-check-circle" aria-hidden="true"></i></span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon vertical icon="fa fa-check-circle" caption="Ribbon">
+                            <AnterosImage src="http://lorempixel.com/130/130/sports/" />
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-vertical ribbon-danger">
-                                <span className="ribbon-inner"><i className="fa fa-check-circle" aria-hidden="true"></i></span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon vertical icon="fa fa-check-circle" danger caption="Ribbon">
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                            <AnterosImage src="http://lorempixel.com/130/130/sports/" />
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-vertical ribbon-success">
-                                <span className="ribbon-inner"><i className="fa fa-check-circle" aria-hidden="true"></i></span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon vertical icon="fa fa-check-circle" success caption="Ribbon">
+                            <AnterosImage src="http://lorempixel.com/130/130/sports/" />
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-vertical ribbon-primary">
-                                <span className="ribbon-inner"><i className="fa fa-heart" aria-hidden="true"></i></span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon vertical icon="fa fa-heart" primary caption="Ribbon">
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-vertical ribbon-info">
-                                <span className="ribbon-inner"><i className="fa fa-heart" aria-hidden="true"></i></span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon vertical icon="fa fa-heart" info caption="Ribbon">
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                        </AnterosRibbon>
                     </div>
 
-                    <div className="col-lg-2 col-sm-4">
-                        <div className="example">
-                            <div className="ribbon ribbon-vertical ribbon-warning">
-                                <span className="ribbon-inner"><i className="fa fa-heart" aria-hidden="true"></i></span>
-                            </div>
-                            <p className="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                        </div>
+                    <div className="col-sm-2">
+                        <AnterosRibbon vertical icon="fa fa-heart" warning caption="Ribbon">
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                        </AnterosRibbon>
                     </div>
-
                 </div>
             </AnterosCard >
 
