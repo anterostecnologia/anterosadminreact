@@ -1214,7 +1214,15 @@ a.label-light-grey:hover {
     color: white;
     font-size: 10px
 }
+
+.label-lg {
+    font-size: 16px
+}
  
+ .label-sm {
+    padding: .1em .5em .1em;
+    font-size: 10px
+ }
 
 .form-control.underlined {
   padding-left: 0;
