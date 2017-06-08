@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import AnterosCard, { HeaderActions } from "../components/AnterosCard";
 import AnterosLabel from "../components/AnterosLabel";
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/styles';
-import AnterosCollapseContent from '../components/AnterosCollapseContent';
+import AnterosBadge from "../components/AnterosBadge";
 
 export default class LabelsView extends Component {
     render() {
@@ -58,13 +56,49 @@ export default class LabelsView extends Component {
                 <div className="row">
                     <div className="col-4">
                         <AnterosCard caption="Default">
-                            <AnterosLabel caption="Default" />
-                            <AnterosLabel primary caption="Primary" />
-                            <AnterosLabel success caption="Success" />
-                            <AnterosLabel info caption="Info" />
-                            <AnterosLabel warning caption="Warning" />
-                            <AnterosLabel danger caption="Danger" />
-                            <AnterosLabel dark caption="Dark" />
+                            <p>
+                                <AnterosBadge caption="1" />
+                                <AnterosBadge primary caption="2" />
+                                <AnterosBadge success caption="3" />
+                                <AnterosBadge info caption="4" />
+                                <AnterosBadge warning caption="5" />
+                                <AnterosBadge danger caption="6" />
+                            </p>
+                            <p>
+                                <AnterosBadge caption="10" />
+                                <AnterosBadge primary caption="11" />
+                                <AnterosBadge success caption="12" />
+                                <AnterosBadge info caption="13" />
+                                <AnterosBadge warning caption="14" />
+                                <AnterosBadge danger caption="15" />
+                            </p>
+                        </AnterosCard>
+                    </div>
+                    <div className="col-4">
+                        <AnterosCard caption="Radius">
+                                <AnterosBadge radiusFormat caption="1" />
+                                <AnterosBadge radiusFormat primary caption="2" />
+                                <AnterosBadge radiusFormat success caption="3" />
+                                <AnterosBadge radiusFormat info caption="4" />
+                                <AnterosBadge radiusFormat warning caption="5" />
+                                <AnterosBadge radiusFormat danger caption="6" />
+                        </AnterosCard>
+                    </div>
+                    <div className="col-4">
+                        <AnterosCard caption="Pill">
+                                <AnterosBadge pillFormat caption="1" />
+                                <AnterosBadge pillFormat primary caption="2" />
+                                <AnterosBadge pillFormat success caption="3" />
+                                <AnterosBadge pillFormat info caption="4" />
+                                <AnterosBadge pillFormat warning caption="5" />
+                                <AnterosBadge pillFormat danger caption="6" />
+                        </AnterosCard>
+                    </div>
+                    <div className="col-4">
+                        <AnterosCard caption="Size">
+                            <AnterosBadge large primary caption="Large" />
+                            <AnterosBadge primary caption="Default" />
+                            <AnterosBadge small primary caption="Small" />
                         </AnterosCard>
                     </div>
                 </div>

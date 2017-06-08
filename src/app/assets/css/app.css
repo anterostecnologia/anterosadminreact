@@ -3392,6 +3392,20 @@ a.nav-link .status-mark {
     background-color: #6c7a86
 }
 
+.badge-radius {
+    border-radius: 3px
+}
+
+.badge-lg {
+    padding: 5px 9px 8px;
+    font-size: 16px
+}
+
+.badge-sm {
+    padding: 2px 5px;
+    font-size: 10px   
+}
+
 a.nav-link .badge {
     position: absolute;
     top: -8px;
