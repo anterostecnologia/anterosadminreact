@@ -3,8 +3,6 @@ import lodash from 'lodash';
 import { AnterosError } from "./AnterosExceptions";
 import { buildClassNames } from "../utils/AnterosUtils";
 
-
-
 export default class AnterosList extends Component {
     constructor(props) {
         super(props);
@@ -73,10 +71,10 @@ export default class AnterosList extends Component {
         let index = 0;
         let _this = this;
         this.props.dataSource.map(record => {
-            if (!record.hasOwnProperty('id') || (!record.id)) {
+            if (!record.hasOwnProperty(_this.props.dataFieldId) || (!record[_this.props.dataFieldId])) {
                 throw new AnterosError("Foi encontrado um registro sem ID no dataSource passado para a Lista.");
             }
-            if (!record.hasOwnProperty('text') || (!record.text)) {
+            if (!record.hasOwnProperty(_this.props.dataFieldText) || (!record[_this.props.dataFieldText])) {
                 throw new AnterosError("Foi encontrado um registro sem o texto no dataSource passado para a Lista.");
             }
             let active = (record.active == undefined ? false : record.active);
@@ -97,7 +95,7 @@ export default class AnterosList extends Component {
                 children.push(React.createElement(AnterosListItem, {
                     key: child.props.id,
                     disabled: record.disabled,
-                    id: record.id,
+                    id: record[_this.props.dataFieldId],
                     index: index,
                     active: active,
                     success: record.success,
@@ -117,7 +115,7 @@ export default class AnterosList extends Component {
                     imageWidth: record.imageWidth,
                     icon: record.icon,
                     image: record.image,
-                    caption: record.text,
+                    caption: record[this.props.dataFieldText],
                     handleSelectItem: _this.handleSelectItem,
                     onSelectListItem: (record.onSelectListItem == undefined ? _this.props.onSelectListItem : record.onSelectListItem),
                     href: record.href,
@@ -288,11 +286,15 @@ AnterosList.propTypes = {
     justify: React.PropTypes.bool,
     onSelectListItem: React.PropTypes.func,
     width: React.PropTypes.string,
-    showBorder: React.PropTypes.bool
+    showBorder: React.PropTypes.bool,
+    dataFieldText: React.PropTypes.string,
+    dataFieldId: React.PropTypes.string
 };
 
 AnterosList.defaultProps = {
-    showBorder: true
+    showBorder: true,
+    dataFieldText: 'text',
+    dataFieldId: 'id'
 }
 
 
