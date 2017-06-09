@@ -4,12 +4,14 @@ import { AnterosError } from "./AnterosExceptions";
 import { buildClassNames } from "../utils/AnterosUtils";
 
 
+
 export default class AnterosList extends Component {
     constructor(props) {
         super(props);
         this.state = { activeIndex: -1 };
         this.handleSelectItem = this.handleSelectItem.bind(this);
         this.numberOfItens = 0;
+        this.idList = lodash.uniqueId('list');
         this.handleKeyDown = this.handleKeyDown.bind(this);
         this.rebuildChildrens = this.rebuildChildrens.bind(this);
         this.buildChildrensFromDataSource = this.buildChildrensFromDataSource.bind(this);
@@ -20,6 +22,7 @@ export default class AnterosList extends Component {
     }
 
     handleKeyDown(event) {
+        event.preventDefault();
         if (this.state.activeIndex >= 0 && this.numberOfItens > 0) {
             if (event.keyCode == 38) {
                 let index = this.state.activeIndex;
@@ -30,13 +33,37 @@ export default class AnterosList extends Component {
                 let index = this.state.activeIndex;
                 if (index + 1 < this.numberOfItens)
                     this.setState({ activeIndex: index + 1 });
+            } else if (event.keyCode == 33) {
+                this.setState((prevState, props) => {
+                    return { activeIndex: (prevState.activeIndex - 5 >= 0 ? prevState.activeIndex - 5 : 0) };
+                })
+            } else if (event.keyCode == 34) {
+                this.setState((prevState, props) => {
+                    return { activeIndex: (prevState.activeIndex + 5 < this.numberOfItens ? prevState.activeIndex + 5 : this.numberOfItens - 1) };
+                })
             } else if (event.keyCode == 36) {
-                this.setState({ activeIndex: 0 });
+                this.setState((prevState, props) => {
+                    return { activeIndex: 0 };
+                })
             } else if (event.keyCode == 35) {
-                this.setState({ activeIndex: this.numberOfItens - 1 });
+                this.setState((prevState, props) => {
+                    return { activeIndex: this.numberOfItens - 1 };
+                })
             }
         }
+
+
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        let target = $(this.list).find('.active')[0];
+        if (target) {
+            target.focus();
+        }
+
+    }
+
+
 
     buildChildrensFromDataSource() {
         if (!(this.props.dataSource.constructor === Array)) {
@@ -68,7 +95,7 @@ export default class AnterosList extends Component {
                 children.push(React.createElement(DynamicComponent, { key: record.id, active: active, index: index, handleSelectItem: _this.handleSelectItem, recordData: record }));
             } else {
                 children.push(React.createElement(AnterosListItem, {
-                    key: lodash.uniqueId(),
+                    key: child.props.id,
                     disabled: record.disabled,
                     id: record.id,
                     index: index,
@@ -94,7 +121,8 @@ export default class AnterosList extends Component {
                     handleSelectItem: _this.handleSelectItem,
                     onSelectListItem: (record.onSelectListItem == undefined ? _this.props.onSelectListItem : record.onSelectListItem),
                     href: record.href,
-                    showBorder: (record.showBorder == undefined ? _this.props.showBorder: record.showBorder)
+                    showBorder: (record.showBorder == undefined ? _this.props.showBorder : record.showBorder),
+                    ownerId: (_this.props.id ? _this.props.id : _this.idList)
                 }));
             }
             index++;
@@ -125,7 +153,7 @@ export default class AnterosList extends Component {
                 _this.state.activeIndex = index;
             }
             children.push(React.createElement(AnterosListItem, {
-                key: lodash.uniqueId(),
+                key: child.props.id,
                 disabled: child.props.disabled,
                 id: child.props.id,
                 index: index,
@@ -151,7 +179,8 @@ export default class AnterosList extends Component {
                 handleSelectItem: _this.handleSelectItem,
                 onSelectListItem: (child.props.onSelectListItem == undefined ? _this.props.onSelectListItem : child.props.onSelectListItem),
                 href: child.props.href,
-                showBorder: (child.showBorder == undefined ? _this.props.showBorder: child.showBorder)
+                showBorder: (child.showBorder == undefined ? _this.props.showBorder : child.showBorder),
+                ownerId: (_this.props.id ? _this.props.id : _this.idList)
             },
                 (child.props ? child.props.children : undefined)
             ));
@@ -170,7 +199,7 @@ export default class AnterosList extends Component {
             children = this.rebuildChildrens();
         }
 
-        return (<div tabIndex={-1} className="list-group-container" onKeyDown={this.handleKeyDown} style={{ width: this.props.width, height: this.props.height }}> <ul className="list-group" >
+        return (<div id={this.props.id ? this.props.id : this.idList} ref={ref => this.list = ref} tabIndex={-1} className="list-group-container" onKeyDown={this.handleKeyDown} style={{ width: this.props.width, height: this.props.height }}> <ul className="list-group" >
             {children}
         </ul></div>);
     }
@@ -202,7 +231,7 @@ export class AnterosListItem extends Component {
 
         let className = buildClassNames(
             (this.props.showBorder ? "list-group-item-border" : "list-group-item"),
-             "list-group-item-action",
+            "list-group-item-action",
             (this.props.className ? this.props.className : ""),
             (this.props.active ? "active" : ""),
             (this.props.disabled ? "disabled" : ""),
@@ -240,7 +269,7 @@ export class AnterosListItem extends Component {
             </li>);
         }
 
-        return (<li style={style} href={this.props.href} className={className} onClick={this.onClick} id={"lstItem" + this.props.id}>
+        return (<li tabIndex={-1} style={style} href={this.props.href} className={className} onClick={this.onClick} id={"lstItem_" + this.props.ownerId + "_" + this.props.id}>
             {icon} <img style={{ marginLeft: "3px", marginRight: "3px" }} className={classNameImage} src={this.props.image} height={this.props.imageHeight} width={this.props.imageWidth} /> {this.props.caption}
         </li>);
     }
@@ -263,7 +292,7 @@ AnterosList.propTypes = {
 };
 
 AnterosList.defaultProps = {
-    showBorder : true
+    showBorder: true
 }
 
 
@@ -302,5 +331,5 @@ AnterosListItem.defaultProps = {
     href: undefined,
     icon: undefined,
     image: undefined,
-    showBorder : true
+    showBorder: true
 }
