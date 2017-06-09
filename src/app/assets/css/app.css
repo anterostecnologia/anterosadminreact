@@ -1214,7 +1214,15 @@ a.label-light-grey:hover {
     color: white;
     font-size: 10px
 }
+
+.label-lg {
+    font-size: 16px
+}
  
+ .label-sm {
+    padding: .1em .5em .1em;
+    font-size: 10px
+ }
 
 .form-control.underlined {
   padding-left: 0;
@@ -3384,6 +3392,20 @@ a.nav-link .status-mark {
     background-color: #6c7a86
 }
 
+.badge-radius {
+    border-radius: 3px
+}
+
+.badge-lg {
+    padding: 5px 9px 8px;
+    font-size: 16px
+}
+
+.badge-sm {
+    padding: 2px 5px;
+    font-size: 10px   
+}
+
 a.nav-link .badge {
     position: absolute;
     top: -8px;
@@ -3441,25 +3463,37 @@ a.nav-link .badge {
 }
 
 .list-group-item {
-    padding: .2rem 0.5rem;
+    padding: .75rem 1.25rem;
     min-height: 30px;
     border: 0;
-    border-color: #0275d8;
 }
 
-.list-group-item.active {
+.list-group-item-border {
+    padding: .75rem 1.25rem;
+    min-height: 30px;
+    border: 1px solid rgba(0,0,0,.125);
+    margin-bottom: -1px;
+    display: flex;
+}
+
+.list-group-item.active, .list-group-item-border.active {
     color: hsla(0, 0%, 100%, .95);
     background-color: #3FA9F4;
 }
 
-.list-group-item:first-child {
+.list-group-item:first-child, .list-group-item-border:first-child {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
 }
 
-.list-group-item:last-child {
+.list-group-item:last-child, .list-group-item-border:last-child {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+}
+
+.list-group-item-border.disabled, .list-group-item-border:disabled {
+    color: #636c72;
+    cursor: not-allowed;
 }
 
 .list-group-container {

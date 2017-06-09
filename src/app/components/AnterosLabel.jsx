@@ -7,6 +7,13 @@ export default class AnterosLabel extends Component {
     }
     render() {
         let className = "label-custom";
+
+        if (this.props.large) {
+            className += " label-lg";
+        } else if (this.props.small) {
+            className += " label-sm";
+        }
+
         if (this.props.primary) {
             className += (this.props.outline ? " label-outline-primary" : " label-primary");
         } else if (this.props.success) {
@@ -22,11 +29,10 @@ export default class AnterosLabel extends Component {
         } else {
             className += (this.props.outline ? " label-outline-default" : " label-default");
         }
+
         if (this.props.pillFormat) {
             className += " label-pill";
         }
-
-
 
         return (<span className={className}>{this.props.caption}</span>);
     }
@@ -41,8 +47,23 @@ AnterosLabel.propTypes = {
     dark: React.PropTypes.bool,
     pillFormat: React.PropTypes.bool,
     outline: React.PropTypes.bool,
-    caption: React.PropTypes.string,
-};
+    large: React.PropTypes.bool,
+    small: React.PropTypes.bool,
+    caption: React.PropTypes.string.isRequired,
+}
+
+AnterosLabel.defaultProps = {
+    primary: false,
+    success: false,
+    info: false,
+    warning: false,
+    danger: false,
+    dark: false,
+    pillFormat: false,
+    outline: false,
+    large: false,
+    small: false
+}
 
 
 

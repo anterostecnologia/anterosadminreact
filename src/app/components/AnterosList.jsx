@@ -93,7 +93,8 @@ export default class AnterosList extends Component {
                     caption: record.text,
                     handleSelectItem: _this.handleSelectItem,
                     onSelectListItem: (record.onSelectListItem == undefined ? _this.props.onSelectListItem : record.onSelectListItem),
-                    href: record.href
+                    href: record.href,
+                    showBorder: (record.showBorder == undefined ? _this.props.showBorder: record.showBorder)
                 }));
             }
             index++;
@@ -149,7 +150,8 @@ export default class AnterosList extends Component {
                 caption: child.props.caption,
                 handleSelectItem: _this.handleSelectItem,
                 onSelectListItem: (child.props.onSelectListItem == undefined ? _this.props.onSelectListItem : child.props.onSelectListItem),
-                href: child.props.href
+                href: child.props.href,
+                showBorder: (child.showBorder == undefined ? _this.props.showBorder: child.showBorder)
             },
                 (child.props ? child.props.children : undefined)
             ));
@@ -168,7 +170,7 @@ export default class AnterosList extends Component {
             children = this.rebuildChildrens();
         }
 
-        return (<div tabIndex={-1} className="list-group-container" onKeyDown={this.handleKeyDown} style={{ maxWidth: this.props.width, maxHeight: this.props.height }}> <ul className="list-group" >
+        return (<div tabIndex={-1} className="list-group-container" onKeyDown={this.handleKeyDown} style={{ width: this.props.width, height: this.props.height }}> <ul className="list-group" >
             {children}
         </ul></div>);
     }
@@ -199,7 +201,8 @@ export class AnterosListItem extends Component {
             return null;
 
         let className = buildClassNames(
-            "list-group-item list-group-item-action",
+            (this.props.showBorder ? "list-group-item-border" : "list-group-item"),
+             "list-group-item-action",
             (this.props.className ? this.props.className : ""),
             (this.props.active ? "active" : ""),
             (this.props.disabled ? "disabled" : ""),
@@ -210,12 +213,11 @@ export class AnterosListItem extends Component {
             (this.props.alignRight ? "justify-content-end" : ""),
             (this.props.alignLeft ? "justify-content-start" : ""),
             (this.props.alignCenter ? "justify-content-center" : ""),
-            (this.props.justify ? "justify-content-between" : ""),
             (this.props.justify ? "justify-content-between" : ""));
 
         let icon;
         if (this.props.icon) {
-            icon = (<i className={this.props.icon}></i>);
+            icon = (<i style={{ marginLeft: "3px", marginRight: "3px" }} className={this.props.icon}></i>);
         }
 
         let style = {};
@@ -229,7 +231,7 @@ export class AnterosListItem extends Component {
 
         let classNameImage;
         if (this.props.imageCircle) {
-            classNameImage = "img-circle";
+            classNameImage = " img-circle";
         }
 
         if (this.props.children) {
@@ -238,7 +240,7 @@ export class AnterosListItem extends Component {
             </li>);
         }
 
-        return (<li href={this.props.href} className={className} onClick={this.onClick} id={"lstItem" + this.props.id}>
+        return (<li style={style} href={this.props.href} className={className} onClick={this.onClick} id={"lstItem" + this.props.id}>
             {icon} <img style={{ marginLeft: "3px", marginRight: "3px" }} className={classNameImage} src={this.props.image} height={this.props.imageHeight} width={this.props.imageWidth} /> {this.props.caption}
         </li>);
     }
@@ -257,7 +259,12 @@ AnterosList.propTypes = {
     justify: React.PropTypes.bool,
     onSelectListItem: React.PropTypes.func,
     width: React.PropTypes.string,
+    showBorder: React.PropTypes.bool
 };
+
+AnterosList.defaultProps = {
+    showBorder : true
+}
 
 
 AnterosListItem.propTypes = {
@@ -284,7 +291,8 @@ AnterosListItem.propTypes = {
     justify: React.PropTypes.bool,
     onSelectListItem: React.PropTypes.func,
     success: React.PropTypes.bool,
-    warning: React.PropTypes.bool
+    warning: React.PropTypes.bool,
+    showBorder: React.PropTypes.bool
 };
 
 AnterosListItem.defaultProps = {
@@ -293,5 +301,6 @@ AnterosListItem.defaultProps = {
     disabled: false,
     href: undefined,
     icon: undefined,
-    image: undefined
+    image: undefined,
+    showBorder : true
 }
