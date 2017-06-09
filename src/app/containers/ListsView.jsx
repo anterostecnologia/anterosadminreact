@@ -4,78 +4,89 @@ import AnterosList, { AnterosListItem } from "../components/AnterosList";
 import AnterosBadge from "../components/AnterosBadge";
 import AnterosLabel from "../components/AnterosLabel";
 import AnterosImage from "../components/AnterosImage";
+import AnterosButton from "../components/AnterosButton";
 
 
 var userList = [
     {
         "id": 1,
         "name": "Georgie Garfirth",
-        "text": "Fusce consequat. Nulla nisl. Nunc nisl.",
-        "date": "31/12/2017",
-        "avatar": "https://randomuser.me/api/portraits/men/85.jpg"
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
+        "date": "16/01/2017",
+        "avatar": "https://randomuser.me/api/portraits/men/85.jpg",
+        "status": "pending"
     },
     {
         "id": 2,
         "name": "Gisella Tother",
-        "text": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
-        "date": "31/12/2017",
-        "avatar": "https://robohash.org/estutsunt.jpg?size=50x50&set=set1"
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
+        "date": "12/03/2017",
+        "avatar": "https://randomuser.me/api/portraits/women/47.jpg",
+        "status": "pending"
     },
     {
         "id": 3,
         "name": "Sax Maffioletti",
-        "text": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
-        "date": "31/12/2017",
-        "avatar": "https://robohash.org/dolortotamearum.bmp?size=50x50&set=set1"
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
+        "date": "29/03/2017",
+        "avatar": "https://randomuser.me/api/portraits/men/36.jpg",
+        "status": "approved"
     },
     {
         "id": 4,
         "_name": "Madeline Accombe",
-        "text": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
-        "date": "31/12/2017",
-        "avatar": "https://robohash.org/dolorespossimusqui.png?size=50x50&set=set1"
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
+        "date": "15/04/2017",
+        "avatar": "https://randomuser.me/api/portraits/women/63.jpg",
+        "status": "approved"
     },
     {
         "id": 5,
         "name": "Mellie Macguire",
-        "text": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
-        "date": "31/12/2017",
-        "avatar": "https://robohash.org/teneturquiaut.jpg?size=50x50&set=set1"
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
+        "date": "15/05/2017",
+        "avatar": "https://randomuser.me/api/portraits/women/28.jpg",
+        "status": "pending"
     },
     {
         "id": 6,
         "name": "Zolly Sandeson",
-        "text": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
-        "date": "31/12/2017",
-        "avatar": "https://robohash.org/esteiusut.png?size=50x50&set=set1"
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
+        "date": "21/05/2017",
+        "avatar": "https://randomuser.me/api/portraits/men/8.jpg",
+        "status": "approved"
     },
     {
         "id": 7,
         "name": "Lionello Tumility",
-        "text": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
-        "date": "31/12/2017",
-        "avatar": "https://robohash.org/dolorvoluptateenim.png?size=50x50&set=set1"
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
+        "date": "14/06/2017",
+        "avatar": "https://randomuser.me/api/portraits/men/31.jpg",
+        "status": "rejected"
     },
     {
         "id": 8,
         "name": "Randy Carnaman",
-        "text": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
-        "date": "31/12/2017",
-        "avatar": "https://robohash.org/voluptatemrecusandaeconsequatur.png?size=50x50&set=set1"
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
+        "date": "15/06/2017",
+        "avatar": "https://randomuser.me/api/portraits/men/14.jpg",
+        "status": "rejected"
     },
     {
         "id": 9,
         "name": "Sammie Bridgwater",
-        "text": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
-        "date": "31/12/2017",
-        "avatar": "https://robohash.org/quaeratnisisit.bmp?size=50x50&set=set1"
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
+        "date": "01/07/2017",
+        "avatar": "https://randomuser.me/api/portraits/women/66.jpg",
+        "status": "rejected"
     },
     {
         "id": 10,
         "name": "El Maria",
-        "text": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
-        "date": "31/12/2017",
-        "avatar": "https://robohash.org/omnispraesentiumsit.png?size=50x50&set=set1"
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
+        "date": "09/07/2017",
+        "avatar": "https://randomuser.me/api/portraits/women/36.jpg",
+        "status": "approved"
     }]
 
 export default class ListsView extends Component {
@@ -262,37 +273,21 @@ export default class ListsView extends Component {
 
                                     <div className="row">
                                         <div className="col-md-6">
-                                            <AnterosCard caption="Custom 1">
-                                                <section className="section">
-                                                    <AnterosList height="700px" dataSource={userList} component={CustomComponentUsers} />
-                                                </section>
-                                            </AnterosCard>
+                                            <AnterosList height="700px" dataSource={userList} component={CustomComponentUsers} />
                                         </div>
 
                                         <div className="col-md-6">
-                                            <AnterosCard caption="Custom 2">
-                                                <section className="section">
 
-                                                </section>
-                                            </AnterosCard>
                                         </div>
                                     </div>
 
                                     <div className="row">
                                         <div className="col-md-6">
-                                            <AnterosCard caption="With dataset">
-                                                <section className="section">
-
-                                                </section>
-                                            </AnterosCard>
+                                        
                                         </div>
 
                                         <div className="col-md-6">
-                                            <AnterosCard caption="With dataset 2">
-                                                <section className="section">
-
-                                                </section>
-                                            </AnterosCard>
+                                            
                                         </div>
                                     </div>
 
@@ -337,30 +332,33 @@ class CustomComponentUsers extends Component {
             className += " disabled";
         }
 
+        let anterosLabel
+        if (this.props.recordData.status == "pending")
+            anterosLabel = <AnterosBadge pillFormat primary caption={this.props.recordData.status} />;
+        else if (this.props.recordData.status == "approved")
+            anterosLabel = <AnterosBadge pillFormat success caption={this.props.recordData.status} />;
+        else if (this.props.recordData.status == "rejected")
+            anterosLabel = <AnterosBadge pillFormat danger caption={this.props.recordData.status} />;
+
         return (
-            <div className="d-flex flex-row comment-row" style={{height: "15px"}}>
+            <div className="flex-row" style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "15px" }}>
                 <div>
                     <AnterosImage margin={5} maxWidth={48} circle src={this.props.recordData.avatar} />
                 </div>
-                    <div>
-                        <h5>{this.props.recordData.name}</h5>
-                        <p className="m-b-5">{this.props.recordData.text}</p>
-                        <div className="comment-footer">
-                            <span className="text-muted pull-right">{this.props.recordData.date}</span>
-                            <span className="label label-light-info">Pending</span>
-                            <span className="action-icons">
-                                <a href="javascript:void(0)"><i className="ti-pencil-alt"></i></a>
-                                <a href="javascript:void(0)"><i className="ti-check"></i></a>
-                                <a href="javascript:void(0)"><i className="ti-heart"></i></a>
-                            </span>
-                        </div>
+                <div>
+                    <h5>{this.props.recordData.name}</h5>
+                    <p style={{ marginBottom: "0px" }} className="justify-content-between" >{this.props.recordData.text}</p>
+                    <div className="d-flex justify-content-between">
+                        <div className="align-self-center">{anterosLabel}</div>
+                        <span className="d-flex align-self-start">
+                            <AnterosButton circle link icon="fa fa-edit" hint="Edit" />
+                            <AnterosButton circle link icon="fa fa-check green" hint="Approve" />
+                            <AnterosButton circle link icon="fa fa-heart-o red" hint="Like it" />
+                        </span>
+                        <span className="align-self-center" style={{ fontSize: "13px", color: "#90a4ae" }} >{this.props.recordData.date}</span>
                     </div>
                 </div>
-                );
-	}
+            </div>
+        );
+    }
 }
-
-                /*<div style={{ color: "blue" }} className={className} onClick={this.onClick}>
-                    <img src={this.props.recordData.foto} />
-                    {this.props.recordData.id + " " + this.props.recordData.text}
-                </div>*/
