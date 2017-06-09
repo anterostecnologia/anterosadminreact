@@ -19,8 +19,8 @@ export default class AnterosProgressBar extends Component {
         );
 
         return (<div className="progress">
-            <div className={className} role="progressbar" style={{ width: this.props.value + "%" }} aria-valuenow={this.props.value} aria-valuemin={this.props.min} aria-valuemax={this.props.max}>
-                <span style={{verticalAlign: "middle"}}>{this.props.showText==true ? this.props.value + "%" : ""}</span>
+            <div className={className} role="progressbar" style={{ width: this.props.value + "%", height: this.props.height + "px" }} aria-valuenow={this.props.value} aria-valuemin={this.props.min} aria-valuemax={this.props.max}>
+                <span style={{ verticalAlign: "middle" }}>{this.props.showText == true ? this.props.value + "%" : ""}</span>
             </div>
         </div>)
     }
@@ -37,12 +37,14 @@ AnterosProgressBar.propTypes = {
     showText: React.PropTypes.bool,
     min: React.PropTypes.number,
     max: React.PropTypes.number,
-    value: React.PropTypes.number.isRequired
+    value: React.PropTypes.number.isRequired,
+    height: React.PropTypes.number
 };
 
 AnterosProgressBar.defaultProps = {
     showText: false,
     min: 0,
     max: 100,
-    value: 0
+    value: 0,
+    height: 20
 }

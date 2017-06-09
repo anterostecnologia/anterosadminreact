@@ -5,6 +5,7 @@ import AnterosBadge from "../components/AnterosBadge";
 import AnterosLabel from "../components/AnterosLabel";
 import AnterosImage from "../components/AnterosImage";
 import AnterosButton from "../components/AnterosButton";
+import AnterosProgressBar from '../components/AnterosProgressBar';
 
 
 var userList = [
@@ -15,79 +16,176 @@ var userList = [
         "date": "16/01/2017",
         "avatar": "https://randomuser.me/api/portraits/men/85.jpg",
         "status": "pending"
-    },
-    {
+    }, {
         "id": 2,
         "name": "Gisella Tother",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
         "date": "12/03/2017",
         "avatar": "https://randomuser.me/api/portraits/women/47.jpg",
         "status": "pending"
-    },
-    {
+    }, {
         "id": 3,
         "name": "Sax Maffioletti",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
         "date": "29/03/2017",
         "avatar": "https://randomuser.me/api/portraits/men/36.jpg",
         "status": "approved"
-    },
-    {
+    }, {
         "id": 4,
-        "_name": "Madeline Accombe",
+        "name": "Madeline Accombe",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
         "date": "15/04/2017",
         "avatar": "https://randomuser.me/api/portraits/women/63.jpg",
         "status": "approved"
-    },
-    {
+    }, {
         "id": 5,
         "name": "Mellie Macguire",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
         "date": "15/05/2017",
         "avatar": "https://randomuser.me/api/portraits/women/28.jpg",
         "status": "pending"
-    },
-    {
+    }, {
         "id": 6,
         "name": "Zolly Sandeson",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
         "date": "21/05/2017",
         "avatar": "https://randomuser.me/api/portraits/men/8.jpg",
         "status": "approved"
-    },
-    {
+    }, {
         "id": 7,
         "name": "Lionello Tumility",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
         "date": "14/06/2017",
         "avatar": "https://randomuser.me/api/portraits/men/31.jpg",
         "status": "rejected"
-    },
-    {
+    }, {
         "id": 8,
         "name": "Randy Carnaman",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
         "date": "15/06/2017",
         "avatar": "https://randomuser.me/api/portraits/men/14.jpg",
         "status": "rejected"
-    },
-    {
+    }, {
         "id": 9,
         "name": "Sammie Bridgwater",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
         "date": "01/07/2017",
         "avatar": "https://randomuser.me/api/portraits/women/66.jpg",
         "status": "rejected"
-    },
-    {
+    }, {
         "id": 10,
         "name": "El Maria",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis scelerisque laoreet. Fusce et turpis nulla. Duis venenatis aliquet bibendum. Vivamus quis est nisl. Sed id nisl at justo condimentum.",
         "date": "09/07/2017",
         "avatar": "https://randomuser.me/api/portraits/women/36.jpg",
         "status": "approved"
-    }]
+    }];
+
+var countryList = [
+    {
+        "id": 1,
+        "text": "Colombia",
+        "qtde_visits": 4484,
+        "percent": 78,
+        "progress_color": "success",
+        "position": "up"
+    }, {
+        "id": 2,
+        "text": "Indonesia",
+        "qtde_visits": 3050,
+        "percent": 3,
+        "progress_color": "info",
+        "position": "up"
+    }, {
+        "id": 3,
+        "text": "Brazil",
+        "qtde_visits": 8319,
+        "percent": 71,
+        "progress_color": "warning",
+        "position": "down"
+    }, {
+        "id": 4,
+        "text": "Russia",
+        "qtde_visits": 3690,
+        "percent": 96,
+        "progress_color": "primary",
+        "position": "down"
+    }, {
+        "id": 5,
+        "text": "Canada",
+        "qtde_visits": 1972,
+        "percent": 1,
+        "progress_color": "danger",
+        "position": "up"
+    }, {
+        "id": 6,
+        "text": "Japan",
+        "qtde_visits": 454,
+        "percent": 44,
+        "progress_color": "success",
+        "position": "down"
+    }, {
+        "id": 7,
+        "text": "Portugal",
+        "qtde_visits": 8970,
+        "percent": 11,
+        "progress_color": "info",
+        "position": "up"
+    }, {
+        "id": 8,
+        "text": "Honduras",
+        "qtde_visits": 7125,
+        "percent": 32,
+        "progress_color": "warning",
+        "position": "down"
+    }, {
+        "id": 9,
+        "text": "Czech Republic",
+        "qtde_visits": 193,
+        "percent": 26,
+        "progress_color": "primary",
+        "position": "up"
+    }, {
+        "id": 10,
+        "text": "Vietnam",
+        "qtde_visits": 3798,
+        "percent": 41,
+        "progress_color": "danger",
+        "position": "up"
+    }];
+
+var browserList = [
+    {
+        "id": 1,
+        "text": "Google Chrome",
+        "percent": 59.36,
+        "image": "https://robohash.org/namdelenitiunde.png?size=50x50&set=set1"
+    }, {
+        "id": 2,
+        "text": "Internet Explorer",
+        "percent": 17.55,
+        "image": "https://robohash.org/maioresperferendiscorrupti.jpg?size=50x50&set=set1"
+    }, {
+        "id": 3,
+        "text": "Mozilla Firefox",
+        "percent": 11.98,
+        "image": "https://robohash.org/ducimuseiusid.png?size=50x50&set=set1"
+    }, {
+        "id": 4,
+        "text": "Microsoft Edge",
+        "percent": 5.63,
+        "image": "https://robohash.org/sitsimiliqueenim.png?size=50x50&set=set1"
+    }, {
+        "id": 5,
+        "text": "Safari",
+        "percent": 3.56,
+        "image": "https://robohash.org/pariaturtemporeest.png?size=50x50&set=set1"
+    }, {
+        "id": 6,
+        "text": "Opera",
+        "percent": 1.24,
+        "image": "https://robohash.org/quialiquidsimilique.png?size=50x50&set=set1"
+    }];
 
 export default class ListsView extends Component {
     render() {
@@ -272,31 +370,50 @@ export default class ListsView extends Component {
                                 <section className="section">
 
                                     <div className="row">
-                                        <div className="col-md-6">
-                                            <AnterosList height="700px" dataSource={userList} component={CustomComponentUsers} />
+                                        <div className="col-md-4">
+                                            <AnterosCard caption="Visits around the countries">
+                                                <section className="section">
+                                                    <AnterosList height="700px" dataSource={countryList} component={CustomComponentCountry} />
+                                                </section>
+                                            </AnterosCard>
                                         </div>
 
-                                        <div className="col-md-6">
-
+                                        <div className="col-md-8">
+                                            <AnterosCard caption="Recent comments">
+                                                <section className="section">
+                                                    <AnterosList height="700px" dataSource={userList} component={CustomComponentUsers} />
+                                                </section>
+                                            </AnterosCard>
                                         </div>
                                     </div>
 
                                     <div className="row">
-                                        <div className="col-md-6">
-                                        
+                                        <div className="col-md-4">
+                                            <AnterosCard caption="Recent messages">
+                                                <section className="section">
+                                                </section>
+                                            </AnterosCard>
                                         </div>
 
-                                        <div className="col-md-6">
-                                            
+                                        <div className="col-md-4">
+                                            <AnterosCard caption="Browser stats">
+                                                <section className="section">
+                                                    <AnterosList height="700px" dataSource={browserList} component={CustomComponentBrowser}/>
+                                                </section>
+                                            </AnterosCard>
+                                        </div>
+
+                                        <div className="col-md-4">
+                                            <AnterosCard caption="Custom 3">
+                                                <section className="section">
+                                                </section>
+                                            </AnterosCard>
                                         </div>
                                     </div>
-
                                 </section>
                             </AnterosCard>
                         </div>
                     </div>
-
-
                 </AnterosCard >
             </div>);
     }
@@ -341,12 +458,12 @@ class CustomComponentUsers extends Component {
             anterosLabel = <AnterosBadge pillFormat danger caption={this.props.recordData.status} />;
 
         return (
-            <div className="flex-row" style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "15px" }}>
-                <div>
-                    <AnterosImage margin={5} maxWidth={48} circle src={this.props.recordData.avatar} />
+            <div style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "15px" }} className={className} onClick={this.onClick}>
+                <div className="d-flex align-items-center">
+                    <AnterosImage margin={5} width={48} height={48} circle src={this.props.recordData.avatar} />
+                    <h5>{this.props.recordData.name}</h5>
                 </div>
                 <div>
-                    <h5>{this.props.recordData.name}</h5>
                     <p style={{ marginBottom: "0px" }} className="justify-content-between" >{this.props.recordData.text}</p>
                     <div className="d-flex justify-content-between">
                         <div className="align-self-center">{anterosLabel}</div>
@@ -358,6 +475,98 @@ class CustomComponentUsers extends Component {
                         <span className="align-self-center" style={{ fontSize: "13px", color: "#90a4ae" }} >{this.props.recordData.date}</span>
                     </div>
                 </div>
+            </div>
+        );
+    }
+}
+
+class CustomComponentCountry extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        let className = "d-flex flex-column list-group-item-action";
+
+        let classNameIcon;
+        if (this.props.recordData.position == "up")
+            classNameIcon = "fa fa-level-up text-success"
+        else if (this.props.recordData.position == "down")
+            classNameIcon = "fa fa-level-down text-danger";
+
+        let progressBar = <AnterosProgressBar
+            success={this.props.recordData.progress_color == "success"}
+            info={this.props.recordData.progress_color == "info"}
+            warning={this.props.recordData.progress_color == "warning"}
+            primary={this.props.recordData.progress_color == "primary"}
+            danger={this.props.recordData.progress_color == "danger"}
+            height={8} value={this.props.recordData.percent} max={100} min={0} />
+
+        return (
+            <div style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "15px" }} className={className} onClick={this.onClick}>
+                <div style={{ paddingTop: "0.5rem", paddingRight: "0.5rem", paddingLeft: "0.5rem" }} >
+                    <h3 style={{ marginBottom: "0px" }} >{this.props.recordData.qtde_visits}</h3>
+                </div>
+                <div className="p-2">
+                    <div className="d-flex flex-row justify-content-between" >
+                        <p style={{ marginBottom: "0px", paddingBottom: "0px" }} >From {this.props.recordData.text}</p>
+                        <div  >{this.props.recordData.percent}% <i className={classNameIcon}></i></div>
+                    </div>
+                    <div>
+                        {progressBar}
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+class CustomComponentBrowser extends Component {
+    constructor(props) {
+        super(props);
+        this.onClick = this.onClick.bind(this);
+
+    }
+
+    onClick() {
+        event.preventDefault();
+        if (!this.props.disabled) {
+            if (this.props.handleSelectItem) {
+                this.props.handleSelectItem(this.props.index);
+            }
+            if (this.props.onSelectListItem) {
+                this.props.onSelectListItem(this);
+            }
+        }
+    }
+
+    render() {
+        let className = "d-flex flex-row list-group-item-action";
+
+        // let classNameIcon;
+        // if (this.props.recordData.position == "up")
+        //     classNameIcon = "fa fa-level-up text-success"
+        // else if (this.props.recordData.position == "down")
+        //     classNameIcon = "fa fa-level-down text-danger";
+
+        // let progressBar = <AnterosProgressBar
+        //     success={this.props.recordData.progress_color == "success"}
+        //     info={this.props.recordData.progress_color == "info"}
+        //     warning={this.props.recordData.progress_color == "warning"}
+        //     primary={this.props.recordData.progress_color == "primary"}
+        //     danger={this.props.recordData.progress_color == "danger"}
+        //     height={8} value={this.props.recordData.percent} max={100} min={0} />
+
+        return (
+            <div style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "15px" }} className={className} onClick={this.onClick}>
+                <div>
+                    <AnterosImage margin={5} width={48} height={48} circle src={this.props.recordData.image} />
+                </div>
+                <div className="d-flex align-items-center p-2">
+                    <h6 style={{margin: "0"}}>{this.props.recordData.text}</h6>
+                    <AnterosBadge pillFormat primary caption={this.props.recordData.percent + "%"}  />
+                </div>
+                {/*style={{ marginBottom: "0px" }}*/}
             </div>
         );
     }

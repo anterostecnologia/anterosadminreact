@@ -127,6 +127,7 @@ export default class AnterosImage extends Component {
                 width: this.props.width,
                 height: this.props.height,
                 maxWidth: this.props.maxWidth,
+                maxHeight: this.props.maxHeight,
                 margin: this.props.margin,
                 WebkitTransition: "0.4s ease",
                 transition: "0.4s ease",
@@ -160,6 +161,7 @@ export default class AnterosImage extends Component {
 
 AnterosImage.propTypes = {
     maxWidth: React.PropTypes.string,
+    maxHeight: React.PropTypes.string,
     margin: React.PropTypes.string,
     scale: React.PropTypes.number,
     marginBottom: React.PropTypes.string,

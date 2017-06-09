@@ -13,7 +13,7 @@ export default class ButtonView extends Component {
                 <AnterosCard caption="Progress Bar">
 
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-4">
                             <AnterosCard caption="Progress Bar colors">
                                 <section className="section">
                                     <AnterosProgressBar value={20} max={100} min={0} />
@@ -25,7 +25,7 @@ export default class ButtonView extends Component {
                             </AnterosCard>
                         </div>
 
-                        <div className="col-md-6">
+                        <div className="col-md-4">
                             <AnterosCard caption="Progress Bar values">
                                 <section className="section">
                                     <AnterosProgressBar value={20} max={100} min={0} showText={true} />
@@ -33,6 +33,17 @@ export default class ButtonView extends Component {
                                     <AnterosProgressBar info value={60} max={100} showText={true} />
                                     <AnterosProgressBar warning value={80} max={100} showText={true} />
                                     <AnterosProgressBar danger value={100} max={100} showText={true} />
+                                </section>
+                            </AnterosCard>
+                        </div>
+
+                        <div className="col-md-4">
+                            <AnterosCard caption="Progress Bar sizes">
+                                <section className="section">
+                                    <AnterosProgressBar height={5} value={20} max={100} min={0} />
+                                    <AnterosProgressBar height={10} success value={40} max={100} />
+                                    <AnterosProgressBar info value={60} max={100} />
+                                    <AnterosProgressBar height={50} warning value={80} max={100} />
                                 </section>
                             </AnterosCard>
                         </div>
