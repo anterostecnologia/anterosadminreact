@@ -3463,25 +3463,37 @@ a.nav-link .badge {
 }
 
 .list-group-item {
-    padding: .2rem 0.5rem;
+    padding: .75rem 1.25rem;
     min-height: 30px;
     border: 0;
-    border-color: #0275d8;
 }
 
-.list-group-item.active {
+.list-group-item-border {
+    padding: .75rem 1.25rem;
+    min-height: 30px;
+    border: 1px solid rgba(0,0,0,.125);
+    margin-bottom: -1px;
+    display: flex;
+}
+
+.list-group-item.active, .list-group-item-border.active {
     color: hsla(0, 0%, 100%, .95);
     background-color: #3FA9F4;
 }
 
-.list-group-item:first-child {
+.list-group-item:first-child, .list-group-item-border:first-child {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
 }
 
-.list-group-item:last-child {
+.list-group-item:last-child, .list-group-item-border:last-child {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+}
+
+.list-group-item-border.disabled, .list-group-item-border:disabled {
+    color: #636c72;
+    cursor: not-allowed;
 }
 
 .list-group-container {
