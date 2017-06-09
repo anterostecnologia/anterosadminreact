@@ -2,14 +2,12 @@
 
 
 
-function ObjectUtil() {
+function AnterosObjectUtil() {
 }
 
 /**
   Some static util functions for retrieving and checking nested keys in JSON objects. Syntax inspired by Immutable. Does support Arrays.
   
-  var objectUtil = require('js-object-util');
-
 // Some deeply nested JSON example input:
 var book = {
 	publisher: {
@@ -44,17 +42,17 @@ var book = {
 
 // Let's go. Checking for properties:
 var keyExists;
-keyExists = objectUtil.hasIn(book, ['publisher', 'address', 'city']);		// true
-keyExists = objectUtil.hasIn(book, ['publisher', 'address', 'notthere']);	// false
+keyExists = AnterosObjectUtil.hasPath(book, ['publisher', 'address', 'city']);		// true
+keyExists = AnterosObjectUtil.hasPath(book, ['publisher', 'address', 'notthere']);	// false
 // Retrieving properties:
 var value;
-value = ObjectUtil.getIn(book, ['year']);							// 2015
-value = objectUtil.getIn(book, ['readers', 1, 'name']);			// Brad
-value = objectUtil.getIn(book, ['readers', 5, 'notthere'], null);			// null
+value = AnterosObjectUtil.getPathValue(book, ['year']);							// 2015
+value = AnterosObjectUtil.getPathValue(book, ['readers', 1, 'name']);			// Brad
+value = AnterosObjectUtil.getPathValue(book, ['readers', 5, 'notthere'], null);			// null
 // Setting properties:
 var new_book;
-new_book = ObjectUtil.setIn(book, ['readers', 2, 'name'], 'Dan');
-new_book = ObjectUtil.setIn(new_book, ['readers', 2, 'age'], 14);
+new_book = AnterosObjectUtil.setPathValue(book, ['readers', 2, 'name'], 'Dan');
+new_book = AnterosObjectUtil.setPathValue(new_book, ['readers', 2, 'age'], 14);
 
 
  */
@@ -62,12 +60,11 @@ new_book = ObjectUtil.setIn(new_book, ['readers', 2, 'age'], 14);
 
 /**
  * Checks whether a nested object key exists in an object. Dives into arrays if required.
- * @see http://stackoverflow.com/questions/2631001/javascript-test-for-existence-of-nested-object-key
  * @param obj The JSON object in which to check for the nested key
  * @param path_components An array of strings and/or numbers defining the path (of key names) to the key in question. Numbers are interpreted as array indices.
  * @returns {boolean} Whether the key exists. (The value may still be null, undefined, or falsy.)
  */
-ObjectUtil.hasPath = function (obj, path_components) {
+AnterosObjectUtil.hasPath = function (obj, path_components) {
     let handled_path = [];
     let path_component;
     let last_obj = null;
@@ -123,7 +120,7 @@ ObjectUtil.hasPath = function (obj, path_components) {
 }
 
 
-ObjectUtil._stringRepresentsPositiveIntegerIncludingZero = function (str) {
+AnterosObjectUtil._stringRepresentsPositiveIntegerIncludingZero = function (str) {
     var n = Math.floor(Number(str));
     return String(n) === str && n >= 0;
 }
@@ -134,7 +131,7 @@ ObjectUtil._stringRepresentsPositiveIntegerIncludingZero = function (str) {
  * @param path_components An array of strings defining the path (of key names) to the key in question
  * @returns {boolean} Whether the key exists and is neither undefined nor null
  */
-ObjectUtil.hasDefinedAndNonNullPath = function (obj, path_components) {
+AnterosObjectUtil.hasDefinedAndNonNullPath = function (obj, path_components) {
     if (ObjectUtil.hasIn(obj, path_components)) {
         let value = ObjectUtil.getIn(obj, path_components);
         let result = (typeof (value) !== 'undefined' && value != null);
@@ -150,7 +147,7 @@ ObjectUtil.hasDefinedAndNonNullPath = function (obj, path_components) {
  * @param alternate An alternate return value that will be used if the given path does not exist in the object
  * @returns {Object} The nested object
  */
-ObjectUtil.getPathValue = function (obj, path_components, alternate) {
+AnterosObjectUtil.getPathValue = function (obj, path_components, alternate) {
     if (!ObjectUtil.hasIn(obj, path_components)) {
         return alternate;
     }
@@ -177,7 +174,7 @@ ObjectUtil.getPathValue = function (obj, path_components, alternate) {
  * @param value_to_use_for_missing_array_elements A value to push into arrays to fill them to the required length, if needed. Optional, defaults to undefined.
  * @returns {Object} The new JSON object, which includes the requested path.
  **/
-ObjectUtil.setPathValue = function (obj, path_components, value, value_to_use_for_missing_array_elements) {
+AnterosObjectUtil.setPathValue = function (obj, path_components, value, value_to_use_for_missing_array_elements) {
 
     var obj_cp = Object.assign({}, obj);
 
