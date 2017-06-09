@@ -5,6 +5,7 @@ import AnterosCheckboxToggle from '../components/AnterosCheckboxToggle';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
 import AnterosCollapseContent from '../components/AnterosCollapseContent';
+import AnterosButton from '../components/AnterosButton';
 
 export default class SwitchesView extends Component {
     render() {

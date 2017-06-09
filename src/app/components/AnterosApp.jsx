@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import '../../app/assets/css/app.css';
+import '../../app/assets/css/material-design-iconic-font.css';
 import AnterosMainLayout from './AnterosMainLayout';
 import AnterosNotFound from './AnterosNotFound';
 import AnterosLogin from './AnterosLogin';

@@ -6,16 +6,17 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
 import AnterosCollapseContent from '../components/AnterosCollapseContent';
 
-export default class CardView extends Component {
+export default class SweetAlertView extends Component {
     render() {
-        return (<AnterosCard caption="Sweat alerts">
-
+        return (<AnterosCard caption="Sweet alerts">
             <AnterosCardDeck>
                 <AnterosCard caption="Basic message" textCenter>
                     <HeaderActions>
                         <AnterosButton circle small link icon="fa fa-code"
                             hint="Show code" hintPosition="left"
-                            collapseContent="idShowButtonsColors" />
+                            collapseContent="idShowButtonsColors" onButtonClick={(event)=>{
+                                console.log('teste');
+                            }}/>
                     </HeaderActions>
                     <AnterosImage src={require('../assets/img/alert1.png')} />
                 </AnterosCard>
