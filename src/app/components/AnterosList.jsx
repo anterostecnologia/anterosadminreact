@@ -21,13 +21,14 @@ export default class AnterosList extends Component {
 
     handleKeyDown(event) {
         event.preventDefault();
+        console.log(event.keyCode);
         if (this.state.activeIndex >= 0 && this.numberOfItens > 0) {
-            if (event.keyCode == 38) {
+            if ((event.keyCode == 38) || (event.keyCode == 37)) {
                 let index = this.state.activeIndex;
                 if (index - 1 >= 0) {
                     this.setState({ activeIndex: index - 1 });
                 }
-            } else if (event.keyCode == 40) {
+            } else if ((event.keyCode == 40) || (event.keyCode == 39)) {
                 let index = this.state.activeIndex;
                 if (index + 1 < this.numberOfItens)
                     this.setState({ activeIndex: index + 1 });
@@ -197,9 +198,11 @@ export default class AnterosList extends Component {
             children = this.rebuildChildrens();
         }
 
-        return (<div id={this.props.id ? this.props.id : this.idList} ref={ref => this.list = ref} tabIndex={-1} className="list-group-container" onKeyDown={this.handleKeyDown} style={{ width: this.props.width, height: this.props.height }}> <ul className="list-group" >
-            {children}
-        </ul></div>);
+        return (<div id={this.props.id ? this.props.id : this.idList} ref={ref => this.list = ref} tabIndex={-1} className="list-group-container" onKeyDown={this.handleKeyDown} style={{ width: this.props.width, height: this.props.height }}>
+            <ul className="list-group" style={{flexDirection= this.props.horizontal?"row":"column"}} >
+                {children}
+            </ul>
+        </div>);
     }
 }
 
