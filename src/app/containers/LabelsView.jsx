@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import AnterosCard, { HeaderActions } from "../components/AnterosCard";
 import AnterosLabel from "../components/AnterosLabel";
 import AnterosBadge from "../components/AnterosBadge";
+import AnterosButton from '../components/AnterosButton';
+import AnterosPageControl from "../components/AnterosPageControl";
+import AnterosTab from "../components/AnterosTab";
 
 export default class LabelsView extends Component {
     render() {
@@ -10,7 +13,7 @@ export default class LabelsView extends Component {
             <AnterosCard caption="Labels">
                 <div className="row">
                     <div className="col-4">
-                        <AnterosCard caption="Default">
+                        <AnterosCard caption="Labels default">
                             <AnterosLabel caption="Default" />
                             <AnterosLabel primary caption="Primary" />
                             <AnterosLabel success caption="Success" />
@@ -21,7 +24,7 @@ export default class LabelsView extends Component {
                         </AnterosCard>
                     </div>
                     <div className="col-4">
-                        <AnterosCard caption="Pill">
+                        <AnterosCard caption="Labels pill">
                             <AnterosLabel pillFormat caption="Default" />
                             <AnterosLabel pillFormat primary caption="Primary" />
                             <AnterosLabel pillFormat success caption="Success" />
@@ -32,7 +35,7 @@ export default class LabelsView extends Component {
                         </AnterosCard>
                     </div>
                     <div className="col-4">
-                        <AnterosCard caption="Outline">
+                        <AnterosCard caption="Labels outline">
                             <AnterosLabel outline caption="Default" />
                             <AnterosLabel outline primary caption="Primary" />
                             <AnterosLabel outline success caption="Success" />
@@ -42,11 +45,43 @@ export default class LabelsView extends Component {
                             <AnterosLabel outline dark caption="Dark" />
                         </AnterosCard>
                     </div>
-                    <div className="col-4">
-                        <AnterosCard caption="Sizes">
-                            <AnterosLabel large primary caption="Large" />
-                            <AnterosLabel primary caption="Default" />
-                            <AnterosLabel small primary caption="Small" />
+                    <div className="col-12">
+                        <AnterosCard caption="Labels sizes">
+                            <p>
+                                <AnterosLabel large caption="Large" />
+                                <AnterosLabel caption="Default" />
+                                <AnterosLabel small caption="Small" />
+                            </p>
+                            <p>
+                                <AnterosLabel large primary caption="Large" />
+                                <AnterosLabel primary caption="Default" />
+                                <AnterosLabel small primary caption="Small" />
+                            </p>
+                            <p>
+                                <AnterosLabel large success caption="Large" />
+                                <AnterosLabel success caption="Default" />
+                                <AnterosLabel small success caption="Small" />
+                            </p>
+                            <p>
+                                <AnterosLabel large info caption="Large" />
+                                <AnterosLabel info caption="Default" />
+                                <AnterosLabel small info caption="Small" />
+                            </p>
+                            <p>
+                                <AnterosLabel large warning caption="Large" />
+                                <AnterosLabel warning caption="Default" />
+                                <AnterosLabel small warning caption="Small" />
+                            </p>
+                            <p>
+                                <AnterosLabel large danger caption="Large" />
+                                <AnterosLabel danger caption="Default" />
+                                <AnterosLabel small danger caption="Small" />
+                            </p>
+                            <p>
+                                <AnterosLabel large dark caption="Large" />
+                                <AnterosLabel dark caption="Default" />
+                                <AnterosLabel small dark caption="Small" />
+                            </p>
                         </AnterosCard>
                     </div>
                 </div>
@@ -55,7 +90,7 @@ export default class LabelsView extends Component {
             <AnterosCard caption="Badges">
                 <div className="row">
                     <div className="col-4">
-                        <AnterosCard caption="Default">
+                        <AnterosCard caption="Badges default">
                             <p>
                                 <AnterosBadge caption="1" />
                                 <AnterosBadge primary caption="2" />
@@ -63,42 +98,67 @@ export default class LabelsView extends Component {
                                 <AnterosBadge info caption="4" />
                                 <AnterosBadge warning caption="5" />
                                 <AnterosBadge danger caption="6" />
+                                <AnterosBadge dark caption="7" />
                             </p>
                             <p>
-                                <AnterosBadge caption="10" />
-                                <AnterosBadge primary caption="11" />
-                                <AnterosBadge success caption="12" />
-                                <AnterosBadge info caption="13" />
-                                <AnterosBadge warning caption="14" />
-                                <AnterosBadge danger caption="15" />
+                                <AnterosBadge caption="11" />
+                                <AnterosBadge primary caption="12" />
+                                <AnterosBadge success caption="13" />
+                                <AnterosBadge info caption="14" />
+                                <AnterosBadge warning caption="15" />
+                                <AnterosBadge danger caption="16" />
+                                <AnterosBadge dark caption="17" />
                             </p>
                         </AnterosCard>
                     </div>
                     <div className="col-4">
-                        <AnterosCard caption="Radius">
-                                <AnterosBadge radiusFormat caption="1" />
-                                <AnterosBadge radiusFormat primary caption="2" />
-                                <AnterosBadge radiusFormat success caption="3" />
-                                <AnterosBadge radiusFormat info caption="4" />
-                                <AnterosBadge radiusFormat warning caption="5" />
-                                <AnterosBadge radiusFormat danger caption="6" />
+                        <AnterosCard caption="Badges radius">
+                            <AnterosBadge radiusFormat caption="1" />
+                            <AnterosBadge radiusFormat primary caption="2" />
+                            <AnterosBadge radiusFormat success caption="3" />
+                            <AnterosBadge radiusFormat info caption="4" />
+                            <AnterosBadge radiusFormat warning caption="5" />
+                            <AnterosBadge radiusFormat danger caption="6" />
+                            <AnterosBadge radiusFormat dark caption="6" />
                         </AnterosCard>
                     </div>
                     <div className="col-4">
-                        <AnterosCard caption="Pill">
-                                <AnterosBadge pillFormat caption="1" />
-                                <AnterosBadge pillFormat primary caption="2" />
-                                <AnterosBadge pillFormat success caption="3" />
-                                <AnterosBadge pillFormat info caption="4" />
-                                <AnterosBadge pillFormat warning caption="5" />
-                                <AnterosBadge pillFormat danger caption="6" />
-                        </AnterosCard>
-                    </div>
-                    <div className="col-4">
-                        <AnterosCard caption="Size">
+                        <AnterosCard caption="Badges size">
                             <AnterosBadge large primary caption="Large" />
                             <AnterosBadge primary caption="Default" />
                             <AnterosBadge small primary caption="Small" />
+                        </AnterosCard>
+                    </div>
+                    <div className="col-4">
+                        <AnterosCard caption="Badges in button">
+                            <AnterosButton primary caption="Primary">
+                                <span className="badge">5</span>
+                            </AnterosButton>
+                            <AnterosButton primary outline caption="Primary">
+                                <span className="badge">5</span>
+                            </AnterosButton>
+                        </AnterosCard>
+                    </div>
+                    <div className="col-4">
+                        <AnterosCard caption="Absolute positioning">
+                        </AnterosCard>
+                    </div>
+                    <div className="col-4">
+                        <AnterosCard caption="Status badges">
+                        </AnterosCard>
+                    </div>
+                    <div className="col-12">
+                        <AnterosCard caption="Badges in nav">
+
+                            <AnterosPageControl height="200px">
+                                <AnterosTab id="tab1" caption="Home" active>
+                                </AnterosTab>
+                                <AnterosTab id="tab2" caption="Blog">
+                                </AnterosTab>
+                                <AnterosTab id="tab3" caption="Profile">
+                                </AnterosTab>
+                            </AnterosPageControl>
+
                         </AnterosCard>
                     </div>
                 </div>

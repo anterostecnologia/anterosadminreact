@@ -6,12 +6,6 @@ export default class AnterosBadge extends Component {
     render() {
         let className = "badge";
 
-        if (this.props.pillFormat) {
-            className += " badge-pill";
-        } else if (this.props.radiusFormat) {
-            className += " badge-radius";
-        }
-
         if (this.props.large) {
             className += " badge-lg";
         } else if (this.props.small) {
@@ -28,8 +22,16 @@ export default class AnterosBadge extends Component {
             className += " badge-warning";
         } else if (this.props.danger) {
             className += " badge-danger";
+        } else if (this.props.dark) {
+            className += " badge-dark";
         } else {
-            className += " badge-default";
+            className += " badge-anteros-default";
+        }
+
+        if (this.props.pillFormat) {
+            className += " badge-pill";
+        } else if (this.props.radiusFormat) {
+            className += " badge-radius";
         }
 
         let style = {};
@@ -51,6 +53,7 @@ AnterosBadge.propTypes = {
     info: React.PropTypes.bool,
     warning: React.PropTypes.bool,
     danger: React.PropTypes.bool,
+    dark: React.PropTypes.bool,
     pillFormat: React.PropTypes.bool,
     radiusFormat: React.PropTypes.bool,
     large: React.PropTypes.bool,
@@ -65,6 +68,7 @@ AnterosBadge.defaultProps = {
     info: false,
     warning: false,
     danger: false,
+    dark: false,
     pillFormat: false,
     radiusFormat: false,
     large: false,

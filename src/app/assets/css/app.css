@@ -3388,8 +3388,13 @@ a.nav-link .status-mark {
     background-color: #F1C40F
 }
 
-.badge-default {
-    background-color: #6c7a86
+.badge-dark {
+   background-color: #526069 
+}
+
+.badge-anteros-default {
+    color: #76838f;
+    background-color: #e4eaec
 }
 
 .badge-radius {
@@ -3563,8 +3568,6 @@ a.nav-link .badge {
 /**
 ** Checkbox
 **/
-
-
 
 .avatar-preview {
     display: inline-block;
