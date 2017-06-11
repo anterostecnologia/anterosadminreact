@@ -4,20 +4,20 @@ import React, { Component } from 'react';
 
 export default class AnterosStatusMark extends Component {
     render() {
-        let className = "status-mark";
-        if (this.props.primary){
-            className += " status-mark"+(this.props.onlyBorder?"-border":"")+"-primary";
-        } else if (this.props.success){
-            className += " status-mark"+(this.props.onlyBorder?"-border":"")+"-success";
-        } else if (this.props.info){
-            className += " status-mark"+(this.props.onlyBorder?"-border":"")+"-info";            
-        } else if (this.props.warning){
-            className += " status-mark"+(this.props.onlyBorder?"-border":"")+"-warning";            
-        } else if (this.props.danger){
-            className += " status-mark"+(this.props.onlyBorder?"-border":"")+"-danger";            
-        } else {
-            className += " status-mark"+(this.props.onlyBorder?"-border":"")+"-default";
-        }
+        let className = "status-mark topRight status-mark-border-default";
+        // if (this.props.primary){
+        //     className += " status-mark"+(this.props.onlyBorder?"-border":"")+"-primary";
+        // } else if (this.props.success){
+        //     className += " status-mark"+(this.props.onlyBorder?"-border":"")+"-success";
+        // } else if (this.props.info){
+        //     className += " status-mark"+(this.props.onlyBorder?"-border":"")+"-info";            
+        // } else if (this.props.warning){
+        //     className += " status-mark"+(this.props.onlyBorder?"-border":"")+"-warning";            
+        // } else if (this.props.danger){
+        //     className += " status-mark"+(this.props.onlyBorder?"-border":"")+"-danger";            
+        // } else {
+        //     className += " status-mark"+(this.props.onlyBorder?"-border":"")+"-default";
+        // }
         if (this.props.pillFormat){
             className += " status-mark-pill";
         }

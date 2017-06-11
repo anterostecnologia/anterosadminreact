@@ -3333,6 +3333,17 @@ flex: 0 0 250px;
     background-color: transparent;
 }
 
+.img-status-mark > span {
+    position: relative;
+}
+
+.status-mark.topRight {
+    top: -10px;
+    right: -10px
+}
+
+ /**/
+
 a.nav-link .status-mark {
     position: absolute;
     top: -8px;

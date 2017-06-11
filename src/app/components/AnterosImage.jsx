@@ -147,14 +147,14 @@ export default class AnterosImage extends Component {
                 style = { ...style, marginBottom: this.props.marginRight }
             }
             return (
-            <div>
+            <div className="img-status-mark">
                 <img ref={ref => this.image = ref}
                 className={className}
                 src={this.props.src}
                 style={style}
                 onMouseOut={this.onMouseOut}
                 onMouseOver={this.onMouseOver}/>
-                {this.children}
+                {this.props.children}
             
             </div>
             );
