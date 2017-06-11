@@ -30,6 +30,18 @@ export default class AnterosStatusMark extends Component {
             style = {...style,color: this.props.color};
         }
 
+        if (this.props.borderColor){
+            style = {...style,border: "2px solid "+this.props.borderColor};
+        }
+
+        if (this.props.width){
+            style = {...style,width: this.props.width};
+        }
+
+        if (this.props.height){
+            style = {...style,height: this.props.height};
+        }
+
         return (<span style={style} className={className}></span>);    
     }
 }
@@ -45,7 +57,10 @@ AnterosStatusMark.propTypes = {
    pillFormat: React.PropTypes.bool,
    backgroundColor: React.PropTypes.string,
    color: React.PropTypes.string,
-   onlyBorder: React.PropTypes.bool.isRequired
+   onlyBorder: React.PropTypes.bool.isRequired,
+   borderColor: React.PropTypes.string,
+   width: React.PropTypes.string,
+   height: React.PropTypes.string
 }
 
 AnterosStatusMark.defaultProps= {

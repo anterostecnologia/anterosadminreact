@@ -679,7 +679,7 @@ class CustomComponentMessages extends Component {
             <div style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "15px" }} className={className} onClick={this.onClick}>
                 <div className="d-flex">
                     <AnterosImage margin={5} width={48} height={48} circle src={this.props.recordData.avatar} >
-                        <AnterosStatusMark success topRight />
+                        <AnterosStatusMark success topRight borderColor="white" height="14px" width="14px"/>
                     </AnterosImage>
                 </div>
                 <div className="d-flex align-items-center">

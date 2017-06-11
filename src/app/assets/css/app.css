@@ -3338,8 +3338,8 @@ flex: 0 0 250px;
 }
 
 .status-mark.topRight {
-    top: -10px;
-    right: 10px
+    top: -12px;
+    right: 14px
 }
 
 a.nav-link .status-mark {
