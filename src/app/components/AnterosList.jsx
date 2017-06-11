@@ -199,7 +199,7 @@ export default class AnterosList extends Component {
         }
 
         return (<div id={this.props.id ? this.props.id : this.idList} ref={ref => this.list = ref} tabIndex={-1} className="list-group-container" onKeyDown={this.handleKeyDown} style={{ width: this.props.width, height: this.props.height }}>
-            <ul className="list-group" style={{flexDirection= this.props.horizontal?"row":"column"}} >
+            <ul className="list-group" style={{flexDirection: this.props.horizontal?"row":"column"}} >
                 {children}
             </ul>
         </div>);

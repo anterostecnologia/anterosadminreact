@@ -6,6 +6,7 @@ import AnterosLabel from "../components/AnterosLabel";
 import AnterosImage from "../components/AnterosImage";
 import AnterosButton from "../components/AnterosButton";
 import AnterosProgressBar from '../components/AnterosProgressBar';
+import AnterosStatusMark from '../components/AnterosStatusMark';
 
 
 var userList = [
@@ -159,33 +160,106 @@ var browserList = [
         "id": 1,
         "text": "Google Chrome",
         "percent": 59.36,
-        "image": "https://robohash.org/namdelenitiunde.png?size=50x50&set=set1"
+        "image": "http://i.imgur.com/VWUj8Wu.png"
     }, {
         "id": 2,
         "text": "Internet Explorer",
         "percent": 17.55,
-        "image": "https://robohash.org/maioresperferendiscorrupti.jpg?size=50x50&set=set1"
+        "image": "http://i.imgur.com/RmjUABK.png"
     }, {
         "id": 3,
         "text": "Mozilla Firefox",
         "percent": 11.98,
-        "image": "https://robohash.org/ducimuseiusid.png?size=50x50&set=set1"
+        "image": "http://i.imgur.com/C0NL8lL.png"
     }, {
         "id": 4,
         "text": "Microsoft Edge",
         "percent": 5.63,
-        "image": "https://robohash.org/sitsimiliqueenim.png?size=50x50&set=set1"
+        "image": "http://i.imgur.com/RmjUABK.png"
     }, {
         "id": 5,
         "text": "Safari",
         "percent": 3.56,
-        "image": "https://robohash.org/pariaturtemporeest.png?size=50x50&set=set1"
+        "image": "http://i.imgur.com/J6mvTv6.png"
     }, {
         "id": 6,
         "text": "Opera",
         "percent": 1.24,
-        "image": "https://robohash.org/quialiquidsimilique.png?size=50x50&set=set1"
+        "image": "http://i.imgur.com/PKU2y1i.png"
     }];
+
+var recentMessagesList = [
+    {
+        "id": 1,
+        "avatar": "https://randomuser.me/api/portraits/women/63.jpg",
+        "text": "Helena Matiewe",
+        "message": "donec pharetra magna vestibulum aliquet",
+        "status": "busy",
+        "time": "11:45 AM"
+    }, {
+        "id": 2,
+        "avatar": "https://robohash.org/assumendasitomnis.jpg?size=50x50&set=set1",
+        "text": "Tuck Greenwood",
+        "message": "eu nibh quisque id justo",
+        "status": "busy",
+        "time": "12:14 PM"
+    }, {
+        "id": 3,
+        "avatar": "https://robohash.org/sequisintpariatur.bmp?size=50x50&set=set1",
+        "text": "Melisandra Trouncer",
+        "message": "ullamcorper augue a suscipit nulla elit",
+        "status": "busy",
+        "time": "2:23 PM"
+    }, {
+        "id": 4,
+        "avatar": "https://robohash.org/laboreomnisqui.jpg?size=50x50&set=set1",
+        "text": "Elva Romeo",
+        "message": "ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget",
+        "status": "online",
+        "time": "1:59 PM"
+    }, {
+        "id": 5,
+        "avatar": "https://robohash.org/minusveniamqui.png?size=50x50&set=set1",
+        "text": "Benedicta Wilcock",
+        "message": "vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien",
+        "status": "busy",
+        "time": "3:43 PM"
+    }, {
+        "id": 6,
+        "avatar": "https://robohash.org/quiautautem.bmp?size=50x50&set=set1",
+        "text": "Jeffry Labroue",
+        "message": "amet eros suspendisse accumsan tortor quis turpis",
+        "status": "offline",
+        "time": "5:00 PM"
+    }, {
+        "id": 7,
+        "avatar": "https://robohash.org/adipiscisapienteinventore.png?size=50x50&set=set1",
+        "text": "Louisette Kenshole",
+        "message": "bibendum felis sed interdum venenatis turpis enim blandit mi in",
+        "status": "offline",
+        "time": "5:09 PM"
+    }, {
+        "id": 8,
+        "avatar": "https://robohash.org/voluptatevitaeeveniet.bmp?size=50x50&set=set1",
+        "text": "Linnet Ancell",
+        "message": "platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi",
+        "status": "busy",
+        "time": "12:45 PM"
+    }, {
+        "id": 9,
+        "avatar": "https://robohash.org/doloribusquasiqui.jpg?size=50x50&set=set1",
+        "text": "Amalea Cresswell",
+        "message": "quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus",
+        "status": "offline",
+        "time": "5:08 PM"
+    }, {
+        "id": 10,
+        "avatar": "https://robohash.org/quisquamullamqui.jpg?size=50x50&set=set1",
+        "text": "Essa Rraundl",
+        "message": "montes nascetur ridiculus mus etiam vel augue vestibulum rutrum",
+        "status": "absent",
+        "time": "3:30 PM"
+    }]
 
 export default class ListsView extends Component {
     render() {
@@ -391,6 +465,7 @@ export default class ListsView extends Component {
                                         <div className="col-md-4">
                                             <AnterosCard caption="Recent messages">
                                                 <section className="section">
+                                                    <AnterosList height="700px" dataSource={recentMessagesList} component={CustomComponentMessages} />
                                                 </section>
                                             </AnterosCard>
                                         </div>
@@ -398,13 +473,13 @@ export default class ListsView extends Component {
                                         <div className="col-md-4">
                                             <AnterosCard caption="Browser stats">
                                                 <section className="section">
-                                                    <AnterosList height="700px" dataSource={browserList} component={CustomComponentBrowser}/>
+                                                    <AnterosList height="700px" dataSource={browserList} component={CustomComponentBrowser} />
                                                 </section>
                                             </AnterosCard>
                                         </div>
 
                                         <div className="col-md-4">
-                                            <AnterosCard caption="Custom 3">
+                                            <AnterosCard caption="To do list">
                                                 <section className="section">
                                                 </section>
                                             </AnterosCard>
@@ -441,21 +516,17 @@ class CustomComponentUsers extends Component {
     render() {
         let className = "list-group-item list-group-item-action";
 
-        if (this.props.active) {
+        if (this.props.active)
             className += " active"
-        }
 
-        if (this.props.recordData.disabled) {
+        if (this.props.recordData.disabled)
             className += " disabled";
-        }
 
-        let anterosLabel
-        if (this.props.recordData.status == "pending")
-            anterosLabel = <AnterosBadge pillFormat primary caption={this.props.recordData.status} />;
-        else if (this.props.recordData.status == "approved")
-            anterosLabel = <AnterosBadge pillFormat success caption={this.props.recordData.status} />;
-        else if (this.props.recordData.status == "rejected")
-            anterosLabel = <AnterosBadge pillFormat danger caption={this.props.recordData.status} />;
+        let anterosBadge = <AnterosBadge pillFormat
+            primary={this.props.recordData.status == "pending"}
+            success={this.props.recordData.status == "approved"}
+            danger={this.props.recordData.status == "rejected"}
+            caption={this.props.recordData.status} />;
 
         return (
             <div style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "15px" }} className={className} onClick={this.onClick}>
@@ -466,7 +537,7 @@ class CustomComponentUsers extends Component {
                 <div>
                     <p style={{ marginBottom: "0px" }} className="justify-content-between" >{this.props.recordData.text}</p>
                     <div className="d-flex justify-content-between">
-                        <div className="align-self-center">{anterosLabel}</div>
+                        <div className="align-self-center">{anterosBadge}</div>
                         <span className="d-flex align-self-start">
                             <AnterosButton circle link icon="fa fa-edit" hint="Edit" />
                             <AnterosButton circle link icon="fa fa-check green" hint="Approve" />
@@ -543,30 +614,82 @@ class CustomComponentBrowser extends Component {
     render() {
         let className = "d-flex flex-row list-group-item-action";
 
-        // let classNameIcon;
-        // if (this.props.recordData.position == "up")
-        //     classNameIcon = "fa fa-level-up text-success"
-        // else if (this.props.recordData.position == "down")
-        //     classNameIcon = "fa fa-level-down text-danger";
+        let anterosBadge = <AnterosBadge pillFormat
+            success={this.props.recordData.percent >= 50}
+            warning={this.props.recordData.percent >= 10 && this.props.recordData.percent < 50}
+            danger={this.props.recordData.percent >= 0 && this.props.recordData.percent < 10}
+            caption={this.props.recordData.percent + "%"} />;
 
-        // let progressBar = <AnterosProgressBar
-        //     success={this.props.recordData.progress_color == "success"}
-        //     info={this.props.recordData.progress_color == "info"}
-        //     warning={this.props.recordData.progress_color == "warning"}
-        //     primary={this.props.recordData.progress_color == "primary"}
-        //     danger={this.props.recordData.progress_color == "danger"}
-        //     height={8} value={this.props.recordData.percent} max={100} min={0} />
+        return (
+            <div style={{ padding: "10px" }} className={className} onClick={this.onClick}>
+                <div>
+                    <AnterosImage width={40} height={40} circle src={this.props.recordData.image} />
+                </div>
+                <div className="d-flex align-items-center justify-content-between" style={{ width: "100%", marginLeft: "5px" }}>
+                    <h6 style={{ margin: "0" }}>{this.props.recordData.text}</h6>
+                    <div>{anterosBadge}</div>
+                </div>
+            </div>
+        );
+    }
+}
+
+class CustomComponentMessages extends Component {
+    constructor(props) {
+        super(props);
+        this.onClick = this.onClick.bind(this);
+
+    }
+
+    onClick() {
+        event.preventDefault();
+        if (!this.props.disabled) {
+            if (this.props.handleSelectItem) {
+                this.props.handleSelectItem(this.props.index);
+            }
+            if (this.props.onSelectListItem) {
+                this.props.onSelectListItem(this);
+            }
+        }
+    }
+
+    render() {
+        let className = "list-group-item list-group-item-action";
+
+        if (this.props.active)
+            className += " active"
+
+        if (this.props.recordData.disabled)
+            className += " disabled";
+
+        let anterosBadge = <AnterosBadge pillFormat
+            primary={this.props.recordData.status == "pending"}
+            success={this.props.recordData.status == "approved"}
+            danger={this.props.recordData.status == "rejected"}
+            caption={this.props.recordData.status} />;
+
+        //             "id": 10,
+        // "avatar": "https://robohash.org/quisquamullamqui.jpg?size=50x50&set=set1",
+        // "text": "Essa Rraundl",
+        // "message": "montes nascetur ridiculus mus etiam vel augue vestibulum rutrum",
+        // "status": "absent",
+        // "time": "3:30 PM"
 
         return (
             <div style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "15px" }} className={className} onClick={this.onClick}>
-                <div>
-                    <AnterosImage margin={5} width={48} height={48} circle src={this.props.recordData.image} />
+                <div className="d-flex">
+                    <AnterosImage margin={5} width={48} height={48} circle src={this.props.recordData.avatar} >
+                        <AnterosStatusMark success topRight />
+                    </AnterosImage>
                 </div>
-                <div className="d-flex align-items-center p-2">
-                    <h6 style={{margin: "0"}}>{this.props.recordData.text}</h6>
-                    <AnterosBadge pillFormat primary caption={this.props.recordData.percent + "%"}  />
+                <div className="d-flex align-items-center">
+                    <div>
+                        <h5 style={{ marginBottom: "-5px" }}>{this.props.recordData.text}</h5>
+                        <span className="align-self-center" style={{ fontSize: "13px", color: "#90a4ae" }} >{this.props.recordData.time}</span>
+                    </div>
+
+                    <p style={{ marginBottom: "0px" }} className="justify-content-between" >{this.props.recordData.message}</p>
                 </div>
-                {/*style={{ marginBottom: "0px" }}*/}
             </div>
         );
     }
