@@ -3337,9 +3337,22 @@ flex: 0 0 250px;
     position: relative;
 }
 
-.status-mark.topRight {
+.status-mark.top-right {
     top: -12px;
-    right: 14px
+    right: 20%
+}
+
+.status-mark.top-left {
+    top: -12px;
+    left: -80%;
+}
+.status-mark.bottom-left {
+    bottom: -16px;
+    right: 80%;
+}
+.status-mark.bottom-right {
+    bottom: -16px;
+    right: 20%;
 }
 
 a.nav-link .status-mark {
@@ -3487,6 +3500,8 @@ a.nav-link .badge {
     min-height: 30px;
     border: 1px solid rgba(0,0,0,.125);
     margin-bottom: -1px;
+    margin-left: -1px;
+    margin-right: -1px;
     display: flex;
 }
 

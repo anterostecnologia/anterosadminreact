@@ -193,70 +193,70 @@ var recentMessagesList = [
         "id": 1,
         "avatar": "https://randomuser.me/api/portraits/women/63.jpg",
         "text": "Helena Matiewe",
-        "message": "donec pharetra magna vestibulum aliquet",
+        "message": "Donec pharetra magna vestibulum aliquet",
         "status": "busy",
         "time": "11:45 AM"
     }, {
         "id": 2,
-        "avatar": "https://robohash.org/assumendasitomnis.jpg?size=50x50&set=set1",
+        "avatar": "https://randomuser.me/api/portraits/men/41.jpg",
         "text": "Tuck Greenwood",
-        "message": "eu nibh quisque id justo",
+        "message": "Eu nibh quisque id justo",
         "status": "busy",
         "time": "12:14 PM"
     }, {
         "id": 3,
-        "avatar": "https://robohash.org/sequisintpariatur.bmp?size=50x50&set=set1",
+        "avatar": "https://randomuser.me/api/portraits/women/45.jpg",
         "text": "Melisandra Trouncer",
-        "message": "ullamcorper augue a suscipit nulla elit",
+        "message": "Ullamcorper augue a suscipit nulla elit",
         "status": "busy",
         "time": "2:23 PM"
     }, {
         "id": 4,
-        "avatar": "https://robohash.org/laboreomnisqui.jpg?size=50x50&set=set1",
+        "avatar": "https://randomuser.me/api/portraits/women/54.jpg",
         "text": "Elva Romeo",
-        "message": "ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget",
+        "message": "Ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget",
         "status": "online",
         "time": "1:59 PM"
     }, {
         "id": 5,
-        "avatar": "https://robohash.org/minusveniamqui.png?size=50x50&set=set1",
+        "avatar": "https://randomuser.me/api/portraits/women/28.jpg",
         "text": "Benedicta Wilcock",
-        "message": "vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien",
+        "message": "Vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien",
         "status": "busy",
         "time": "3:43 PM"
     }, {
         "id": 6,
-        "avatar": "https://robohash.org/quiautautem.bmp?size=50x50&set=set1",
+        "avatar": "https://randomuser.me/api/portraits/men/17.jpg",
         "text": "Jeffry Labroue",
-        "message": "amet eros suspendisse accumsan tortor quis turpis",
+        "message": "Amet eros suspendisse accumsan tortor quis turpis",
         "status": "offline",
         "time": "5:00 PM"
     }, {
         "id": 7,
-        "avatar": "https://robohash.org/adipiscisapienteinventore.png?size=50x50&set=set1",
+        "avatar": "https://randomuser.me/api/portraits/women/9.jpg",
         "text": "Louisette Kenshole",
-        "message": "bibendum felis sed interdum venenatis turpis enim blandit mi in",
+        "message": "Bibendum felis sed interdum venenatis turpis enim blandit mi in",
         "status": "offline",
         "time": "5:09 PM"
     }, {
         "id": 8,
-        "avatar": "https://robohash.org/voluptatevitaeeveniet.bmp?size=50x50&set=set1",
+        "avatar": "https://randomuser.me/api/portraits/women/76.jpg",
         "text": "Linnet Ancell",
-        "message": "platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi",
+        "message": "Platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi",
         "status": "busy",
         "time": "12:45 PM"
     }, {
         "id": 9,
-        "avatar": "https://robohash.org/doloribusquasiqui.jpg?size=50x50&set=set1",
+        "avatar": "https://randomuser.me/api/portraits/women/69.jpg",
         "text": "Amalea Cresswell",
-        "message": "quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus",
+        "message": "Quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus",
         "status": "offline",
         "time": "5:08 PM"
     }, {
         "id": 10,
-        "avatar": "https://robohash.org/quisquamullamqui.jpg?size=50x50&set=set1",
+        "avatar": "https://randomuser.me/api/portraits/women/87.jpg",
         "text": "Essa Rraundl",
-        "message": "montes nascetur ridiculus mus etiam vel augue vestibulum rutrum",
+        "message": "Montes nascetur ridiculus mus etiam vel augue vestibulum rutrum",
         "status": "absent",
         "time": "3:30 PM"
     }]
@@ -465,7 +465,7 @@ export default class ListsView extends Component {
                                         <div className="col-md-4">
                                             <AnterosCard caption="Recent messages">
                                                 <section className="section">
-                                                    <AnterosList height="700px" dataSource={recentMessagesList} component={CustomComponentMessages} />
+                                                    <AnterosList height="400px" dataSource={recentMessagesList} component={CustomComponentMessages} />
                                                 </section>
                                             </AnterosCard>
                                         </div>
@@ -473,7 +473,7 @@ export default class ListsView extends Component {
                                         <div className="col-md-4">
                                             <AnterosCard caption="Browser stats">
                                                 <section className="section">
-                                                    <AnterosList height="700px" dataSource={browserList} component={CustomComponentBrowser} />
+                                                    <AnterosList height="400px" dataSource={browserList} component={CustomComponentBrowser} />
                                                 </section>
                                             </AnterosCard>
                                         </div>
@@ -543,7 +543,7 @@ class CustomComponentUsers extends Component {
                             <AnterosButton circle link icon="fa fa-check green" hint="Approve" />
                             <AnterosButton circle link icon="fa fa-heart-o red" hint="Like it" />
                         </span>
-                        <span className="align-self-center" style={{ fontSize: "13px", color: "#90a4ae" }} >{this.props.recordData.date}</span>
+                        <small>{this.props.recordData.date}</small>
                     </div>
                 </div>
             </div>
@@ -662,11 +662,20 @@ class CustomComponentMessages extends Component {
         if (this.props.recordData.disabled)
             className += " disabled";
 
-        let anterosBadge = <AnterosBadge pillFormat
-            primary={this.props.recordData.status == "pending"}
-            success={this.props.recordData.status == "approved"}
-            danger={this.props.recordData.status == "rejected"}
-            caption={this.props.recordData.status} />;
+        let anterosStatus;
+        if (this.props.recordData.status == "online"
+            || this.props.recordData.status == "busy"
+            || this.props.recordData.status == "absent") {
+            anterosStatus = <AnterosStatusMark topRight borderColor="white" height="14px" width="14px"
+                success={this.props.recordData.status == "online"}
+                danger={this.props.recordData.status == "busy"}
+                warning={this.props.recordData.status == "absent"}
+                caption={this.props.recordData.status} />;
+        } else if (this.props.recordData.status == "offline") {
+            anterosStatus = <AnterosStatusMark topRight height="14px" width="14px"
+                success onlyBorder
+                caption={this.props.recordData.status} />;
+        }
 
         //             "id": 10,
         // "avatar": "https://robohash.org/quisquamullamqui.jpg?size=50x50&set=set1",
@@ -679,15 +688,16 @@ class CustomComponentMessages extends Component {
             <div style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "15px" }} className={className} onClick={this.onClick}>
                 <div className="d-flex">
                     <AnterosImage margin={5} width={48} height={48} circle src={this.props.recordData.avatar} >
-                        <AnterosStatusMark success topRight borderColor="white" height="14px" width="14px"/>
+                        {anterosStatus}
                     </AnterosImage>
-                </div>
-                <div className="d-flex align-items-center">
+
                     <div>
                         <h5 style={{ marginBottom: "-5px" }}>{this.props.recordData.text}</h5>
-                        <span className="align-self-center" style={{ fontSize: "13px", color: "#90a4ae" }} >{this.props.recordData.time}</span>
+                        <small>{this.props.recordData.time}</small>
                     </div>
+                </div>
 
+                <div className="d-flex align-items-center">
                     <p style={{ marginBottom: "0px" }} className="justify-content-between" >{this.props.recordData.message}</p>
                 </div>
             </div>
