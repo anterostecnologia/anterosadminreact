@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AnterosNavigatorLink from "./AnterosNavigatorLink";
 import lodash from 'lodash';
 import { AnterosError } from "./AnterosExceptions";
-import './AnterosPageControl.css';
+// import './AnterosPageControl.css';
 
 export default class AnterosPageControl extends Component {
     constructor(props) {

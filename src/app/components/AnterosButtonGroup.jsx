@@ -1,17 +1,36 @@
 import React, { Component } from 'react';
-import {buildClassNames} from "../utils/AnterosUtils";
+import { buildClassNames } from "../utils/AnterosUtils";
+import AnterosButton from "./AnterosButton";
+import lodash from "lodash";
 
 
 export default class AnterosButtonGroup extends Component {
     constructor(props) {
-        super(props);
+        super(props);        
     }
 
 
     render() {
-        let className = buildClassNames("btn-group",(this.props.large?"btn-group-lg":""),(this.props.small?"btn-group-sm":""));
+        let children = [];
+        if (this.props.children) {
+            let _this = this;
+            let arrChildren = React.Children.toArray(this.props.children);
+            arrChildren.forEach(function (child) {
+                if (child.type && child.type.name != "AnterosButton") {
+                    children.push(child);
+                } else {
+                    children.push(React.createElement(AnterosButton, {
+                        ...child.props, inline: false, key: lodash.uniqueId('btn')
+                    },
+                        child.props.children
+                    ));
+                }
+            });
+        }
+
+        let className = buildClassNames("btn-group", (this.props.large ? "btn-group-lg" : ""), (this.props.small ? "btn-group-sm" : ""));
         return (<div className={className}>
-            {this.props.children}
+            {children}
         </div>);
     }
 }

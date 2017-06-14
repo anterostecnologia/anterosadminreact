@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './AnterosTreeView.css';
 import lodash from 'lodash';
 import { AnterosError } from "./AnterosExceptions";
 

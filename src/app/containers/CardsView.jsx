@@ -159,7 +159,7 @@ export default class CardView extends Component {
                     </div>
 
                     <div className="col-4">
-                        <AnterosCard warning showFooter={true} primary caption="Warning card">
+                        <AnterosCard warning showFooter={true} caption="Warning card">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.
                             <HeaderActions>
                                 <AnterosButton circle small link icon="fa fa-code"
@@ -173,7 +173,7 @@ export default class CardView extends Component {
                     </div>
 
                     <div className="col-4">
-                        <AnterosCard danger showFooter={true} success caption="Danger card">
+                        <AnterosCard danger showFooter={true} caption="Danger card">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.
                             <HeaderActions>
                                 <AnterosButton circle small link icon="fa fa-code"

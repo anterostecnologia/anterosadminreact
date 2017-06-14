@@ -15,7 +15,6 @@ import 'script-loader!datatables.net-buttons/js/buttons.colVis.js';
 import 'script-loader!datatables.net-buttons/js/buttons.print.js';
 import 'script-loader!datatables.net-buttons/js/buttons.html5.js';
 import 'script-loader!datatables.net-buttons-bs/js/buttons.bootstrap.js';
-import './AnterosDataTable.css';
 import { formatNumber, parseNumber } from "../utils/AnterosUtils.js";
 import { formatDate, parseDateWithFormat, isDate } from "../utils/AnterosDateUtils.js";
 

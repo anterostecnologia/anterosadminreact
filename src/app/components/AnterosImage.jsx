@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './AnterosImage.css';
+// import './AnterosImage.css';
 import { If, Then, Else } from "../utils/AnterosControlStatements";
 import { buildClassNames } from "../utils/AnterosUtils";
 

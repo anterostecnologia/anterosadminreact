@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Promise from 'promise';
-import './AnterosStepWizard.css';
+// import './AnterosStepWizard.css';
 import { AnterosError } from "./AnterosExceptions";
 /**
  * Author: Mark Paul

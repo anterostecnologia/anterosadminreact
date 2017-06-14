@@ -89,6 +89,10 @@ export default class AnterosButton extends Component {
             }
         }
 
+        if (this.props.inline){
+            className +=" btn-inline";
+        }
+
         if (this.props.pillLeft) {
             className += " btn-pill-left";
         }
@@ -244,7 +248,8 @@ AnterosButton.propTypes = {
     instagram: React.PropTypes.bool,
     pinterest: React.PropTypes.bool,
     dribbble: React.PropTypes.bool,
-    youtube: React.PropTypes.bool
+    youtube: React.PropTypes.bool,
+    inline: React.PropTypes.bool
 };
 
 AnterosButton.defaultProps = {
@@ -268,7 +273,8 @@ AnterosButton.defaultProps = {
     icon: undefined,
     image: undefined,
     caption: undefined,
-    hintPosition: 'top'    
+    hintPosition: 'top',
+    inline: true  
 };
 
 

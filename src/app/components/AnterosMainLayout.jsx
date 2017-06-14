@@ -76,35 +76,35 @@ class AnterosMainLayout extends Component {
 
 
           <AnterosMenu logo={require('../assets/img/security-menu-1.png')}>
-            <AnterosMenuItem active={true} icon="fa fa-home blue" caption="Basic UI">
-              <AnterosMenuItem id="mniButtons" route="/home/buttons" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-caret-square-o-right blue" caption="Buttons"></AnterosMenuItem>
-              <AnterosMenuItem id="mnFButtons" route="/home/fButtons" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-play-circle-o blue" caption="Floating buttons"></AnterosMenuItem>
-              <AnterosMenuItem id="mniImages" route="/home/images" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-file-image-o blue" caption="Images"></AnterosMenuItem>
-              <AnterosMenuItem id="mniCards" route="/home/cards" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="zmdi zmdi-card orange" caption="Cards"></AnterosMenuItem>
-              <AnterosMenuItem id="mniSAlerts" route="/home/salerts" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-bell red" caption="Sweet alerts"></AnterosMenuItem>
-              <AnterosMenuItem id="mniNotifications" route="/home/notifications" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="zmdi zmdi-alert-polygon red" caption="Notifications"></AnterosMenuItem>
-              <AnterosMenuItem id="mniTooltips" route="/home/tooltips" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-comment green" caption="Tooltips"></AnterosMenuItem>
-              <AnterosMenuItem id="mniTabs" route="/home/tabs" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="zmdi zmdi-tab" caption="Tabs & Accordions"></AnterosMenuItem>
-              <AnterosMenuItem id="mniLists" route="/home/lists" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-bars coral" caption="Lists"></AnterosMenuItem>
-              <AnterosMenuItem id="mniSwitches" route="/home/switches" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-toggle-on" iconColor="orange" caption="Switches &amp; Toggle"></AnterosMenuItem>
-              <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="zmdi zmdi-spinner" caption="Spinners"></AnterosMenuItem>
-              <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Loaders"></AnterosMenuItem>
-              <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Navs"></AnterosMenuItem>
-              <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="zmdi-menu" caption="Menus"></AnterosMenuItem>
-              <AnterosMenuItem id="mniProgressBar" route="/home/progressbar" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-tasks green" caption="Progress Bars"></AnterosMenuItem>
-              <AnterosMenuItem id="mniRibbons" route="/home/ribbons" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-tasks green" caption="Ribbons"></AnterosMenuItem>
-              <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Pagination"></AnterosMenuItem>
-              <AnterosMenuItem id="mniLabels" route="/home/labels" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Labels & badges"></AnterosMenuItem>
-              <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Modals"></AnterosMenuItem>
+            <AnterosMenuItem id="mniBasicUI"  icon="fa fa-home blue" caption="Basic UI">
+              <AnterosMenuItem id="mniButtons" route="/home/buttons" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-caret-square-o-right blue" caption="Buttons"></AnterosMenuItem>
+              <AnterosMenuItem id="mnFButtons" route="/home/fButtons" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-play-circle-o blue" caption="Floating buttons"></AnterosMenuItem>
+              <AnterosMenuItem id="mniImages" route="/home/images" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-file-image-o blue" caption="Images"></AnterosMenuItem>
+              <AnterosMenuItem id="mniCards" route="/home/cards" onSelectMenuItem={this.onSelectMenuItem}  icon="zmdi zmdi-card orange" caption="Cards"></AnterosMenuItem>
+              <AnterosMenuItem id="mniSAlerts" route="/home/salerts" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-bell red" caption="Sweet alerts"></AnterosMenuItem>
+              <AnterosMenuItem id="mniNotifications" route="/home/notifications" onSelectMenuItem={this.onSelectMenuItem}  icon="zmdi zmdi-alert-polygon red" caption="Notifications"></AnterosMenuItem>
+              <AnterosMenuItem id="mniTooltips" route="/home/tooltips" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-comment green" caption="Tooltips"></AnterosMenuItem>
+              <AnterosMenuItem id="mniTabs" route="/home/tabs" onSelectMenuItem={this.onSelectMenuItem}  icon="zmdi zmdi-tab" caption="Tabs & Accordions"></AnterosMenuItem>
+              <AnterosMenuItem id="mniLists" route="/home/lists" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-bars coral" caption="Lists"></AnterosMenuItem>
+              <AnterosMenuItem id="mniSwitches" route="/home/switches" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-toggle-on" iconColor="orange" caption="Switches &amp; Toggle"></AnterosMenuItem>
+              <AnterosMenuItem id="mniSpinners" onSelectMenuItem={this.onSelectMenuItem}  icon="zmdi zmdi-spinner" caption="Spinners"></AnterosMenuItem>
+              <AnterosMenuItem id="mniLoaders" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Loaders"></AnterosMenuItem>
+              <AnterosMenuItem id="mniNavs" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Navs"></AnterosMenuItem>
+              <AnterosMenuItem id="mniMenus" onSelectMenuItem={this.onSelectMenuItem}  icon="zmdi zmdi-menu" caption="Menus"></AnterosMenuItem>
+              <AnterosMenuItem id="mniProgressBar" route="/home/progressbar" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-tasks green" caption="Progress Bars"></AnterosMenuItem>
+              <AnterosMenuItem id="mniRibbons" route="/home/ribbons" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-tasks green" caption="Ribbons"></AnterosMenuItem>
+              <AnterosMenuItem id="mniPagination" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Pagination"></AnterosMenuItem>
+              <AnterosMenuItem id="mniLabels" route="/home/labels" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Labels & badges"></AnterosMenuItem>
+              <AnterosMenuItem id="mniModals" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Modals"></AnterosMenuItem>
             </AnterosMenuItem>
-            <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home blue" caption="Advanced UI"> </AnterosMenuItem>
-            <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-address-card-o blue" caption="Forms"> </AnterosMenuItem>
-            <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home" caption="Layouts"> </AnterosMenuItem>
-            <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-table" caption="Tables"> </AnterosMenuItem>
-            <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-line-chart" caption="Charts"> </AnterosMenuItem>
-            <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home" caption="Widgets"> </AnterosMenuItem>
-            <AnterosMenuItem id="mniDashBoards" route="/home/security" onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-home" caption="Dashboards"> </AnterosMenuItem>
-            <AnterosMenuItem onSelectMenuItem={this.onSelectMenuItem} active={true} icon="fa fa-map-o" caption="Maps"> </AnterosMenuItem>
+            <AnterosMenuItem id="mniAdvancedUI" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Advanced UI"> </AnterosMenuItem>
+            <AnterosMenuItem id="mniForms" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-address-card-o blue" caption="Forms"> </AnterosMenuItem>
+            <AnterosMenuItem id="mniLayouts" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home" caption="Layouts"> </AnterosMenuItem>
+            <AnterosMenuItem id="mniTable" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-table" caption="Tables"> </AnterosMenuItem>
+            <AnterosMenuItem id="mniCharts" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-line-chart" caption="Charts"> </AnterosMenuItem>
+            <AnterosMenuItem id="mniWidgets" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home" caption="Widgets"> </AnterosMenuItem>
+            <AnterosMenuItem id="mniDashBoards" route="/home/security" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home" caption="Dashboards"> </AnterosMenuItem>
+            <AnterosMenuItem id="mniMaps" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-map-o" caption="Maps"> </AnterosMenuItem>
           </AnterosMenu>
 
 

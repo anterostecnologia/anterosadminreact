@@ -59,6 +59,7 @@
     "metro-dist": "^3.0.17",
     "modernizr": "^3.5.0",
     "moment": "^2.18.1",
+    "node-sass": "^4.5.3",
     "nouislider": "^9.2.0",
     "pdfmake": "^0.1.28",
     "react": "^15.5.4",

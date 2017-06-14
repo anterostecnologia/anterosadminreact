@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import lodash from 'lodash';
-import "./AnterosColors.css";
-import "./AnterosFloatingButton.css";
-
 
 export default class AnterosFloatingButton extends Component {
     constructor(props) {

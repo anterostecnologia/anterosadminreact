@@ -7,13 +7,21 @@ export default class AnterosMenuItem extends Component {
 
     constructor(props) {
         super(props);
-        this.state = ({ expanded: false });
         this.toggleExpanded = this.toggleExpanded.bind(this);
+        if (!(this.props.id)) {
+            throw new AnterosError('Informe um ID para o component AnterosMenuItem.');
+        }
     }
 
     toggleExpanded(event) {
-        let expanded = !this.state.expanded;
-        this.setState({ expanded: expanded });
+        let expanded = !this.props.isExpanded(this.props.id);
+        if (expanded){
+            this.props.onExpandId(this.props.id)
+        } else {
+            this.props.onCollapseId(this.props.id);
+        }
+
+        this.props.setActiveId(this.props.id);
 
         if (this.props.onSelectMenuItem) {
             this.props.onSelectMenuItem(this);
@@ -29,14 +37,18 @@ export default class AnterosMenuItem extends Component {
             arrChildren.forEach(function (child) {
                 if (child.type && child.type.name == "AnterosMenuItem") {
                     newChildren.push(React.createElement(AnterosMenuItem, {
-                        key: lodash.uniqueId(),
+                        key: child.props.id,
                         icon: child.props.icon,
-                        iconColor : child.props.iconColor,
+                        iconColor: child.props.iconColor,
                         route: child.props.route,
                         id: child.props.id,
                         caption: child.props.caption,
-                        active: child.props.active,
                         onSelectMenuItem: child.props.onSelectMenuItem,
+                        getActiveId: _this.props.getActiveId,
+                        setActiveId: _this.props.setActiveId,
+                        onExpandId: _this.props.onExpandId,
+                        onCollapseId: _this.props.onCollapseId,
+                        isExpanded: _this.props.isExpanded,
                         level: _this.props.level + 1
                     },
                         child.props.children
@@ -48,13 +60,14 @@ export default class AnterosMenuItem extends Component {
         }
 
         let classItem;
-        if (this.props.active == true) {
+        console.log(this.props.id);
+        if (this.props.getActiveId() == this.props.id) {
             classItem = "active";
         }
 
         let icon;
         if (this.props.icon) {
-            icon = (<i style={{color: this.props.iconColor}} className={this.props.icon}></i>);
+            icon = (<i style={{ color: this.props.iconColor }} className={this.props.icon}></i>);
         }
 
         let arrowIcon;
@@ -62,7 +75,7 @@ export default class AnterosMenuItem extends Component {
 
         if (newChildren && newChildren.length > 0) {
             arrowIcon = (<i className="fa arrow" style={{ float: "right", marginRight: "5px" }} />);
-            if (this.state.expanded) {
+            if (this.props.isExpanded(this.props.id)) {
                 classItem = "open";
                 children = (<ul>{newChildren}</ul>);
             }

@@ -6,6 +6,44 @@ import lodash from 'lodash';
 
 
 export default class AnterosMenu extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { activeId: undefined, expandedIds: [] };
+    this.setActiveId = this.setActiveId.bind(this);
+    this.getActiveId = this.getActiveId.bind(this);
+    this.onExpandId = this.onExpandId.bind(this);
+    this.onCollapseId = this.onCollapseId.bind(this);
+    this.isExpanded = this.isExpanded.bind(this);
+  }
+
+  setActiveId(id) {
+    this.setState({ activeId: id });
+  }
+
+  getActiveId() {
+    return this.state.activeId;
+  }
+
+  onExpandId(id) {
+    let ids = this.state.expandedIds;
+    ids = ids.concat(id);
+    this.setState({ ...this.state, expandedIds: ids });
+  }
+
+  isExpanded(id){
+    return (this.state.expandedIds.indexOf(id) !== -1);
+  }
+
+  onCollapseId(id) {
+    let ids = this.state.expandedIds;
+    const index = ids.indexOf(id);
+    if (index !== -1) {
+      ids.splice(index, 1);
+    }
+    this.setState({ ...this.state, expandedIds: ids });
+  }
+
   render() {
     let children = [];
     if (this.props.children) {
@@ -13,13 +51,17 @@ export default class AnterosMenu extends Component {
       let arrChildren = React.Children.toArray(this.props.children);
       arrChildren.forEach(function (child) {
         children.push(React.createElement(AnterosMenuItem, {
-          key: lodash.uniqueId(),
+          key: child.props.id,
           icon: child.props.icon,
           caption: child.props.caption,
           route: child.props.route,
           id: child.props.id,
-          active: child.props.active,
           onSelectMenuItem: child.props.onSelectMenuItem,
+          getActiveId: _this.getActiveId,
+          setActiveId: _this.setActiveId,
+          onExpandId: _this.onExpandId,
+          onCollapseId: _this.onCollapseId,
+          isExpanded: _this.isExpanded,
           level: 1
         },
           child.props.children

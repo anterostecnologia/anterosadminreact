@@ -2,7 +2,7 @@
  * sweetalert2 v6.6.2
  * Released under the MIT License.
  */
-import './AnterosSweetAlert.css';
+// import './AnterosSweetAlert.css';
 
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :

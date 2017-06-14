@@ -13,14 +13,7 @@ import AnterosButton from "../components/AnterosButton";
 
 export default class FloatingButtonsView extends Component {
     render() {
-        return (<div className="content">
-            <AnterosFloatingButton hint="Menu" autoClose={true} openMode="hover" bottomRight fixed backgroundColor="yellow" color="black" iconOpen="icon-paragraph-justify3">
-                <AnterosFloatingButtonItem color="white" icon="fa fa-pencil" hint="Edit" backgroundColor="#f1c40f" onButtonClick={() => console.log("Clicou no botão editar")} />
-                <AnterosFloatingButtonItem color="white" icon="fa fa-eraser" hint="Remove" backgroundColor="#e74c3c" onButtonClick={() => console.log("Clicou no botão remover")} />
-                <AnterosFloatingButtonItem color="white" icon="fa fa-search" hint="Search" backgroundColor="#7cb342" onButtonClick={() => console.log("Clicou no botão localizar")} />
-                <AnterosFloatingButtonItem color="white" icon="fa fa-print" hint="Print" onButtonClick={() => console.log("Clicou no botão imprimir")} />
-            </AnterosFloatingButton>
-
+        return (<div>
             <AnterosCard caption="Basic examples" withScroll={false}>
                 <HeaderActions>
                     <AnterosButton circle small link icon="fa fa-code"
@@ -248,7 +241,12 @@ export default class FloatingButtonsView extends Component {
                 </div>
             </AnterosCard>
 
-
+            <AnterosFloatingButton hint="Menu" autoClose={true} openMode="hover" bottomRight fixed backgroundColor="yellow" color="black" iconOpen="icon-paragraph-justify3">
+                <AnterosFloatingButtonItem color="white" icon="fa fa-pencil" hint="Edit" backgroundColor="#f1c40f" onButtonClick={() => console.log("Clicou no botão editar")} />
+                <AnterosFloatingButtonItem color="white" icon="fa fa-eraser" hint="Remove" backgroundColor="#e74c3c" onButtonClick={() => console.log("Clicou no botão remover")} />
+                <AnterosFloatingButtonItem color="white" icon="fa fa-search" hint="Search" backgroundColor="#7cb342" onButtonClick={() => console.log("Clicou no botão localizar")} />
+                <AnterosFloatingButtonItem color="white" icon="fa fa-print" hint="Print" onButtonClick={() => console.log("Clicou no botão imprimir")} />
+            </AnterosFloatingButton>
         </div >);
     }
 }
