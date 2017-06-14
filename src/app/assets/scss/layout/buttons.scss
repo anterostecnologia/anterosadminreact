@@ -9,7 +9,7 @@
 	}
 
 	&.btn-secondary {
-		@include button-variant( $color-text, $color-secundary, $color-divider );	
+		@include button-variant( $color-text, $color-secondary, $color-divider );	
 	}
 
 	&.btn-success {
@@ -34,7 +34,7 @@
 	}
 
 	&.btn-secondary-outline {
-		@include button-outline-variant($color-secundary);
+		@include button-outline-variant($color-secondary);
 	}
 
 	&.btn-info-outline {
