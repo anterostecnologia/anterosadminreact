@@ -24,14 +24,16 @@ export default class AnterosHeader extends Component {
                 } else if (child.type && child.type.name == "AnterosNavigatorLinkDropdown") {
                     newNavigatorLinks.push(child);
                 } else if (child.type && child.type.name == "AnterosFullScreen") {
-                    newNavigatorLinks.push(child);    
+                    newNavigatorLinks.push(child);
                 }
             });
         }
         return (
             <header className="header">
-                <div className="brand hidden-sm-down">
-                    <img src={this.props.logo} />
+                <div className="header-sidebar">
+                    <div className="brand hidden-sm-down">
+                        <img src={this.props.logo} />
+                    </div>
                 </div>
                 <div className="header-block header-block-collapse hidden-lg-up">
                     <button className="collapse-btn" id="sidebar-collapse-btn" onClick={this.onSidebarCollapseButtonClick}>

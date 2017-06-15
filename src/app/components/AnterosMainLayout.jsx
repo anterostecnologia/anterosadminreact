@@ -32,6 +32,7 @@ import ListsView from "../containers/ListsView"
 import LabelsView from "../containers/LabelsView"
 import SweetAlertView from "../containers/SweetAlertView";
 import TooltipsView from "../containers/TooltipsView";
+import NotificationsView from "../containers/NotificationsView";
 
 class AnterosMainLayout extends Component {
 
@@ -124,6 +125,7 @@ class AnterosMainLayout extends Component {
               <AnterosSecurityRoute path='/home/labels' component={LabelsView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/salerts' component={SweetAlertView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/tooltips' component={TooltipsView} isLoggedIn={this.props.isLoggedIn} />
+              <AnterosSecurityRoute path='/home/notifications' component={NotificationsView} isLoggedIn={this.props.isLoggedIn} />
             </Switch>
             {this.props.children}
           </AnterosMainContainer>

@@ -12,9 +12,7 @@ export default class AnterosAlert extends Component {
         if (this.props.showBorder==undefined) {
             className += " alert-no-border";
         }
-        if (this.props.showBorderLeft){
-            className += " alert-border-left";
-        }
+        
         if (this.props.fill){
             className += " alert-fill";
         }
@@ -48,6 +46,10 @@ export default class AnterosAlert extends Component {
             icon = (<i className="fa fa-linkedin"></i>);
         } else {
             className += " alert-info";
+        }
+
+        if (this.props.showBorderLeft){
+            className += " alert-border-left";
         }
 
         if (this.props.textColored){

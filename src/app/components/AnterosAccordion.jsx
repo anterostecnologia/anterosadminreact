@@ -69,27 +69,27 @@ export class AnterosAccordionItem extends Component {
         if (this.props.success) {
             className = "card card-success";
             if (this.props.outline) {
-                className += "card card-outline-success";
+                className = "card card-outline-success";
             }
         } else if (this.props.info) {
             className = "card card-info";
             if (this.props.outline) {
-                className += "card card-outline-info";
+                className = "card card-outline-info";
             }
         } else if (this.props.warning) {
             className = "card card-warning";
             if (this.props.outline) {
-                className += "card card-outline-warning";
+                className = "card card-outline-warning";
             }
         } else if (this.props.danger) {
             className = "card card-danger";
             if (this.props.outline) {
-                className += "card card-outline-danger";
+                className = "card card-outline-danger";
             }
         } else if (this.props.primary) {
             className = "card card-primary";
             if (this.props.outline) {
-                className += "card card-outline-primary";
+                className = "card card-outline-primary";
             }
         }
 
@@ -105,8 +105,8 @@ export class AnterosAccordionItem extends Component {
 
         return (<div className={className} onClick={this.onClick}>
             <div className="card-header justify-content-between" role="tab" id={this.props.ownerId + "_heading" + this.props.id} data-toggle="collapse" data-parent={"#" + this.props.ownerId} href={"#" + this.props.ownerId + "_collapse" + this.props.id} aria-expanded="false" aria-controls={this.props.ownerId + "_collapse" + this.props.id}>
-                <a>{icon} <img style={{ marginLeft: "3px", marginRight: "3px" }} className={classNameImage} src={this.props.image} height={this.props.imageHeight} width={this.props.imageWidth} /> {this.props.caption}</a>
-                <i className="fa fa-chevron-down" />
+                <a className="title">{icon} <img style={{ marginLeft: "3px", marginRight: "3px" }} className={classNameImage} src={this.props.image} height={this.props.imageHeight} width={this.props.imageWidth} /> {this.props.caption}</a>
+                <i className="title fa fa-chevron-down" />
             </div>
             <div id={this.props.ownerId + "_collapse" + this.props.id} className="collapse " role="tabpanel" aria-labelledby={this.props.ownerId + "_heading" + this.props.id}>
                 <div className="card-block">

@@ -7,17 +7,17 @@
 *					  Colors Definitions
 **************************************************************/
 
-$color-primary: #3FA9F4;// #85CE36;//#3FA9F4 !default;
+$color-primary: #00CBB3;// #85CE36;//#3FA9F4 !default;
 $color-primary-light: lighten($color-primary, 10%) !default; 
 $color-primary-lighter: lighten($color-primary-light, 6%) !default; 
 $color-primary-dark: darken($color-primary, 10%) !default;
 $color-primary-darker: darken($color-primary-dark, 6%) !default;
 
 $color-divider: #d7dde4 !default;
-$color-bg: #e4e5e6 !default;
-$color-bg-header: #3FA9F4;//#85CE36;//#3FA9F4;
+$color-bg: #EEF1F5 !default;
+$color-bg-header: #FFFFFF;//#85CE36;//#3FA9F4;
 
-$color-text: #ffffff;
+$color-text: black;
 $color-text-light: #7e8e9f !default;
 $color-text-muted: #C2CCD6;
 $color-text-inverse: #ffffff !default;
@@ -29,6 +29,7 @@ $color-warning: #f0ad4e;//#fe974b !default;
 $color-danger: #d9534f;//#FF4444 !default;
 $color-secondary: #6b7a85;//#131e26 !default;
 $color-inverse: #131e26 !default;
+
 
 /*************************************************************
 *					Common Element Variables
@@ -52,15 +53,24 @@ $link-hover-decoration: none !default;
 // Header
 $header-height: 70px !default;
 $header-height-xs: 50px !default;
+$header-hover: $color-primary;
 
 // Sidebar
 $sidebar-width: 230px !default;
-$sidebar-color-hover: #f2f6f9;
-$sidebar-color-text-hover: #3a4651;
-$sidebar-color-primary: #fff;
-$sidebar-color-secondary: darken($sidebar-color-primary, 6%) !default;
-$sidebar-color-text: fade-out( #005A8A, 0.5) !default;
-$sidebar-color-text-active:  #005A8A;
+$sidebar-color-primary: #304b58;
+$sidebar-color-hover:  darken($sidebar-color-primary, 6%);
+$sidebar-color-text-hover: #fff;
+$sidebar-color-secondary: darken($sidebar-color-primary, 8%) !default;
+$sidebar-color-text:  #fff; 
+$sidebar-color-active:  lighten($sidebar-color-primary, 10%);
+$sidebar-color-text-active:  #fff;
+$sidebar-color-icon: #00CBB3;
+$sidebar-header-color: $color-primary;
+$sidebar-header-text: $color-text-inverse;
+
+// Search
+$input-search-color: #eceff1;
+$input-search-text-color: #969696;
 
 // Footer
 $footer-height: 50px !default;

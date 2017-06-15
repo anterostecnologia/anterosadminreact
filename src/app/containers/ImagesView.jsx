@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AnterosCard from "../components/AnterosCard";
+import AnterosCard, { AnterosCardDeck } from "../components/AnterosCard";
 import AnterosImage from "../components/AnterosImage";
 import AnterosImageMagnifier from "../components/AnterosImageMagnifier";
 import AnterosImageCropper from "../components/AnterosImageCropper";
@@ -33,31 +33,28 @@ export default class ImageView extends Component {
 
     render() {
         return (<AnterosCard caption="Images">
-            <div className="row">
-                <div className="col-6">
-                    <AnterosCard caption="Rounded images">
-                        <AnterosImage marginRight={20} maxWidth={50} rounded src={require('../assets/img/ti.jpg')} />
-                        <AnterosImage marginRight={20} maxWidth={100} rounded src={require('../assets/img/ti.jpg')} />
-                        <AnterosImage marginRight={20} maxWidth={150} rounded src={require('../assets/img/ti.jpg')} />
-                    </AnterosCard>
-                </div>
-                <div className="col-6">
-                    <AnterosCard caption="Thumbnail images">
-                        <AnterosImage marginRight={20} maxWidth={50} thumbnail src={require('../assets/img/folha_seca.jpg')} />
-                        <AnterosImage marginRight={20} maxWidth={100} thumbnail src={require('../assets/img/folha_seca.jpg')} />
-                        <AnterosImage marginRight={20} maxWidth={150} thumbnail src={require('../assets/img/folha_seca.jpg')} />
-                    </AnterosCard>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-12">
-                    <AnterosCard caption="Bordered images">
-                        <AnterosImage marginRight={20} maxWidth={50} circle bordered red src={require('../assets/img/folha_seca.jpg')} />
-                        <AnterosImage marginRight={20} maxWidth={100} bordered purple src={require('../assets/img/folha_seca.jpg')} />
-                        <AnterosImage marginRight={20} maxWidth={150} bordered success src={require('../assets/img/folha_seca.jpg')} />
-                    </AnterosCard>
-                </div>
-            </div>
+            <AnterosCardDeck>
+                <AnterosCard caption="Rounded images">
+                    <AnterosImage marginRight={20} maxWidth={50} rounded src={require('../assets/img/ti.jpg')} />
+                    <AnterosImage marginRight={20} maxWidth={100} rounded src={require('../assets/img/ti.jpg')} />
+                    <AnterosImage marginRight={20} maxWidth={150} rounded src={require('../assets/img/ti.jpg')} />
+                </AnterosCard>
+                <AnterosCard caption="Thumbnail images">
+                    <AnterosImage marginRight={20} maxWidth={50} thumbnail src={require('../assets/img/folha_seca.jpg')} />
+                    <AnterosImage marginRight={20} maxWidth={100} thumbnail src={require('../assets/img/folha_seca.jpg')} />
+                    <AnterosImage marginRight={20} maxWidth={150} thumbnail src={require('../assets/img/folha_seca.jpg')} />
+                </AnterosCard>
+                <AnterosCard caption="Bordered images">
+                    <AnterosImage marginRight={20} maxWidth={50} circle bordered red src={require('../assets/img/folha_seca.jpg')} />
+                    <AnterosImage marginRight={20} maxWidth={100} bordered purple src={require('../assets/img/folha_seca.jpg')} />
+                    <AnterosImage marginRight={20} maxWidth={150} bordered success src={require('../assets/img/folha_seca.jpg')} />
+                </AnterosCard>
+                <AnterosCard caption="Image circle">
+                    <AnterosImage marginRight={20} maxWidth={50} circle src={require('../assets/img/flower.jpg')} />
+                    <AnterosImage marginRight={20} maxWidth={100} circle src={require('../assets/img/flower.jpg')} />
+                    <AnterosImage marginRight={20} maxWidth={150} circle src={require('../assets/img/flower.jpg')} />
+                </AnterosCard>
+            </AnterosCardDeck >
             <AnterosCard caption="Zooming animations">
                 <AnterosImage marginRight={20} maxWidth={150} zoomScale={2} src={require('../assets/img/flower.jpg')} />
                 <AnterosImageMagnifier
@@ -105,11 +102,7 @@ export default class ImageView extends Component {
                     </div>
                 </div>
             </AnterosCard>
-            <AnterosCard caption="Image circle and effects">
-                <AnterosImage marginRight={20} maxWidth={50} circle src={require('../assets/img/flower.jpg')} />
-                <AnterosImage marginRight={20} maxWidth={100} circle src={require('../assets/img/flower.jpg')} />
-                <AnterosImage marginRight={20} maxWidth={150} circle src={require('../assets/img/flower.jpg')} />
-
+            <AnterosCard caption="Image effects">
                 <AnterosCard caption="Effect 1" >
                     <div className="row">
                         <div className="col-sm-2">
