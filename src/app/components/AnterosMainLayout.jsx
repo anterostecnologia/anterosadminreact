@@ -34,6 +34,8 @@ import SweetAlertView from "../containers/SweetAlertView";
 import TooltipsView from "../containers/TooltipsView";
 import NotificationsView from "../containers/NotificationsView";
 import TablesView from "../containers/TablesView";
+import TablesLayoutView from "../containers/TablesLayoutView";
+import DataTablesView from "../containers/DataTablesView";
 
 class AnterosMainLayout extends Component {
 
@@ -104,6 +106,8 @@ class AnterosMainLayout extends Component {
             <AnterosMenuItem id="mniLayouts" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home" caption="Layouts"> </AnterosMenuItem>
             <AnterosMenuItem id="mniTable" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-table" caption="Tables"> 
               <AnterosMenuItem id="mniBasicTables" route="/home/basictables" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Basic tables"></AnterosMenuItem>
+              <AnterosMenuItem id="mniLayoutTables" route="/home/layouttables" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Layout tables"></AnterosMenuItem>
+              <AnterosMenuItem id="mniDataTables" route="/home/datatables" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Data tables"></AnterosMenuItem>
             </AnterosMenuItem>
             <AnterosMenuItem id="mniCharts" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-line-chart" caption="Charts"> </AnterosMenuItem>
             <AnterosMenuItem id="mniWidgets" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home" caption="Widgets"> </AnterosMenuItem>
@@ -130,6 +134,8 @@ class AnterosMainLayout extends Component {
               <AnterosSecurityRoute path='/home/tooltips' component={TooltipsView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/notifications' component={NotificationsView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/basictables' component={TablesView} isLoggedIn={this.props.isLoggedIn} />
+              <AnterosSecurityRoute path='/home/layouttables' component={TablesLayoutView} isLoggedIn={this.props.isLoggedIn} />
+              <AnterosSecurityRoute path='/home/datatables' component={DataTablesView} isLoggedIn={this.props.isLoggedIn} />
             </Switch>
             {this.props.children}
           </AnterosMainContainer>

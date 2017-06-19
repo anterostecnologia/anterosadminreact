@@ -560,3 +560,22 @@ tr.shown td.details-control:before {
 }
 
 
+.datatable-success  th {
+  background-color: $color-success;
+}
+
+.datatable-primary  th {
+  background-color: $color-primary;
+}
+
+.datatable-info  th {
+  background-color: $color-info;
+}
+
+.datatable-warning  th {
+  background-color: $color-warning;
+}
+
+.datatable-danger  th {
+  background-color: $color-warning;
+}

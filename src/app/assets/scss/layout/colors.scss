@@ -48,56 +48,56 @@
 }
 
 .bg-primary {
-    background-color: #2196f3;
-    border-color: #2196f3;
+    background-color: $color-primary;
+    border-color: $color-primary;
     color: #fff
 }
 
 .bg-primary-300 {
-    background-color: #64b5f6;
-    border-color: #64b5f6;
+    background-color: darken($color-primary,30%);
+    border-color: darken($color-primary,30%);
     color: #fff
 }
 
 .bg-primary-400 {
-    background-color: #42a5f5;
-    border-color: #42a5f5;
+    background-color: darken($color-primary,40%);
+    border-color: darken($color-primary,40%);
     color: #fff
 }
 
 .bg-primary-600 {
-    background-color: #1e88e5;
-    border-color: #1e88e5;
+    background-color: darken($color-primary,60%);
+    border-color: darken($color-primary,60%);
     color: #fff
 }
 
 .bg-primary-700 {
-    background-color: #1976d2;
-    border-color: #1976d2;
+    background-color: darken($color-primary,70%);
+    border-color: darken($color-primary,70%);
     color: #fff
 }
 
 .bg-primary-800 {
-    background-color: #1565c0;
-    border-color: #1565c0;
+    background-color: darken($color-primary,80%);
+    border-color: darken($color-primary,80%);
     color: #fff
 }
 
 .bg-danger {
-    background-color: #f44336;
-    border-color: #f44336;
+    background-color: $color-danger;
+    border-color: $color-danger;
     color: #fff
 }
 
 .bg-danger-300 {
-    background-color: #e57373;
-    border-color: #e57373;
+    background-color: darken($color-danger,30%);
+    border-color: darken($color-danger,30%);
     color: #fff
 }
 
 .bg-danger-400 {
-    background-color: #ef5350;
-    border-color: #ef5350;
+    background-color: darken($color-danger,40%);
+    border-color: darken($color-danger,40%);
     color: #fff
 }
 
@@ -120,8 +120,8 @@
 }
 
 .bg-success {
-    background-color: #4caf50;
-    border-color: #4caf50;
+    background-color: $color-success;
+    border-color: $color-success;
     color: #fff
 }
 
@@ -156,8 +156,8 @@
 }
 
 .bg-warning {
-    background-color: #ff5722;
-    border-color: #ff5722;
+    background-color: $color-warning;
+    border-color: $color-warning;
     color: #fff
 }
 
@@ -192,8 +192,8 @@
 }
 
 .bg-info {
-    background-color: #00bcd4;
-    border-color: #00bcd4;
+    background-color: $color-warning;
+    border-color: $color-warning;
     color: #fff
 }
 

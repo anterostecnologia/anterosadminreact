@@ -12,8 +12,8 @@
 }
 
 table thead tr th{
-  background-color: #00a8ff;
-  color: hsla(0, 0%, 100%, .9);
+  background-color: $color-primary;
+  color: $color-text-inverse;
   height: 40px;
   font-weight: normal;
 }
@@ -81,66 +81,71 @@ table tbody tr td{
 .table-success,
 .table-success > th,
 .table-success > td {
-  background-color: #dff0d8;
+  background-color: $color-success;
 }
 
 .table-hover .table-success:hover {
-  background-color: #d0e9c6;
+  background-color: lighten($color-success,5%)
 }
 
 .table-hover .table-success:hover > td,
 .table-hover .table-success:hover > th {
-  background-color: #d0e9c6;
+  background-color: lighten($color-success,5%)
 }
 
 .table-info,
 .table-info > th,
 .table-info > td {
-  background-color: #d9edf7;
+  background-color: $color-info
+}
+
+
+.table-info > th {
+  border-bottom: 2px solid $color-info
 }
 
 .table-hover .table-info:hover {
-  background-color: #c4e3f3;
+  background-color: lighten($color-info,5%)
 }
 
 .table-hover .table-info:hover > td,
 .table-hover .table-info:hover > th {
-  background-color: #c4e3f3;
+  background-color: lighten($color-info,5%)
 }
 
 .table-warning,
 .table-warning > th,
 .table-warning > td {
-  background-color: #fcf8e3;
+  background-color: $color-warning;
 }
 
 .table-hover .table-warning:hover {
-  background-color: #faf2cc;
+  background-color: lighten($color-warning,5%)
 }
 
 .table-hover .table-warning:hover > td,
 .table-hover .table-warning:hover > th {
-  background-color: #faf2cc;
+  background-color: lighten($color-warning,5%)
 }
 
 .table-danger,
 .table-danger > th,
 .table-danger > td {
-  background-color: #f2dede;
+  background-color: $color-danger;
 }
 
 .table-hover .table-danger:hover {
-  background-color: #ebcccc;
+  background-color: lighten($color-danger,5%)
 }
 
 .table-hover .table-danger:hover > td,
 .table-hover .table-danger:hover > th {
-  background-color: #ebcccc;
+  background-color: lighten($color-danger,5%)
 }
 
 .thead-inverse th {
   color: #fff;
-  background-color: #292b2c;
+  background-color: $color-inverse
 }
 
 .thead-default th {
@@ -150,13 +155,19 @@ table tbody tr td{
 
 .table-inverse {
   color: #fff;
-  background-color: #292b2c;
+  background-color: $color-inverse
 }
 
 .table-inverse th,
 .table-inverse td,
 .table-inverse thead th {
   border-color: #fff;
+}
+
+.table-inverse,
+.table-inverse > th,
+.table-inverse > td {
+  background-color: $color-inverse;
 }
 
 .table-inverse.table-bordered {
@@ -174,6 +185,102 @@ table tbody tr td{
   border: 0;
 }
 
+
+.color-table.primary-table thead th {
+    background-color: $color-primary;
+    color: $color-text-inverse
+}
+
+.color-table.success-table thead th {
+    background-color: $color-success;
+    color: $color-text-inverse
+}
+
+.color-table.info-table thead th {
+    background-color: $color-info;
+    color: $color-text-inverse
+}
+
+.color-table.warning-table thead th {
+    background-color: $color-warning;
+    color: $color-text-inverse
+}
+
+.color-table.danger-table thead th {
+    background-color: $color-danger;
+    color: $color-text-inverse;
+}
+
+.color-table.inverse-table thead th {
+    background-color: $color-inverse;
+    color: $color-text-inverse;
+}
+
+
+.color-bordered-table.primary-bordered-table {
+    border: 2px solid darken($color-primary,5%);
+}
+
+.color-bordered-table.primary-bordered-table thead th {
+    background-color: $color-primary;
+    border-bottom: 2px solid darken($color-primary,5%);
+    color: $color-text-inverse
+}
+
+.color-bordered-table.success-bordered-table {
+    border: 2px solid darken($color-success,5%);
+}
+
+.color-bordered-table.success-bordered-table thead th {
+    background-color: $color-success;
+    border-bottom: 2px solid darken($color-success,5%);
+    color: $color-text-inverse;
+}
+
+.color-bordered-table.info-bordered-table {
+    border: 2px solid darken($color-info,5%);
+}
+
+.color-bordered-table.info-bordered-table thead th {
+    background-color: $color-info;
+    border-bottom: 2px solid darken($color-info,5%);
+    color: $color-text-inverse;
+}
+
+.color-bordered-table.warning-bordered-table {
+    border: 2px solid darken($color-warning,5%);
+}
+
+.color-bordered-table.warning-bordered-table thead th {
+    background-color: $color-warning;
+    border-bottom: 2px solid darken($color-warning,5%);
+    color: $color-text-inverse;
+}
+
+.color-bordered-table.danger-bordered-table {
+    border: 2px solid darken($color-danger,5%);
+}
+
+.color-bordered-table.danger-bordered-table thead th {
+    background-color: $color-danger;
+    border-bottom: 2px solid darken($color-danger,5%);
+    color: $color-text-inverse;
+}
+
+.color-bordered-table.inverse-bordered-table {
+    border: 2px solid darken($color-inverse,5%);
+}
+
+.color-bordered-table.inverse-bordered-table thead th {
+    background-color: $color-inverse;
+    border-bottom: 2px solid darken($color-inverse,5%);
+    color: $color-text-inverse;
+}
+
+
+.floating-labels .form-group {
+    position: relative
+}
 
 .table-flip-scroll table {
     width: 100%
@@ -251,4 +358,25 @@ table tbody tr td{
         margin-left: -5px;
         border-left: 1px solid #ddd
     }
+}
+
+
+
+.shadow-left {
+   -webkit-box-shadow: inset 12px 0px 5px 0px rgba(0,0,0,0.12),;
+   -moz-box-shadow: inset 12px 0px 5px 0px rgba(0,0,0,0.12);
+   box-shadow: inset 12px 0px 5px 0px rgba(0,0,0,0.12);
+
+}
+.shadow-right {
+   -webkit-box-shadow: inset -12px 0px 5px 0px rgba(0,0,0,0.12);
+   -moz-box-shadow: inset -12px 0px 5px 0px rgba(0,0,0,0.12);
+   box-shadow: inset -12px 0px 5px 0px rgba(0,0,0,0.12);
+
+}
+
+.shadow-left-right {
+   -webkit-box-shadow: inset 12px 0px 5px 0px rgba(0,0,0,0.12), inset -12px 0px 5px 0px rgba(0,0,0,0.12);
+   -moz-box-shadow: inset 12px 0px 5px 0px rgba(0,0,0,0.12), inset -12px 0px 5px 0px rgba(0,0,0,0.12);
+   box-shadow: inset 12px 0px 5px 0px rgba(0,0,0,0.12), inset -12px 0px 5px 0px rgba(0,0,0,0.12);
 }

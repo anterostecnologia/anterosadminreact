@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import lodash from "lodash";
 
 
 export default class AnterosButton extends Component {
     constructor(props) {
         super(props);
         this.onClick = this.onClick.bind(this);
+        this.idButton = lodash.uniqueId("btn");
     }
 
     componentDidMount() {
-        $('[data-toggle="tooltip"]').tooltip();
+        $(this.button).tooltip();
     }
 
     onClick(event) {
@@ -28,7 +30,7 @@ export default class AnterosButton extends Component {
             className += " btn-oval";
         }
 
-        if (this.props.circle){
+        if (this.props.circle) {
             className += " btn-circle";
         }
 
@@ -89,8 +91,8 @@ export default class AnterosButton extends Component {
             }
         }
 
-        if (this.props.inline){
-            className +=" btn-inline";
+        if (this.props.inline) {
+            className += " btn-inline";
         }
 
         if (this.props.pillLeft) {
@@ -111,43 +113,43 @@ export default class AnterosButton extends Component {
 
         let customIcon = this.props.icon;
 
-        if (this.props.facebook){
-            className += " btn-facebook"; 
+        if (this.props.facebook) {
+            className += " btn-facebook";
             customIcon = "fa fa-facebook";
         }
 
-        if (this.props.twitter){
-            className += " btn-twitter"; 
+        if (this.props.twitter) {
+            className += " btn-twitter";
             customIcon = "fa fa-twitter";
         }
 
-        if (this.props.googlePlus){
-            className += " btn-googleplus"; 
+        if (this.props.googlePlus) {
+            className += " btn-googleplus";
             customIcon = "fa fa-google-plus";
         }
 
-        if (this.props.linkedin){
-            className += " btn-linkedin"; 
+        if (this.props.linkedin) {
+            className += " btn-linkedin";
             customIcon = "fa fa-linkedin";
         }
 
-        if (this.props.instagram){
-            className += " btn-instagram"; 
+        if (this.props.instagram) {
+            className += " btn-instagram";
             customIcon = "fa fa-instagram";
         }
 
-        if (this.props.pinterest){
-            className += " btn-pinterest"; 
+        if (this.props.pinterest) {
+            className += " btn-pinterest";
             customIcon = "fa fa-pinterest";
         }
 
-        if (this.props.dribbble){
-            className += " btn-dribbble"; 
+        if (this.props.dribbble) {
+            className += " btn-dribbble";
             customIcon = "fa fa-dribbble";
         }
 
-         if (this.props.youtube){
-            className += " btn-youtube"; 
+        if (this.props.youtube) {
+            className += " btn-youtube";
             customIcon = "fa fa-youtube";
         }
 
@@ -181,33 +183,23 @@ export default class AnterosButton extends Component {
             className += " dropdown-toggle";
         }
 
-        if (this.props.collapseContent){
+        if (this.props.collapseContent) {
             dataToggle = "collapse";
             ariaExpanded = "true";
-            ariaControls=this.props.collapseContent;
-            href="#"+this.props.collapseContent;
+            ariaControls = this.props.collapseContent;
+            href = "#" + this.props.collapseContent;
             className += " collapsed";
         }
 
         let icon;
         if (customIcon) {
-            icon = (<i className={customIcon}></i>);
+            icon = (<i className={customIcon} style={{ color: this.props.iconColor }}></i>);
         }
-
-        let balloonProps = {};
-        if (this.props.hint){
-            balloonProps = {...balloonProps,"title":this.props.hint};
-        }
-        if (this.props.hintPosition){
-            balloonProps = {...balloonProps,"data-placement":this.props.hintPosition};
-        }
-
-
 
         return (
-            <button data-toggle={dataToggle} aria-haspopup={ariaHaspopup} aria-expanded={ariaExpanded} aria-controls={ariaControls} href={href}
-                {...balloonProps}
+            <button id={this.props.id?this.props.id:this.idButton} title={this.props.hint} data-placement={this.props.hintPosition} data-toggle={dataToggle} aria-haspopup={ariaHaspopup} aria-expanded={ariaExpanded} aria-controls={ariaControls} href={href}
                 onClick={this.onClick} style={style}
+                ref={ref => this.button = ref}
                 type="button" className={className}>
                 {icon}<img src={this.props.image} /> {this.props.caption}{this.props.children}
             </button>
@@ -235,12 +227,12 @@ AnterosButton.propTypes = {
     color: React.PropTypes.string,
     dropdown: React.PropTypes.bool,
     icon: React.PropTypes.string,
+    iconColor: React.PropTypes.string,
     image: React.PropTypes.string,
     caption: React.PropTypes.string,
     onButtonClick: React.PropTypes.func,
     hint: React.PropTypes.string,
-    hintPosition: React.PropTypes.oneOf(['top','right','left','bottom']),
-    hintSize: React.PropTypes.string,
+    hintPosition: React.PropTypes.oneOf(['top', 'right', 'left', 'bottom']),
     facebook: React.PropTypes.bool,
     twitter: React.PropTypes.bool,
     googlePlus: React.PropTypes.bool,
@@ -274,7 +266,7 @@ AnterosButton.defaultProps = {
     image: undefined,
     caption: undefined,
     hintPosition: 'top',
-    inline: true  
+    inline: true
 };
 
 

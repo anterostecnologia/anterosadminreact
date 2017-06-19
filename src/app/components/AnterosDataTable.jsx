@@ -105,7 +105,7 @@ export default class AnterosDataTable extends Component {
     }
 
     onClick(event) {
-        console.log(event);
+
     }
 
 
@@ -177,6 +177,19 @@ export default class AnterosDataTable extends Component {
             return dtB.getMilliseconds() - dtA.getMilliseconds();
         }
 
+        let classNameExportButtons = "";
+        if (this.props.exportButtonsPrimary){
+            classNameExportButtons = "btn-primary";
+        } else if (this.props.exportButtonsInfo){
+            classNameExportButtons = "btn-info";
+        } else if (this.props.exportButtonsSuccess){
+            classNameExportButtons = "btn-success";
+        } else if (this.props.exportButtonsDanger){
+            classNameExportButtons = "btn-danger";
+        } else if (this.props.exportButtonsWarning){
+            classNameExportButtons = "btn-warning";    
+        }        
+
         var table = $(this.table).DataTable({
             dom: 'Blfrtip',
             columns: this.buildColumns(),
@@ -214,11 +227,11 @@ export default class AnterosDataTable extends Component {
                 loadingIndicator: this.props.showLoadingIndicator
             },
             buttons: [
-                { extend: 'copy', className: 'btn-info', text: 'Copiar' },
-                { extend: 'excel', className: 'btn-info', text: 'Excel' },
-                { extend: 'pdf', className: 'btn-info', text: 'PDF' },
-                { extend: 'print', className: 'btn-info', text: 'Imprimir' },
-                { extend: 'csv', className: 'btn-info', text: 'CSV' }
+                { extend: 'copy', className: classNameExportButtons, text: 'Copiar' },
+                { extend: 'excel', className: classNameExportButtons, text: 'Excel' },
+                { extend: 'pdf', className: classNameExportButtons, text: 'PDF' },
+                { extend: 'print', className: classNameExportButtons, text: 'Imprimir' },
+                { extend: 'csv', className: classNameExportButtons, text: 'CSV' }
             ],
             "language": {
                 "sEmptyTable": "Nenhum registro encontrado",
@@ -283,7 +296,6 @@ export default class AnterosDataTable extends Component {
                 }
             });
 
-
             table.on('key-focus', function (e, datatable, cell, originalEvent) {
                 _this.currentRow = cell.index().row;
                 _this.currentCol = cell.index().column;
@@ -340,6 +352,7 @@ export default class AnterosDataTable extends Component {
             }
         });
 
+
         let element = this.divTable.querySelector(".dataTables_scrollBody");
         element.onscroll = function () {
             if (this.clientWidth < this.scrollWidth) {
@@ -356,6 +369,19 @@ export default class AnterosDataTable extends Component {
             }
         }
 
+        let th1 = $(this.divTable).find('table').eq(0).find('thead').eq(0);
+        if (this.props.success) {
+            th1.addClass("datatable-success");
+        } else if (this.props.primary) {
+            th1.addClass("datatable-primary");
+        } else if (this.props.warning) {
+            th1.addClass("datatable-warning");
+        } else if (this.props.info) {
+            th1.addClass("datatable-info");
+        } else if (this.props.danger) {
+            th1.addClass("datatable-danger");
+        }
+
     }
 
     adjustHeaderCheckbox() {
@@ -365,6 +391,7 @@ export default class AnterosDataTable extends Component {
         th1.addClass('dataTable_title_align_center');
         th2.removeClass();
         th2.addClass('dataTable_title_align_center');
+
     }
 
     buildColumns() {
@@ -374,10 +401,11 @@ export default class AnterosDataTable extends Component {
         let _this = this;
         arrChildren.forEach(function (column) {
             let className = "";
+
             if (column.props.align == "right" || column.props.alignRight) {
-                className += "dataTable_cell_align_right";
+                className += " dataTable_cell_align_right";
             } else if (column.props.align == "center" || column.props.alignCenter) {
-                className += "dataTable_cell_align_center";
+                className += " dataTable_cell_align_center";
             }
             className += " " + (column.props.cellRowClassName ? column.props.cellRowClassName : "");
 
@@ -548,7 +576,17 @@ AnterosDataTable.propTypes = {
     onSelectAllRecords: React.PropTypes.func,
     onUnSelectAllRecords: React.PropTypes.func,
     onPageChange: React.PropTypes.func,
-    renderDetails: React.PropTypes.func
+    renderDetails: React.PropTypes.func,
+    primary: React.PropTypes.bool,
+    success: React.PropTypes.bool,
+    info: React.PropTypes.bool,
+    warning: React.PropTypes.bool,
+    danger: React.PropTypes.bool,
+    exportButtonsPrimary: React.PropTypes.bool,
+    exportButtonsSuccess: React.PropTypes.bool,
+    exportButtonsInfo: React.PropTypes.bool,
+    exportButtonsWarning: React.PropTypes.bool,
+    exportButtonsDanger: React.PropTypes.bool
 };
 
 
@@ -575,7 +613,8 @@ AnterosDataTable.defaultProps = {
     thousandsSeparator: ",",
     pageLengthOptions: [10, 20, 30, 50, 100],
     dateFormat: 'DD/MM/YYYY',
-    timeFormat: 'HH:mm:ss'
+    timeFormat: 'HH:mm:ss',
+    exportButtonsInfo: true
 
 };
 
