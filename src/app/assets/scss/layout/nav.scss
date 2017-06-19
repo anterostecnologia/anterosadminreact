@@ -243,9 +243,9 @@ span a {
 
 .tabs-vertical li .nav-link.active, .tabs-vertical li .nav-link:hover,
 .tabs-vertical li .nav-link.active:focus {
-    background: #009efb;
+    background: $color-primary;
     border: 0px;
-    color: #fff
+    color: $color-text-inverse;
 }
 
 .customvtab .tabs-vertical li .nav-link.active, .customvtab .tabs-vertical li .nav-link:hover,

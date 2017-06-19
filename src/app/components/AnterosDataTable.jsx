@@ -177,21 +177,21 @@ export default class AnterosDataTable extends Component {
             return dtB.getMilliseconds() - dtA.getMilliseconds();
         }
 
-        let classNameExportButtons = "";
-        if (this.props.exportButtonsPrimary){
+        let classNameExportButtons = "btn-info";
+        if (this.props.exportButtonsPrimary) {
             classNameExportButtons = "btn-primary";
-        } else if (this.props.exportButtonsInfo){
+        } else if (this.props.exportButtonsInfo) {
             classNameExportButtons = "btn-info";
-        } else if (this.props.exportButtonsSuccess){
+        } else if (this.props.exportButtonsSuccess) {
             classNameExportButtons = "btn-success";
-        } else if (this.props.exportButtonsDanger){
+        } else if (this.props.exportButtonsDanger) {
             classNameExportButtons = "btn-danger";
-        } else if (this.props.exportButtonsWarning){
-            classNameExportButtons = "btn-warning";    
-        }        
+        } else if (this.props.exportButtonsWarning) {
+            classNameExportButtons = "btn-warning";
+        }
 
         var table = $(this.table).DataTable({
-            dom: 'Blfrtip',
+            dom: "<'row'<'col-md-4'B><'col-md-4'l><'col-md-4'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
             columns: this.buildColumns(),
             keys: true,
             scrollY: this.props.height,
@@ -225,7 +225,7 @@ export default class AnterosDataTable extends Component {
             },
             scroller: {
                 loadingIndicator: this.props.showLoadingIndicator
-            },
+            },            
             buttons: [
                 { extend: 'copy', className: classNameExportButtons, text: 'Copiar' },
                 { extend: 'excel', className: classNameExportButtons, text: 'Excel' },
@@ -259,6 +259,8 @@ export default class AnterosDataTable extends Component {
                 "thousands": this.props.thousandsSeparator
             }
         });
+
+       
 
         if (this.props.enableCheckboxSelect) {
             $('#' + this.idCheckBoxSelect).on('click', function () {
@@ -527,6 +529,8 @@ export default class AnterosDataTable extends Component {
 
         return (
             <div tabIndex={this.props.tabIndex} ref={ref => this.divTable = ref} style={{ borderColor: "silver", border: "1px", width: "100%", height: "100%" }}>
+                <div id={idTable+"_header"} className="row">
+                </div>
                 <table ref={ref => this.table = ref} id={idTable} className={className} cellSpacing="0">
                     <thead>
                     </thead>
@@ -613,8 +617,7 @@ AnterosDataTable.defaultProps = {
     thousandsSeparator: ",",
     pageLengthOptions: [10, 20, 30, 50, 100],
     dateFormat: 'DD/MM/YYYY',
-    timeFormat: 'HH:mm:ss',
-    exportButtonsInfo: true
+    timeFormat: 'HH:mm:ss'
 
 };
 

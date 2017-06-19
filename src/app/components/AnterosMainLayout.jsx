@@ -36,6 +36,7 @@ import NotificationsView from "../containers/NotificationsView";
 import TablesView from "../containers/TablesView";
 import TablesLayoutView from "../containers/TablesLayoutView";
 import DataTablesView from "../containers/DataTablesView";
+import ModalsView from "../containers/ModalsView";
 
 class AnterosMainLayout extends Component {
 
@@ -99,7 +100,7 @@ class AnterosMainLayout extends Component {
               <AnterosMenuItem id="mniRibbons" route="/home/ribbons" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-tasks green" caption="Ribbons"></AnterosMenuItem>
               <AnterosMenuItem id="mniPagination" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Pagination"></AnterosMenuItem>
               <AnterosMenuItem id="mniLabels" route="/home/labels" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Labels & badges"></AnterosMenuItem>
-              <AnterosMenuItem id="mniModals" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Modals"></AnterosMenuItem>
+              <AnterosMenuItem id="mniModals" route="/home/modals" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Modals"></AnterosMenuItem>
             </AnterosMenuItem>
             <AnterosMenuItem id="mniAdvancedUI" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Advanced UI"> </AnterosMenuItem>
             <AnterosMenuItem id="mniForms" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-address-card-o blue" caption="Forms"> </AnterosMenuItem>
@@ -136,6 +137,7 @@ class AnterosMainLayout extends Component {
               <AnterosSecurityRoute path='/home/basictables' component={TablesView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/layouttables' component={TablesLayoutView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/datatables' component={DataTablesView} isLoggedIn={this.props.isLoggedIn} />
+              <AnterosSecurityRoute path='/home/modals' component={ModalsView} isLoggedIn={this.props.isLoggedIn} />
             </Switch>
             {this.props.children}
           </AnterosMainContainer>
