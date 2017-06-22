@@ -4,18 +4,104 @@
         border-radius: 0;
     }
 
-    // MOdal tabs are defined in _common/modal/modal.scss
-
     .modal-header {
-        background-color: $color-primary;
-        color: #ffffff;
+        background-color: #eceff1;
+        color: #4f5f6f;
     }
 
     .modal-footer {
+        background-color: inherit;
+        color: inherit;
         .btn {
             margin-bottom: 0;
         }
     }
+
+    .modal-header-primary {
+        background-color: $color-primary;
+        color: $color-text-inverse;
+    }
+
+    .modal-header-success {
+        background-color: $color-success;
+        color: $color-text-inverse;
+    }
+
+    .modal-header-info {
+        background-color: $color-info;
+        color: $color-text-inverse;
+    }
+
+    .modal-header-warning {
+        background-color: $color-warning;
+        color: $color-text-inverse;
+    }
+
+    .modal-header-danger {
+        background-color: $color-danger;
+        color: $color-text-inverse;
+    }
+
+    .modal-header-inverse {
+        background-color: $color-inverse;
+        color: $color-text-inverse;
+    }
+
+    .modal-header-secondary {
+        background-color: $color-secondary;
+        color: $color-text-inverse;
+    }
+
+
+    .modal-full-primary {
+        background-color: lighten($color-primary,5%);
+        color: $color-text-inverse;
+    }
+
+    .modal-full-success {
+        background-color: lighten($color-success,5%);
+        color: $color-text-inverse;
+    }
+
+    .modal-full-info {
+        background-color: lighten($color-info,5%);
+        color: $color-text-inverse;
+    }
+
+    .modal-full-warning {
+        background-color: lighten($color-warning,5%);
+        color: $color-text-inverse;
+    }
+
+    .modal-full-danger {
+        background-color: lighten($color-danger,5%);
+        color: $color-text-inverse;
+    }
+
+    .modal-full-inverse {
+        background-color: lighten($color-inverse,5%);
+        color: $color-text-inverse;
+    }
+
+    .modal-full-secondary {
+        background-color: lighten($color-secondary,5%);
+        color: $color-text-inverse;
+    }
+
+	.modal-body-center {
+        align-items: center;
+        justify-content: center;
+        display: inline-flex;
+		flex-direction: column
+    }
+
+	.modal-body-center-inline {
+        align-items: center;
+        justify-content: center;
+        display: inline-flex;
+    }
+
+    
 }
 
 #modal-media {
@@ -101,4 +187,39 @@
             }
         }
     }
+}
+
+
+.modal-extra-small {
+    max-width: 200px;
+}
+
+.modal-small {
+    max-width: 400px;
+}
+
+.modal-medium {
+    max-width: 600px;
+}
+
+.modal-large {
+    max-width: 900px;
+}
+
+.modal-full {
+    max-width: 98%;
+}
+
+
+.fade-scale {
+  transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all .25s linear;
+  -o-transition: all .25s linear;
+  transition: all .25s linear;
+}
+
+.fade-scale.in {
+  opacity: 1;
+  transform: scale(1);
 }

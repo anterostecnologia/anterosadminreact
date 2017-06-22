@@ -91,6 +91,10 @@ export default class AnterosButton extends Component {
             }
         }
 
+        if (this.props.default) {
+            className += " btn-default";
+        }
+
         if (this.props.inline) {
             className += " btn-inline";
         }
@@ -197,7 +201,7 @@ export default class AnterosButton extends Component {
         }
 
         return (
-            <button id={this.props.id?this.props.id:this.idButton} title={this.props.hint} data-placement={this.props.hintPosition} data-toggle={dataToggle} aria-haspopup={ariaHaspopup} aria-expanded={ariaExpanded} aria-controls={ariaControls} href={href}
+            <button id={this.props.id?this.props.id:this.idButton} title={this.props.hint} data-placement={this.props.hintPosition} data-user={this.props.dataUser} data-toggle={dataToggle} aria-haspopup={ariaHaspopup} aria-expanded={ariaExpanded} aria-controls={ariaControls} href={href}
                 onClick={this.onClick} style={style}
                 ref={ref => this.button = ref}
                 type="button" className={className}>
@@ -219,6 +223,7 @@ AnterosButton.propTypes = {
     primary: React.PropTypes.bool,
     danger: React.PropTypes.bool,
     secondary: React.PropTypes.bool,
+    default: React.PropTypes.bool,
     pillLeft: React.PropTypes.bool,
     pillRight: React.PropTypes.bool,
     block: React.PropTypes.bool,
@@ -241,7 +246,8 @@ AnterosButton.propTypes = {
     pinterest: React.PropTypes.bool,
     dribbble: React.PropTypes.bool,
     youtube: React.PropTypes.bool,
-    inline: React.PropTypes.bool
+    inline: React.PropTypes.bool,
+    dataUser: React.PropTypes.string
 };
 
 AnterosButton.defaultProps = {

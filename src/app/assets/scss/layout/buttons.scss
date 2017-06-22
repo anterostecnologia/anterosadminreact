@@ -28,6 +28,10 @@
 		@include button-variant( $color-text-inverse, $color-danger, $color-danger);
 	}
 
+	&.btn-default {
+		@include button-variant( $color-text, $color-default, $color-default);
+	}
+
 	// Remove all backgrounds
 	&.btn-primary-outline {
 		@include button-outline-variant($color-primary);
@@ -52,6 +56,8 @@
 	&.btn-danger-outline {
 		@include button-outline-variant($color-danger);
 	}
+
+	
 
 	&.btn-pill-left,
 	&.btn-pill-right,
