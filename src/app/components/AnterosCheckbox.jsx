@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-
+import lodash from 'lodash';
 
 class AnterosCheckbox extends Component {
     constructor(props) {
         super(props);
         this.toggleCheckboxChange = this.toggleCheckboxChange.bind(this);
+        this.idCheckbox = lodash.uniqueId('check');
         this.state = {
-            isChecked: false,
+            isChecked: this.props.checked
         }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({ isChecked: nextProps.checked });
     }
 
     toggleCheckboxChange() {
@@ -24,15 +29,18 @@ class AnterosCheckbox extends Component {
     }
 
     render() {
-        const { name, id, value, disabled,rounded } = this.props;
-        const { isChecked } = this.state;        
-        const className = `checkbox ${(rounded?" rounded":"")}`;
+        const { name, id, value, disabled, rounded } = this.props;
+        const { isChecked } = this.state;
+        const className = `checkbox ${(rounded ? " rounded" : "")}`;
+
+        console.log('teste');
 
         return (
             <label>
-                <input className={className} id={id}
+                <input className={className} id={id ? id : this.idCheckbox}
                     type="checkbox"
                     value={value}
+                    key = {id ? id : this.idCheckbox}
                     name={name}
                     checked={isChecked}
                     disabled={disabled}

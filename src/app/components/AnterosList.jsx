@@ -62,8 +62,6 @@ export default class AnterosList extends Component {
 
     }
 
-
-
     buildChildrensFromDataSource() {
         if (!(this.props.dataSource.constructor === Array)) {
             throw new AnterosError("O dataSource deve ser obrigatoriamente um array de dados.");
@@ -94,7 +92,7 @@ export default class AnterosList extends Component {
                 children.push(React.createElement(DynamicComponent, { key: record.id, active: active, index: index, handleSelectItem: _this.handleSelectItem, recordData: record }));
             } else {
                 children.push(React.createElement(AnterosListItem, {
-                    key: child.props.id,
+                    key: record.id,
                     disabled: record.disabled,
                     id: record[_this.props.dataFieldId],
                     index: index,
@@ -198,7 +196,7 @@ export default class AnterosList extends Component {
             children = this.rebuildChildrens();
         }
 
-        return (<div id={this.props.id ? this.props.id : this.idList} ref={ref => this.list = ref} tabIndex={-1} className="list-group-container" onKeyDown={this.handleKeyDown} style={{ width: this.props.width, height: this.props.height }}>
+        return (<div id={this.props.id ? this.props.id : this.idList} ref={ref => this.list = ref} tabIndex={-1} className={this.props.showBorder ? "list-group-container" : ""} onKeyDown={this.handleKeyDown} style={{ width: this.props.width, height: this.props.height }}>
             <ul className="list-group" style={{flexDirection: this.props.horizontal?"row":"column"}} >
                 {children}
             </ul>

@@ -7,6 +7,9 @@ import AnterosImage from "../components/AnterosImage";
 import AnterosButton from "../components/AnterosButton";
 import AnterosProgressBar from '../components/AnterosProgressBar';
 import AnterosStatusMark from '../components/AnterosStatusMark';
+import AnterosCheckbox from '../components/AnterosCheckbox';
+import { If, Then, Else } from "../utils/AnterosControlStatements";
+import {isArray, isUndefined} from "../utils/AnterosUtils"
 
 
 var userList = [
@@ -194,13 +197,13 @@ var recentMessagesList = [
         "avatar": "https://randomuser.me/api/portraits/women/63.jpg",
         "text": "Helena Matiewe",
         "message": "Donec pharetra magna vestibulum aliquet",
-        "status": "busy",
+        "status": "absent",
         "time": "11:45 AM"
     }, {
         "id": 2,
         "avatar": "https://randomuser.me/api/portraits/men/41.jpg",
         "text": "Tuck Greenwood",
-        "message": "Eu nibh quisque id justo",
+        "message": "Eu nibh quisque id justo in hac tristique ornare",
         "status": "busy",
         "time": "12:14 PM"
     }, {
@@ -208,7 +211,7 @@ var recentMessagesList = [
         "avatar": "https://randomuser.me/api/portraits/women/45.jpg",
         "text": "Melisandra Trouncer",
         "message": "Ullamcorper augue a suscipit nulla elit",
-        "status": "busy",
+        "status": "online",
         "time": "2:23 PM"
     }, {
         "id": 4,
@@ -243,7 +246,7 @@ var recentMessagesList = [
         "avatar": "https://randomuser.me/api/portraits/women/76.jpg",
         "text": "Linnet Ancell",
         "message": "Platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi",
-        "status": "busy",
+        "status": "online",
         "time": "12:45 PM"
     }, {
         "id": 9,
@@ -259,7 +262,167 @@ var recentMessagesList = [
         "message": "Montes nascetur ridiculus mus etiam vel augue vestibulum rutrum",
         "status": "absent",
         "time": "3:30 PM"
-    }]
+    }];
+
+var todoList = [
+    {
+        "id": 1,
+        "text": "Bibendum felis sed interdum venenatis enim blandit mi in",
+        "checked": true,
+        "priority": null,
+        "date": "06 Feb 2017",
+        "person": []
+    }, {
+        "id": 2,
+        "text": "Sit amet sem fusce consequat nulla",
+        "checked": false,
+        "priority": null,
+        "date": "29 Mar 2017",
+        "person": []
+    }, {
+        "id": 3,
+        "text": "Dolor sit amet consectetuer adipiscing elit proin interdum mauris",
+        "checked": false,
+        "priority": 2,
+        "date": "15 Oct 2016",
+        "person": [
+            {
+                "id": 1,
+                "name": "Joye Kohrs",
+                "avatar": "https://randomuser.me/api/portraits/men/8.jpg"
+            }
+        ]
+    }, {
+        "id": 4,
+        "text": "Neque sapien placerat ante nulla justo aliquam",
+        "checked": false,
+        "priority": 1,
+        "date": "17 Nov 2016",
+        "person": [
+            {
+                "id": 1,
+                "name": "Garret Strond",
+                "avatar": "https://robohash.org/excepturimodiconsequatur.jpg?size=50x50&set=set1"
+            }
+        ]
+    }, {
+        "id": 5,
+        "text": "Augue quam sollicitudin vitae consectetuer eget",
+        "checked": true,
+        "priority": 3,
+        "date": "19 Jun 2016",
+        "person": [
+            {
+                "id": 1,
+                "name": "Valma Bellchamber",
+                "avatar": "https://robohash.org/minusrepellatvoluptatibus.bmp?size=50x50&set=set1"
+            }, {
+                "id": 2,
+                "name": "Dacie Domelaw",
+                "avatar": "https://robohash.org/magnametpariatur.png?size=50x50&set=set1"
+            }, {
+                "id": 3,
+                "name": "Hube Chadband",
+                "avatar": "https://robohash.org/utquisapiente.jpg?size=50x50&set=set1"
+            }, {
+                "id": 4,
+                "name": "Roi Drinnan",
+                "avatar": "https://robohash.org/inomnisarchitecto.png?size=50x50&set=set1"
+            }
+        ]
+    }, {
+        "id": 6,
+        "text": "Metus aenean fermentum donec ut",
+        "checked": false,
+        "priority": 2,
+        "date": "26 Jun 2016",
+        "person": [
+            {
+                "id": 1,
+                "name": "Moshe Merryfield",
+                "avatar": "https://robohash.org/quivelconsequatur.png?size=50x50&set=set1"
+            }, {
+                "id": 2,
+                "name": "Barry Murtell",
+                "avatar": "https://robohash.org/natussimiliquererum.jpg?size=50x50&set=set1"
+            }, {
+                "id": 3,
+                "name": "Jenda Rennles",
+                "avatar": "https://robohash.org/quisdoloremillo.bmp?size=50x50&set=set1"
+            }
+        ]
+    }, {
+        "id": 7,
+        "text": "Sit amet erat nulla tempus vivamus in felis eu",
+        "checked": false,
+        "priority": 3,
+        "date": "15 Aug 2016",
+        "person": [
+            {
+                "id": 1,
+                "name": "Dunn Dibden",
+                "avatar": "https://robohash.org/facereinad.jpg?size=50x50&set=set1"
+            }, {
+                "id": 2,
+                "name": "Alma Byneth",
+                "avatar": "https://robohash.org/eaquepossimusaut.bmp?size=50x50&set=set1"
+            }, {
+                "id": 3,
+                "name": "Guss Heale",
+                "avatar": "https://robohash.org/eumsuntvero.jpg?size=50x50&set=set1"
+            }
+        ]
+    }, {
+        "id": 8,
+        "text": "Magna at nunc commodo placerat praesent",
+        "checked": true,
+        "priority": null,
+        "date": "10 Mar 2017",
+        "person": [
+            {
+                "id": 1,
+                "name": "Carolus Iannini",
+                "avatar": "https://robohash.org/dolorumquaevoluptas.png?size=50x50&set=set1"
+            }, {
+                "id": 2,
+                "name": "Joletta Coram",
+                "avatar": "https://robohash.org/cumexercitationemquaerat.png?size=50x50&set=set1"
+            }, {
+                "id": 3,
+                "name": "Abeu Neads",
+                "avatar": "https://robohash.org/veroquasvoluptatem.png?size=50x50&set=set1"
+            }
+        ]
+    }, {
+        "id": 9,
+        "text": "Lorem ipsum dolor sit amet consectetuer",
+        "checked": true,
+        "priority": null,
+        "date": "17 Dec 2016",
+        "person": [
+            {
+                "id": 1,
+                "name": "Fabian Casterou",
+                "avatar": "https://robohash.org/eumevenietporro.bmp?size=50x50&set=set1"
+            }
+        ]
+    }, {
+        "id": 10,
+        "text": "Tortor sollicitudin mi sit amet lobortis sapien",
+        "checked": true,
+        "priority": null,
+        "date": "09 Jan 2017",
+        "person": []
+    }];
+
+    function setTodoListChecked(id, checked) {
+        todoList.map(record => {
+            if (record.id == id) {
+                record.checked = checked;
+                return;
+            }
+        });
+    }
 
 export default class ListsView extends Component {
     render() {
@@ -481,6 +644,7 @@ export default class ListsView extends Component {
                                         <div className="col-md-4">
                                             <AnterosCard caption="To do list">
                                                 <section className="section">
+                                                    <AnterosList height="400px" dataSource={todoList} component={CustomComponentTodo} />
                                                 </section>
                                             </AnterosCard>
                                         </div>
@@ -673,16 +837,9 @@ class CustomComponentMessages extends Component {
                 caption={this.props.recordData.status} />;
         } else if (this.props.recordData.status == "offline") {
             anterosStatus = <AnterosStatusMark topRight height="14px" width="14px"
-                success onlyBorder
+                success backgroundColor="white"
                 caption={this.props.recordData.status} />;
         }
-
-        //             "id": 10,
-        // "avatar": "https://robohash.org/quisquamullamqui.jpg?size=50x50&set=set1",
-        // "text": "Essa Rraundl",
-        // "message": "montes nascetur ridiculus mus etiam vel augue vestibulum rutrum",
-        // "status": "absent",
-        // "time": "3:30 PM"
 
         return (
             <div style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "15px" }} className={className} onClick={this.onClick}>
@@ -700,6 +857,170 @@ class CustomComponentMessages extends Component {
                 <div className="d-flex align-items-center">
                     <p style={{ marginBottom: "0px" }} className="justify-content-between" >{this.props.recordData.message}</p>
                 </div>
+            </div>
+        );
+    }
+}
+
+class CustomComponentTodo extends Component {
+    constructor(props) {
+        super(props);
+        this.onClick = this.onClick.bind(this);
+
+    }
+
+    onClick() {
+        event.preventDefault();
+        if (!this.props.disabled) {
+            if (this.props.handleSelectItem) {
+                this.props.handleSelectItem(this.props.index);
+            }
+            if (this.props.onSelectListItem) {
+                this.props.onSelectListItem(this);
+            }
+        }
+    }
+
+    render() {
+        // let className = "list-group-item list-group-item-action";
+        let className;
+
+        if (this.props.active)
+            className += " active"
+
+        if (this.props.recordData.disabled)
+            className += " disabled";
+
+        // let anterosStatus;
+        // if (this.props.recordData.status == "online"
+        //     || this.props.recordData.status == "busy"
+        //     || this.props.recordData.status == "absent") {
+        //     anterosStatus = <AnterosStatusMark topRight borderColor="white" height="14px" width="14px"
+        //         success={this.props.recordData.status == "online"}
+        //         danger={this.props.recordData.status == "busy"}
+        //         warning={this.props.recordData.status == "absent"}
+        //         caption={this.props.recordData.status} />;
+        // } else if (this.props.recordData.status == "offline") {
+        //     anterosStatus = <AnterosStatusMark topRight height="14px" width="14px"
+        //         success onlyBorder
+        //         caption={this.props.recordData.status} />;
+        // }
+
+        let anterosBadge;
+        if (this.props.recordData.priority == 1) {
+            anterosBadge = <AnterosBadge pillFormat danger caption="Today" />
+        } else if (this.props.recordData.priority == 2) {
+            anterosBadge = <AnterosBadge pillFormat warning caption="1 week" />
+        } else if (this.props.recordData.priority == 3) {
+            anterosBadge = <AnterosBadge pillFormat success caption="2 weeks" />
+        }
+
+        // "person": [
+        //     {
+        //         "name": "Garret Strond",
+        //         "avatar": "https://robohash.org/excepturimodiconsequatur.jpg?size=50x50&set=set1"
+        //     }
+        // ]
+
+        let hasPerson = (isArray(this.props.recordData.person) && this.props.recordData.person.length > 0);
+        return (
+            <div style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "15px" }} className={className} onClick={this.onClick}>
+                <div className="d-flex">
+                    <AnterosCheckbox checked={this.props.recordData.checked} rounded value="" 
+                    onCheckboxChange={(value, checked) => setTodoListChecked(this.props.recordData.id, checked)} />
+                    <div>
+                        <div className="d-flex">
+                            <h6 style={{ marginBottom: "-5px" }}>{this.props.recordData.text}</h6>
+                            {anterosBadge}
+                        </div>
+                        <small>{this.props.recordData.date}</small>
+                    </div>
+                </div>
+
+                <If condition={hasPerson}>
+                    <Then>
+                        <div className="d-flex align-items-center">
+                            <AnterosList horizontal showBorder={false} dataSource={this.props.recordData.person} dataFieldText="name" component={CustomComponentTodoImages} />
+                        </div>
+                    </Then>
+                    {/*<Else>
+                                <div>
+                                    <div className="img"><img ref={ref => this.image = ref} src={this.props.src} alt="img" /></div>
+                                    <div className="info">
+                                        <div className="info-back">
+                                            {this.props.children}
+                                        </div>
+                                    </div>
+                                </div>
+                            </Else>*/}
+                </If>
+
+
+            </div>
+            // <div className={className}>
+            //     <div className="checkbox checkbox-info">
+            //         <input type="checkbox" id="inputCall" name="inputCheckboxesCall" />
+            //             <label for="inputCall" className=""> <span>Give Purchase report to</span> <span className="label label-light-danger">Today</span> </label>
+            //     </div>
+            // <div>
+            //     <ul className="assignedto">
+            //         <li><img src="../assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka" /></li>
+            //         <li><img src="../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina" /></li>
+            //     </ul>
+            // </div>
+            // </div>
+        );
+    }
+}
+
+class CustomComponentTodoImages extends Component {
+    constructor(props) {
+        super(props);
+        this.onClick = this.onClick.bind(this);
+
+    }
+
+    onClick() {
+        event.preventDefault();
+        if (!this.props.disabled) {
+            if (this.props.handleSelectItem) {
+                this.props.handleSelectItem(this.props.index);
+            }
+            if (this.props.onSelectListItem) {
+                this.props.onSelectListItem(this);
+            }
+        }
+    }
+
+    render() {
+        // let className = "list-group-item list-group-item-action";
+        let className;
+
+        // let anterosStatus;
+        // if (this.props.recordData.status == "online"
+        //     || this.props.recordData.status == "busy"
+        //     || this.props.recordData.status == "absent") {
+        //     anterosStatus = <AnterosStatusMark topRight borderColor="white" height="14px" width="14px"
+        //         success={this.props.recordData.status == "online"}
+        //         danger={this.props.recordData.status == "busy"}
+        //         warning={this.props.recordData.status == "absent"}
+        //         caption={this.props.recordData.status} />;
+        // } else if (this.props.recordData.status == "offline") {
+        //     anterosStatus = <AnterosStatusMark topRight height="14px" width="14px"
+        //         success onlyBorder
+        //         caption={this.props.recordData.status} />;
+        // }
+
+        // "person": [
+        //     {
+        //         "name": "Garret Strond",
+        //         "avatar": "https://robohash.org/excepturimodiconsequatur.jpg?size=50x50&set=set1"
+        //     }
+        // ]
+
+        return (
+            <div className={className}>
+                <AnterosImage margin={5} width={24} height={24} circle src={this.props.recordData.avatar} />
             </div>
         );
     }
