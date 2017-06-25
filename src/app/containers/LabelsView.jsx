@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import AnterosCard, { HeaderActions } from "../components/AnterosCard";
-import AnterosLabel from "../components/AnterosLabel";
-import AnterosBadge from "../components/AnterosBadge";
-import AnterosButton from '../components/AnterosButton';
-import AnterosPageControl from "../components/AnterosPageControl";
-import AnterosTab from "../components/AnterosTab";
+import {AnterosCard, HeaderActions } from "anteros-react";
+import {AnterosLabel} from "anteros-react";
+import {AnterosBadge} from "anteros-react";
+import {AnterosButton} from 'anteros-react';
+import {AnterosPageControl} from "anteros-react";
+import {AnterosTab} from "anteros-react";
 
 export default class LabelsView extends Component {
     render() {

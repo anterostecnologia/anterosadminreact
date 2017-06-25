@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import '../../app/assets/scss/main.scss';
+import 'anteros-react/lib/anteros-react.min.css';
 import AnterosMainLayout from './AnterosMainLayout';
-import AnterosNotFound from './AnterosNotFound';
+import {AnterosNotFound} from 'anteros-react';
 import AnterosLogin from './AnterosLogin';
-import AnterosSecurityRoute from './AnterosSecurityRoute';
-import Teste from './Teste';
+import {AnterosSecurityRoute} from 'anteros-react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -27,10 +26,9 @@ class AnterosApp extends Component {
             <Router>
                 <div>
                     <Switch>
-                        <Route exact path="/" render={() => <Redirect to='/home/security' push={true}/>}/>
+                        <Route exact path="/" render={() => <Redirect to='/home/default' push={true}/>}/>
                         <AnterosSecurityRoute path="/home" component={AnterosMainLayout} isLoggedIn={this.props.isLoggedIn}/>
                         <Route path="/login" component={AnterosLogin} /> 
-                        <AnterosSecurityRoute path="/teste" component={Teste} isLoggedIn={this.props.isLoggedIn}/> 
                         <Route component={AnterosNotFound} />
                     </Switch>
                 </div>

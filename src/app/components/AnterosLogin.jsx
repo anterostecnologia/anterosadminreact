@@ -3,7 +3,7 @@ import {
     Redirect
 } from 'react-router-dom';
 import axios from 'axios';
-import { convertJsonToObject } from '../../app/utils/AnterosJacksonParser';
+import { convertJsonToObject } from 'anteros-react';
 import { connect } from "react-redux";
 import { handleLogin, handleLogout, setToken } from '../actions/authenticationActions';
 

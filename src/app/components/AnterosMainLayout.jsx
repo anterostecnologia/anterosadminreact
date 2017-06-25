@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
-import AnterosHeader from './AnterosHeader';
-import AnterosMenu from './AnterosMenu';
-import AnterosMenuItem from './AnterosMenuItem';
-import AnterosFooter from './AnterosFooter';
-import AnterosMainContainer from './AnterosMainContainer';
-import SecurityControl from './SecurityControl';
-import AnterosNotFound from './AnterosNotFound';
-import AnterosFullScreen from './AnterosFullScreen';
-import AnterosNavigatorLinkDropdown from "./AnterosNavigatorLinkDropdown";
-import AnterosNavigatorLink from "./AnterosNavigatorLink";
-import AnterosDropdownMenu from "./AnterosDropdownMenu";
-import AnterosDropdownMenuItem from "./AnterosDropdownMenuItem";
-import AnterosDropdownDivider from "./AnterosDropdownDivider";
-import AnterosBadge from "./AnterosBadge";
+import {AnterosHeader} from 'anteros-react';
+import {AnterosMenu} from 'anteros-react';
+import {AnterosMenuItem} from 'anteros-react';
+import {AnterosFooter} from 'anteros-react';
+import {AnterosMainContainer} from 'anteros-react';
+import {AnterosNotFound} from 'anteros-react';
+import {AnterosFullScreen} from 'anteros-react';
+import {AnterosNavigatorLinkDropdown} from "anteros-react";
+import {AnterosNavigatorLink} from "anteros-react";
+import {AnterosDropdownMenu} from "anteros-react";
+import {AnterosDropdownMenuItem} from "anteros-react";
+import {AnterosDropdownDivider} from "anteros-react";
+import {AnterosBadge} from "anteros-react";
 import { connect } from "react-redux";
 import { handleLogout } from '../actions/authenticationActions';
 import 'font-awesome/css/font-awesome.min.css';
 import {
   Route, Link, Switch, NavLink
 } from 'react-router-dom';
-import AnterosSecurityRoute from "./AnterosSecurityRoute";
+import {AnterosSecurityRoute} from "anteros-react";
 import ImagesView from "../containers/ImagesView";
 import ButtonsView from "../containers/ButtonsView";
 import CardsView from "../containers/CardsView";
@@ -37,6 +36,8 @@ import TablesView from "../containers/TablesView";
 import TablesLayoutView from "../containers/TablesLayoutView";
 import DataTablesView from "../containers/DataTablesView";
 import ModalsView from "../containers/ModalsView";
+import HomeView from "../containers/HomeView";
+
 
 class AnterosMainLayout extends Component {
 
@@ -112,7 +113,7 @@ class AnterosMainLayout extends Component {
             </AnterosMenuItem>
             <AnterosMenuItem id="mniCharts" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-line-chart" caption="Charts"> </AnterosMenuItem>
             <AnterosMenuItem id="mniWidgets" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home" caption="Widgets"> </AnterosMenuItem>
-            <AnterosMenuItem id="mniDashBoards" route="/home/security" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home" caption="Dashboards"> </AnterosMenuItem>
+            <AnterosMenuItem id="mniDashBoards" route="/home/dashboards" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home" caption="Dashboards"> </AnterosMenuItem>
             <AnterosMenuItem id="mniMaps" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-map-o" caption="Maps"> </AnterosMenuItem>
           </AnterosMenu>
 
@@ -120,7 +121,7 @@ class AnterosMainLayout extends Component {
           <div className="sidebar-overlay" id="sidebar-overlay" onClick={this.onSidebarOverlayClick}></div>
           <AnterosMainContainer >
             <Switch>
-              <AnterosSecurityRoute path='/home/security' component={SecurityControl} isLoggedIn={this.props.isLoggedIn} />
+              <AnterosSecurityRoute path='/home/default' component={HomeView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/images' component={ImagesView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/buttons' component={ButtonsView} isLoggedIn={this.props.isLoggedIn} />
               <AnterosSecurityRoute path='/home/cards' component={CardsView} isLoggedIn={this.props.isLoggedIn} />

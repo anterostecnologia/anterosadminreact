@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import AnterosCard, { HeaderActions } from "../components/AnterosCard";
-import AnterosAlert from "../components/AnterosAlert";
+import {AnterosCard,  HeaderActions } from "anteros-react";
+import {AnterosAlert} from "anteros-react";
 
 
 export default class NotificationsView extends Component {

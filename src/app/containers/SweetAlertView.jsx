@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import AnterosCard, { HeaderActions, FooterActions, AnterosCardGroup, AnterosCardDeck } from "../components/AnterosCard";
-import AnterosImage from "../components/AnterosImage";
-import AnterosButton from "../components/AnterosButton";
+import {AnterosCard,  HeaderActions, FooterActions, AnterosCardGroup, AnterosCardDeck } from "anteros-react";
+import {AnterosImage} from "anteros-react";
+import {AnterosButton} from "anteros-react";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
-import AnterosCollapseContent from '../components/AnterosCollapseContent';
+import {AnterosCollapseContent} from 'anteros-react';
 
 export default class SweetAlertView extends Component {
     render() {

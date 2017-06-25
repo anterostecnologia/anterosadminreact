@@ -1,17 +1,17 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import AnterosCard, { AnterosCardDeck, HeaderActions } from "../components/AnterosCard";
-import AnterosPageControl from "../components/AnterosPageControl";
-import AnterosTable, { AnterosTableColumn } from "../components/AnterosTable";
-import AnterosButton from "../components/AnterosButton";
-import AnterosImage from "../components/AnterosImage";
+import {AnterosCard, AnterosCardDeck, HeaderActions } from "anteros-react";
+import {AnterosPageControl} from "anteros-react";
+import {AnterosTable, AnterosTableColumn } from "anteros-react";
+import {AnterosButton} from "anteros-react";
+import {AnterosImage} from "anteros-react";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
-import AnterosCollapseContent from '../components/AnterosCollapseContent';
-import AnterosBadge from "../components/AnterosBadge";
-import AnterosProgressBar from "../components/AnterosProgressBar";
-import AnterosDataTable, { Columns, AnterosDataTableColumn } from "../components/AnterosDataTable";
+import {AnterosCollapseContent} from 'anteros-react';
+import {AnterosBadge} from "anteros-react";
+import {AnterosProgressBar} from "anteros-react";
+import {AnterosDataTable, Columns, AnterosDataTableColumn } from "anteros-react";
 import clients from '../../app/assets/data/clients.json';
 
 function randomIntFromInterval(min, max) {

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import AnterosCard,{HeaderActions} from "../components/AnterosCard";
-import AnterosCheckboxSlide from '../components/AnterosCheckboxSlide';
-import AnterosCheckboxToggle from '../components/AnterosCheckboxToggle';
+import {AnterosCard,HeaderActions} from "anteros-react";
+import {AnterosCheckboxSlide} from 'anteros-react';
+import {AnterosCheckboxToggle} from 'anteros-react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
-import AnterosCollapseContent from '../components/AnterosCollapseContent';
-import AnterosButton from '../components/AnterosButton';
+import {AnterosCollapseContent} from 'anteros-react';
+import {AnterosButton} from 'anteros-react';
 
 export default class SwitchesView extends Component {
     render() {

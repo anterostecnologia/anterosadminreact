@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import AnterosCard, { AnterosCardDeck, HeaderActions } from "../components/AnterosCard";
-import AnterosButton from '../components/AnterosButton';
-import AnterosButtonGroup from '../components/AnterosButtonGroup';
-import AnterosDropdownButton from '../components/AnterosDropdownButton';
-import AnterosDropdownMenu from '../components/AnterosDropdownMenu';
-import AnterosDropdownMenuItem from '../components/AnterosDropdownMenuItem';
-import AnterosFloatingButton, { AnterosFloatingButtonItem } from "../components/AnterosFloatingButton";
-import AnterosRadialButton from "../components/AnterosRadialButton";
-import AnterosDropdownDivider from "../components/AnterosDropdownDivider";
+import {AnterosCard, AnterosCardDeck, HeaderActions } from "anteros-react";
+import {AnterosButton} from 'anteros-react';
+import {AnterosButtonGroup} from 'anteros-react';
+import {AnterosDropdownButton} from 'anteros-react';
+import {AnterosDropdownMenu} from 'anteros-react';
+import {AnterosDropdownMenuItem} from 'anteros-react';
+import {AnterosFloatingButton, AnterosFloatingButtonItem } from "anteros-react";
+// import {AnterosRadialButton} from "anteros-react";
+import {AnterosDropdownDivider} from "anteros-react";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
-import AnterosCollapseContent from '../components/AnterosCollapseContent';
+import {AnterosCollapseContent} from 'anteros-react';
 
 const BUTTONS_COLORS = '<AnterosButton primary caption="Primary" />\n\
 <AnterosButton secondary caption="Secondary" />\n\
@@ -27,7 +27,7 @@ const BUTTONS_OUTLINE = '<AnterosButton primary outline caption="Primary" />\n\
 <AnterosButton warning outline caption="Warning" />\n\
 <AnterosButton danger outline caption="Danger" />'
 
-export default class ButtonView extends Component {
+export default class ButtonsView extends Component {
     render() {
         return (<AnterosCard caption="Buttons">
 
@@ -433,7 +433,7 @@ export default class ButtonView extends Component {
                             hint="Show code" hintPosition="left"
                             collapseContent="idShowButtonsColors" />
                     </HeaderActions>
-                    <AnterosRadialButton />
+                    {/*<AnterosRadialButton />*/}
                 </AnterosCard>
             </AnterosCardDeck>
 

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import AnterosCard, { AnterosCardDeck } from "../components/AnterosCard";
-import AnterosImage from "../components/AnterosImage";
-import AnterosImageMagnifier from "../components/AnterosImageMagnifier";
-import AnterosImageCropper from "../components/AnterosImageCropper";
-import AnterosButton from "../components/AnterosButton";
+import {AnterosCard, AnterosCardDeck } from "anteros-react";
+import {AnterosImage} from "anteros-react";
+import {AnterosImageMagnifier} from "anteros-react";
+import {AnterosImageCropper} from "anteros-react";
+import {AnterosButton} from "anteros-react";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
-import AnterosCollapseContent from '../components/AnterosCollapseContent';
+import {AnterosCollapseContent} from 'anteros-react';
 
 const src = 'http://i.imgur.com/Baf0DlW.png';
 

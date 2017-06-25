@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import AnterosCard, { HeaderActions } from "../components/AnterosCard";
-import AnterosFloatingButton, { AnterosFloatingButtonItem } from "../components/AnterosFloatingButton";
-import AnterosDropdownMenu from "../components/AnterosDropdownMenu";
-import AnterosDropdownMenuItem from "../components/AnterosDropdownMenuItem";
-import AnterosBadge from "../components/AnterosBadge";
-import AnterosStatusMark from "../components/AnterosStatusMark";
+import {AnterosCard, HeaderActions } from "anteros-react";
+import {AnterosFloatingButton, AnterosFloatingButtonItem } from "anteros-react";
+import {AnterosDropdownMenu} from "anteros-react";
+import {AnterosDropdownMenuItem} from "anteros-react";
+import {AnterosBadge} from "anteros-react";
+import {AnterosStatusMark} from "anteros-react";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
-import AnterosCollapseContent from '../components/AnterosCollapseContent';
-import AnterosButton from "../components/AnterosButton";
+import {AnterosCollapseContent} from 'anteros-react';
+import {AnterosButton} from "anteros-react";
 
 
 export default class FloatingButtonsView extends Component {
