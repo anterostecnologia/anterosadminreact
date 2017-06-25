@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "anteros-react": "file:../anteros-react/anteros-react-1.0.11.tgz",
+    "anteros-react": "^1.0.11",
     "axios": "^0.16.1",
     "babel-cli": "^6.24.0",
     "babel-core": "^6.23.1",
