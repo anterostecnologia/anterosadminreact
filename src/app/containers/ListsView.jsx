@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import AnterosCard, { AnterosCardDeck } from "../components/AnterosCard";
-import AnterosList, { AnterosListItem } from "../components/AnterosList";
-import AnterosBadge from "../components/AnterosBadge";
-import AnterosLabel from "../components/AnterosLabel";
-import AnterosImage from "../components/AnterosImage";
-import AnterosButton from "../components/AnterosButton";
-import AnterosProgressBar from '../components/AnterosProgressBar';
-import AnterosStatusMark from '../components/AnterosStatusMark';
-import AnterosCheckbox from '../components/AnterosCheckbox';
-import { If, Then, Else } from "../utils/AnterosControlStatements";
-import {isArray, isUndefined} from "../utils/AnterosUtils"
+import {AnterosCard,  AnterosCardDeck } from "anteros-react";
+import {AnterosList,  AnterosListItem } from "anteros-react";
+import {AnterosBadge} from "anteros-react";
+import {AnterosLabel} from "anteros-react";
+import {AnterosImage} from "anteros-react";
+import {AnterosButton} from "anteros-react";
+import {AnterosProgressBar} from 'anteros-react';
+import {AnterosStatusMark} from 'anteros-react';
+import {AnterosCheckbox} from 'anteros-react';
+import { If, Then, Else } from "anteros-react";
+import {isArray, isUndefined} from "anteros-react"
 
 
 var userList = [
