@@ -547,31 +547,31 @@ export default class ModalsView extends Component {
 
                     <div>
                         <div className="form-group row">
-                            <label for="example-text-input" className="col-2 col-form-label">Text</label>
+                            <label  className="col-2 col-form-label">Text</label>
                             <div className="col-10">
                                 <input className="form-control" type="text" value="Artisanal kale" id="example-text-input" />
                             </div>
                         </div>
                         <div className="form-group row">
-                            <label for="example-search-input" className="col-2 col-form-label">Search</label>
+                            <label className="col-2 col-form-label">Search</label>
                             <div className="col-10">
                                 <input className="form-control" type="search" value="How do I shoot web" id="example-search-input" />
                             </div>
                         </div>
                         <div className="form-group row">
-                            <label for="example-email-input" className="col-2 col-form-label">Email</label>
+                            <label className="col-2 col-form-label">Email</label>
                             <div className="col-10">
                                 <input className="form-control" type="email" value="bootstrap@example.com" id="example-email-input" />
                             </div>
                         </div>
                         <div className="form-group row">
-                            <label for="example-url-input" className="col-2 col-form-label">URL</label>
+                            <label  className="col-2 col-form-label">URL</label>
                             <div className="col-10">
                                 <input className="form-control" type="url" value="https://getbootstrap.com" id="example-url-input" />
                             </div>
                         </div>
                         <div className="form-group row">
-                            <label for="example-tel-input" className="col-2 col-form-label">Telephone</label>
+                            <label className="col-2 col-form-label">Telephone</label>
                             <div className="col-10">
                                 <input className="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input" />
                             </div>
