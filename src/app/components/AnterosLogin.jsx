@@ -22,7 +22,7 @@ class AnterosLogin extends Component {
         event.preventDefault();
 
         this.props.handleLogin(this.props.currentUser);
-        // axios.get('http://localhost:8090/AnterosCFC-Service/resource/buscaTodos', {
+        // axios.get('http://localhost:8090/AnterosCFC-Service/resource/1', {
         //     auth: {
         //         username: 'EDSON',
         //         password: '727204'

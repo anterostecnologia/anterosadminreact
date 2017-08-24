@@ -37,6 +37,7 @@ import TablesLayoutView from "../containers/TablesLayoutView";
 import DataTablesView from "../containers/DataTablesView";
 import ModalsView from "../containers/ModalsView";
 import HomeView from "../containers/HomeView";
+import KanbanView from "../containers/KanbanView";
 
 
 class AnterosMainLayout extends Component {
@@ -111,6 +112,7 @@ class AnterosMainLayout extends Component {
               <AnterosMenuItem id="mniLayoutTables" route="/home/layouttables" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Layout tables"></AnterosMenuItem>
               <AnterosMenuItem id="mniDataTables" route="/home/datatables" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Data tables"></AnterosMenuItem>
             </AnterosMenuItem>
+            <AnterosMenuItem id="mniKanbanBoard" route="/home/kanbanboard" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Kanban board"></AnterosMenuItem>
             <AnterosMenuItem id="mniCharts" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-line-chart" caption="Charts"> </AnterosMenuItem>
             <AnterosMenuItem id="mniWidgets" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home" caption="Widgets"> </AnterosMenuItem>
             <AnterosMenuItem id="mniDashBoards" route="/home/dashboards" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home" caption="Dashboards"> </AnterosMenuItem>
@@ -121,24 +123,25 @@ class AnterosMainLayout extends Component {
           <div className="sidebar-overlay" id="sidebar-overlay" onClick={this.onSidebarOverlayClick}></div>
           <AnterosMainContainer >
             <Switch>
-              <AnterosSecurityRoute path='/home/default' component={HomeView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/images' component={ImagesView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/buttons' component={ButtonsView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/cards' component={CardsView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/progressbar' component={ProgressBarView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/switches' component={SwitchesView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/ribbons' component={RibbonsView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/tabs' component={TabsView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/fButtons' component={FloatingButtonsView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/lists' component={ListsView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/labels' component={LabelsView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/salerts' component={SweetAlertView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/tooltips' component={TooltipsView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/notifications' component={NotificationsView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/basictables' component={TablesView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/layouttables' component={TablesLayoutView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/datatables' component={DataTablesView} isLoggedIn={this.props.isLoggedIn} />
-              <AnterosSecurityRoute path='/home/modals' component={ModalsView} isLoggedIn={this.props.isLoggedIn} />
+              <Route path='/home/default' component={HomeView} isLoggedIn={true} />
+              <Route path='/home/images' component={ImagesView} isLoggedIn={true} />
+              <Route path='/home/buttons' component={ButtonsView} isLoggedIn={true} />
+              <Route path='/home/cards' component={CardsView} isLoggedIn={true} />
+              <Route path='/home/progressbar' component={ProgressBarView} isLoggedIn={true} />
+              <Route path='/home/switches' component={SwitchesView} isLoggedIn={true} />
+              <Route path='/home/ribbons' component={RibbonsView} isLoggedIn={true} />
+              <Route path='/home/tabs' component={TabsView} isLoggedIn={true} />
+              <Route path='/home/fButtons' component={FloatingButtonsView} isLoggedIn={true} />
+              <Route path='/home/lists' component={ListsView} isLoggedIn={true} />
+              <Route path='/home/labels' component={LabelsView} isLoggedIn={true} />
+              <Route path='/home/salerts' component={SweetAlertView} isLoggedIn={true} />
+              <Route path='/home/tooltips' component={TooltipsView} isLoggedIn={true} />
+              <Route path='/home/notifications' component={NotificationsView} isLoggedIn={true} />
+              <Route path='/home/basictables' component={TablesView} isLoggedIn={true} />
+              <Route path='/home/layouttables' component={TablesLayoutView} isLoggedIn={true} />
+              <Route path='/home/datatables' component={DataTablesView} isLoggedIn={true} />
+              <Route path='/home/modals' component={ModalsView} isLoggedIn={true} />
+              <Route path='/home/kanbanboard' component={KanbanView} isLoggedIn={true} />
             </Switch>
             {this.props.children}
           </AnterosMainContainer>

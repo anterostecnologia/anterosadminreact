@@ -27,7 +27,7 @@ class AnterosApp extends Component {
                 <div>
                     <Switch>
                         <Route exact path="/" render={() => <Redirect to='/home/default' push={true}/>}/>
-                        <AnterosSecurityRoute path="/home" component={AnterosMainLayout} isLoggedIn={this.props.isLoggedIn}/>
+                        <Route path="/home" component={AnterosMainLayout} />
                         <Route path="/login" component={AnterosLogin} /> 
                         <Route component={AnterosNotFound} />
                     </Switch>

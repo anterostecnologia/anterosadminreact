@@ -2,11 +2,6 @@
 logs
 *.log
 
-# Zip
-*.zip
-*.tgz
-
-
 # Runtime data
 pids
 *.pid
