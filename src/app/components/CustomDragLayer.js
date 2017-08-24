@@ -7,7 +7,8 @@ import snapToGrid from './snapToGrid';
 const layerStyles = {
   position: 'fixed',
   pointerEvents: 'none',
-  zIndex: 100000
+  zIndex: 100000,
+  fontSize: "14px"
 };
 
 function getItemStyles(props) {
@@ -72,7 +73,7 @@ class CustomDragLayer extends Component {
     style = { ...layerStyles, ...style };
 
     return (
-      <div style={style}>
+      <div style={style} >
         {this.renderItem(itemType, item)}
       </div>
     );

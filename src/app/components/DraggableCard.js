@@ -13,14 +13,13 @@ function getStyles(isDragging) {
 
 const cardSource = {
   beginDrag(props, monitor, component) {
-    const { item, x, y, dataFieldValue, index } = props;
-    const { id, title } = item;
+    const { item, x, y, dataFieldValue, index, id } = props;
+    const { title } = item;
     const { clientWidth, clientHeight } = findDOMNode(component);
 
     return { id, title, item, x, y, index, clientWidth, clientHeight, dataFieldValue };
   },
   endDrag(props, monitor) {
-    document.getElementById(monitor.getItem().id).style.display = 'block';
     props.stopScrolling();
   },
   isDragging(props, monitor) {
@@ -64,12 +63,12 @@ class CardComponent extends Component {
   }
 
   render() {
-    const { isDragging, connectDragSource, item, cardComponent } = this.props;
+    const { isDragging, connectDragSource, item, cardComponent, id } = this.props;
     const DynamicComponent = cardComponent;
 
     return connectDragSource(
       <div>
-        <DynamicComponent style={getStyles(isDragging)} item={item} />
+        <DynamicComponent style={getStyles(isDragging)} item={item} id={id} />
       </div>
     );
   }
@@ -83,6 +82,7 @@ CardComponent.propTypes = {
     isDragging: PropTypes.bool.isRequired,
     x: PropTypes.number.isRequired,
     y: PropTypes.number,
+    id: PropTypes.string,
     stopScrolling: PropTypes.func,
     cardComponent: PropTypes.any.isRequired
   }

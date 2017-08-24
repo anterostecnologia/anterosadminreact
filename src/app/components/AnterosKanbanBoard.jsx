@@ -61,6 +61,11 @@ class AnterosKanbanBoard extends Component {
     }
 
     moveCard(item, from, to, positionFrom, positionTo) {
+        console.log(item);
+        console.log(from);
+        console.log(to);
+        console.log(positionFrom);
+        console.log(positionTo);
         if ((this.props.dataSource instanceof AnterosRemoteDatasource) || (this.props.dataSource instanceof AnterosLocalDatasource)) {
             if (positionTo==-1){
                 positionTo = this.props.dataSource.getTotalRecords()-1;

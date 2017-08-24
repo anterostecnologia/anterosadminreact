@@ -37,10 +37,18 @@ const specs = {
     var children = findDOMNode(component).children;
     let y = monitor.getClientOffset().y;
     for (let i = 0; i < children.length; i++) {
-      let value = Math.floor(children[i].getBoundingClientRect().top + (children[i].getBoundingClientRect().bottom - children[i].getBoundingClientRect().top) / 2);
-      if (y >= value && y <= children[i].getBoundingClientRect().bottom) {
-        placeholderIndex = i;
-        break;
+      if (i == 0) {
+        if (y >= children[i].getBoundingClientRect().top && y <= children[i].getBoundingClientRect().bottom) {
+          placeholderIndex = i;
+          break;
+        }
+      }
+      else {
+        let value = Math.floor(children[i].getBoundingClientRect().top + (children[i].getBoundingClientRect().bottom - children[i].getBoundingClientRect().top) / 2);
+        if (y >= value && y <= children[i].getBoundingClientRect().bottom) {
+          placeholderIndex = i;
+          break;
+        }
       }
     }
 
@@ -57,10 +65,9 @@ const specs = {
         props.stopScrolling();
       }
     }
-    component.setState({ placeholderIndex });
     const item = monitor.getItem();
-    if (!document.getElementById(item.id).style)
-      document.getElementById(item.id).style = {};
+    console.log(placeholderIndex);
+    component.setState({ placeholderIndex });
     document.getElementById(item.id).style.display = 'none';
   }
 };
@@ -106,15 +113,16 @@ class Cards extends Component {
       }
 
       if (card !== undefined) {
-          cardList.push(React.createElement(Card,
-            {
-              x: x, y: i, dataFieldValue: this.props.dataFieldValue,
-              item: card.item,
-              key: card.item.id,
-              index: card.index,
-              cardComponent: this.props.cardComponent,
-              stopScrolling: this.props.stopScrolling
-            }));
+        cardList.push(React.createElement(Card,
+          {
+            x: x, y: i, dataFieldValue: this.props.dataFieldValue,
+            item: card.item,
+            key: card.item.id,
+            index: card.index,
+            id: this.cardsId + "_" + card.item.id,
+            cardComponent: this.props.cardComponent,
+            stopScrolling: this.props.stopScrolling
+          }));
       }
 
     });
