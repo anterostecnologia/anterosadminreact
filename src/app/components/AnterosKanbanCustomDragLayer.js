@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { DragLayer } from 'react-dnd';
-import CardDragPreview from './CardDragPreview';
+import CardDragPreview from './AnterosKanbanCardDragPreview';
 import snapToGrid from './snapToGrid';
 
 
@@ -46,7 +46,7 @@ const collect = function (monitor) {
   }
 };
 
-class CustomDragLayer extends Component {
+class AnterosKanbanCustomDragLayer extends Component {
   constructor(props) {
     super(props);
   }
@@ -81,7 +81,7 @@ class CustomDragLayer extends Component {
 }
 
 
-CustomDragLayer.propTypes = {
+AnterosKanbanCustomDragLayer.propTypes = {
   item: PropTypes.object,
   itemType: PropTypes.string,
   initialOffset: PropTypes.shape({
@@ -99,4 +99,4 @@ CustomDragLayer.propTypes = {
 
 
 
-export default DragLayer(collect)(CustomDragLayer);
+export default DragLayer(collect)(AnterosKanbanCustomDragLayer);

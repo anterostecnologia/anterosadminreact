@@ -9,7 +9,7 @@ const styles = {
 
 
 
-const CardDragPreview = (props) => {
+const AnterosKanbanCardDragPreview = (props) => {
   styles.width = `${props.card.clientWidth || 243}px`;
   styles.height = `${props.card.clientHeight || 243}px`;
   const DynamicComponent = props.cardComponent;
@@ -20,9 +20,9 @@ const CardDragPreview = (props) => {
   );
 };
 
-CardDragPreview.propTypes = {
+AnterosKanbanCardDragPreview.propTypes = {
   card: PropTypes.object,
   cardComponent: PropTypes.any.isRequired
 };
 
-export default CardDragPreview;
+export default AnterosKanbanCardDragPreview;

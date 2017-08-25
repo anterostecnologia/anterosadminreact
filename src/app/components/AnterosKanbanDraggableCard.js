@@ -17,10 +17,17 @@ const cardSource = {
     const { title } = item;
     const { clientWidth, clientHeight } = findDOMNode(component);
 
+    if (props.onBeginDragCard){
+      props.onBeginDragCard(item);
+    }
+
     return { id, title, item, x, y, index, clientWidth, clientHeight, dataFieldValue };
   },
   endDrag(props, monitor) {
     props.stopScrolling();
+    if (props.onEndDragCard){
+      props.onEndDragCard(props.item);
+    }
   },
   isDragging(props, monitor) {
     const isDragging = props.item && props.item.id === monitor.getItem().id;
@@ -51,9 +58,10 @@ function collectDragSource(connectDragSource, monitor) {
   };
 }
 
-class CardComponent extends Component {
+class AnterosKanbanCardComponent extends Component {
   constructor(props){
     super(props);
+    this.onClickCard = this.onClickCard.bind(this);
   }
 
   componentDidMount() {
@@ -62,12 +70,19 @@ class CardComponent extends Component {
     });
   }
 
+  onClickCard(event){
+    event.preventDefault();
+    if (this.props.onClickCard){
+      this.props.onClickCard(this.props.item);
+    }
+  }
+
   render() {
     const { isDragging, connectDragSource, item, cardComponent, id } = this.props;
     const DynamicComponent = cardComponent;
 
     return connectDragSource(
-      <div>
+      <div onClick={this.onClickCard}>
         <DynamicComponent style={getStyles(isDragging)} item={item} id={id} />
       </div>
     );
@@ -75,7 +90,7 @@ class CardComponent extends Component {
 }
 
 
-CardComponent.propTypes = {
+AnterosKanbanCardComponent.propTypes = {
     item: PropTypes.object,
     connectDragSource: PropTypes.func.isRequired,
     connectDragPreview: PropTypes.func.isRequired,
@@ -84,8 +99,12 @@ CardComponent.propTypes = {
     y: PropTypes.number,
     id: PropTypes.string,
     stopScrolling: PropTypes.func,
-    cardComponent: PropTypes.any.isRequired
+    cardComponent: PropTypes.any.isRequired,
+    onBeginDragCard: React.PropTypes.func,
+    onEndDragCard: React.PropTypes.func,
+    onHoverCard: React.PropTypes.func,
+    onClickCard: React.PropTypes.func
   }
 
 
-  export default DragSource('card', cardSource, collectDragSource, OPTIONS)(CardComponent);
+  export default DragSource('card', cardSource, collectDragSource, OPTIONS)(AnterosKanbanCardComponent);

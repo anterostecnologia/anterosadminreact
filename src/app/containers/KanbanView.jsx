@@ -74,11 +74,29 @@ export default class KanbanView extends Component {
         super(props);
         this.dataSource = new AnterosLocalDatasource();
         this.dataSource.open(tasks);
+        this.onBeginDragCard = this.onBeginDragCard.bind(this);
+        this.onEndDragCard = this.onEndDragCard.bind(this);
+        this.onClickCard = this.onClickCard.bind(this);
+    }
+
+    onBeginDragCard(card) {
+        console.log('Begin drag card');
+        console.log(card);
+    }
+
+    onEndDragCard(card) {
+        console.log('End drag card');
+        console.log(card);
+    }
+
+    onClickCard(card) {
+        console.log('Click card');
+        console.log(card);
     }
 
     render() {
         return (<AnterosCard caption="Kanban board" height="850px">
-            <AnterosKanbanBoard dataSource={this.dataSource} dataFieldColumn="status" height="750px" cardComponent={Card}>
+            <AnterosKanbanBoard dataSource={this.dataSource} dataFieldColumn="status" height="750px" cardComponent={Card} onBeginDragCard={this.onBeginDragCard} onEndDragCard={this.onEndDragCard} onClickCard={this.onClickCard}>
                 <AnterosKanbanColumn dataFieldValue="TO_DO" title="TO DO" backgroundColorTitle="#81D4FA" fontColorTitle="black" centerTitle />
                 <AnterosKanbanColumn dataFieldValue="DOING" title="DOING" backgroundColorTitle="#FEE0BD" fontColorTitle="black" centerTitle />
                 <AnterosKanbanColumn dataFieldValue="TESTING" title="TESTING" backgroundColorTitle="#FF8A65" fontColorTitle="black" centerTitle />
@@ -121,7 +139,7 @@ class Card extends Component {
             return "#43A047";
         } else if (value == "Low") {
             return "#0288D1";
-        }    
+        }
     }
 
     render() {

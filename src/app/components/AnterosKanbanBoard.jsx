@@ -5,8 +5,8 @@ import HTML5Backend, { getEmptyImage } from 'react-dnd-html5-backend';
 import { AnterosRemoteDatasource, AnterosLocalDatasource } from 'anteros-react';
 import './temp.css';
 
-import CardsContainer from './CardsContainer';
-import CustomDragLayer from './CustomDragLayer';
+import AnterosKanbanCardsContainer from './AnterosKanbanCardsContainer';
+import AnterosKanbanCustomDragLayer from './AnterosKanbanCustomDragLayer';
 
 
 class AnterosKanbanBoard extends Component {
@@ -61,11 +61,6 @@ class AnterosKanbanBoard extends Component {
     }
 
     moveCard(item, from, to, positionFrom, positionTo) {
-        console.log(item);
-        console.log(from);
-        console.log(to);
-        console.log(positionFrom);
-        console.log(positionTo);
         if ((this.props.dataSource instanceof AnterosRemoteDatasource) || (this.props.dataSource instanceof AnterosLocalDatasource)) {
             if (positionTo==-1){
                 positionTo = this.props.dataSource.getTotalRecords()-1;
@@ -117,12 +112,16 @@ class AnterosKanbanBoard extends Component {
                 index: index,
                 cardComponent: _this.props.cardComponent,
                 height: _this.props.columnHeight,
+                onBeginDragCard:this.props.onBeginDragCard,
+                onEndDragCard:this.props.onEndDragCard,
+                onHoverCard:this.props.onHoverCard,
+                onClickCard:this.props.onClickCard,
                 cards: _this.getCardsByColumnValue(child.props.dataFieldValue)
             })
         );
         return (
             <div className="kanban" style={{height:this.props.height}}>
-                <CustomDragLayer snapToGrid={false} cardComponent={this.props.cardComponent}/>
+                <AnterosKanbanCustomDragLayer snapToGrid={false} cardComponent={this.props.cardComponent}/>
                 {children}
             </div>
         );
@@ -138,7 +137,11 @@ AnterosKanbanBoard.propTypes = {
         React.PropTypes.instanceOf(AnterosRemoteDatasource)
     ]),
     dataFieldColumn: React.PropTypes.string,
-    cardComponent: React.PropTypes.any.isRequired
+    cardComponent: React.PropTypes.any.isRequired,
+    onBeginDragCard: React.PropTypes.func,
+    onEndDragCard: React.PropTypes.func,
+    onHoverCard: React.PropTypes.func,
+    onClickCard: React.PropTypes.func
 }
 
 
@@ -148,7 +151,7 @@ export class AnterosKanbanColumn extends React.Component {
     }
 
     render() {
-        return (<CardsContainer
+        return (<AnterosKanbanCardsContainer
             title={this.props.title}
             cards={this.props.cards}
             dataFieldValue={this.props.dataFieldValue}
@@ -164,6 +167,10 @@ export class AnterosKanbanColumn extends React.Component {
             cardComponent={this.props.cardComponent}
             width={this.props.width}
             opacity={this.props.opacity}
+            onBeginDragCard={this.props.onBeginDragCard}
+            onEndDragCard={this.props.onEndDragCard}
+            onHoverCard={this.props.onHoverCard}
+            onClickCard={this.props.onClickCard}
             x={this.props.index}
         />);
     }
@@ -177,7 +184,7 @@ AnterosKanbanColumn.propTypes = {
     opacity: React.PropTypes.string,
     fontColorTitle: React.PropTypes.string,
     centerTitle: React.PropTypes.bool,
-    width: React.PropTypes.string
+    width: React.PropTypes.string    
 }
 
 

@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { DropTarget } from 'react-dnd';
 import { findDOMNode } from 'react-dom';
 import lodash from 'lodash';
-import Card from './DraggableCard';
+import Card from './AnterosKanbanDraggableCard';
 
 const specs = {
   drop(props, monitor, component) {
@@ -66,7 +66,6 @@ const specs = {
       }
     }
     const item = monitor.getItem();
-    console.log(placeholderIndex);
     component.setState({ placeholderIndex });
     document.getElementById(item.id).style.display = 'none';
   }
@@ -82,7 +81,7 @@ const collectSource = function (connectDragSource, monitor) {
   }
 }
 
-class Cards extends Component {
+class AnterosKanbanCards extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -121,7 +120,11 @@ class Cards extends Component {
             index: card.index,
             id: this.cardsId + "_" + card.item.id,
             cardComponent: this.props.cardComponent,
-            stopScrolling: this.props.stopScrolling
+            stopScrolling: this.props.stopScrolling,
+            onBeginDragCard: this.props.onBeginDragCard,
+            onEndDragCard: this.props.onEndDragCard,
+            onHoverCard: this.props.onHoverCard,
+            onClickCard: this.props.onClickCard
           }));
       }
 
@@ -142,7 +145,7 @@ class Cards extends Component {
   }
 }
 
-Cards.propTypes = {
+AnterosKanbanCards.propTypes = {
   connectDropTarget: PropTypes.func.isRequired,
   moveCard: PropTypes.func.isRequired,
   cards: PropTypes.array.isRequired,
@@ -157,4 +160,4 @@ Cards.propTypes = {
 }
 
 
-export default DropTarget('card', specs, collectSource)(Cards)
+export default DropTarget('card', specs, collectSource)(AnterosKanbanCards)
