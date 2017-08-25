@@ -1,10 +1,8 @@
 
 import React, { Component, PropTypes } from 'react';
-import { AnterosCard, AnterosBadge, AnterosImage } from "anteros-react";
-import { AnterosButton, AnterosLocalDatasource } from "anteros-react";
-import AnterosKanbanBoard, { AnterosKanbanColumn } from "../components/AnterosKanbanBoard";
-import AnterosFlexBox from "../components/AnterosFlexBox";
-import AnterosIcon from "../components/AnterosIcon";
+import { AnterosCard, AnterosBadge, AnterosImage, AnterosFlexBox, AnterosIcon, 
+    AnterosKanbanBoard, AnterosKanbanColumn, AnterosButton, AnterosLocalDatasource } from "anteros-react";
+
 
 const tasks = [{ "id": 1, "first_name": "Birdie", "last_name": "Yewdale", "email": "byewdale0@meetup.com", "task": "Fixflex", "status": "TESTING", "tag1": "Desktop", "tag2": "Normal" },
 { "id": 2, "first_name": "Herve", "last_name": "Cowing", "email": "hcowing1@harvard.edu", "task": "Fixflex", "status": "TESTING", "tag1": "Partners", "tag2": "Normal" },

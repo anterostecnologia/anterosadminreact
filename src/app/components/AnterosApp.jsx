@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import 'anteros-react/lib/anteros-react.min.css';
+import 'anteros-react/lib/anteros-react.css';
 import AnterosMainLayout from './AnterosMainLayout';
 import {AnterosNotFound} from 'anteros-react';
 import AnterosLogin from './AnterosLogin';
