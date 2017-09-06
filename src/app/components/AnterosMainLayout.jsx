@@ -38,6 +38,9 @@ import DataTablesView from "../containers/DataTablesView";
 import ModalsView from "../containers/ModalsView";
 import HomeView from "../containers/HomeView";
 import KanbanView from "../containers/KanbanView";
+import MiscView from "../containers/MiscView";
+import ChartsView from "../containers/ChartsView";
+
 
 
 class AnterosMainLayout extends Component {
@@ -113,7 +116,10 @@ class AnterosMainLayout extends Component {
               <AnterosMenuItem id="mniDataTables" route="/home/datatables" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Data tables"></AnterosMenuItem>
             </AnterosMenuItem>
             <AnterosMenuItem id="mniKanbanBoard" route="/home/kanbanboard" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Kanban board"></AnterosMenuItem>
-            <AnterosMenuItem id="mniCharts" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-line-chart" caption="Charts"> </AnterosMenuItem>
+            <AnterosMenuItem id="mniMisc" route="/home/miscellaneous" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home blue" caption="Miscellaneous"></AnterosMenuItem>
+            <AnterosMenuItem id="mniCharts" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-line-chart" caption="Charts">
+            <AnterosMenuItem id="mniECharts" route="/home/echarts" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-line-chart blue" caption="ECharts"></AnterosMenuItem>
+            </AnterosMenuItem>
             <AnterosMenuItem id="mniWidgets" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home" caption="Widgets"> </AnterosMenuItem>
             <AnterosMenuItem id="mniDashBoards" route="/home/dashboards" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-home" caption="Dashboards"> </AnterosMenuItem>
             <AnterosMenuItem id="mniMaps" onSelectMenuItem={this.onSelectMenuItem}  icon="fa fa-map-o" caption="Maps"> </AnterosMenuItem>
@@ -142,6 +148,8 @@ class AnterosMainLayout extends Component {
               <Route path='/home/datatables' component={DataTablesView} isLoggedIn={true} />
               <Route path='/home/modals' component={ModalsView} isLoggedIn={true} />
               <Route path='/home/kanbanboard' component={KanbanView} isLoggedIn={true} />
+              <Route path='/home/miscellaneous' component={MiscView} isLoggedIn={true} />
+              <Route path='/home/echarts' component={ChartsView} isLoggedIn={true} />
             </Switch>
             {this.props.children}
           </AnterosMainContainer>
