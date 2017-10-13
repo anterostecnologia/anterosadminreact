@@ -3,6 +3,7 @@ import ReactDOM from "react-dom"
 import AnterosApp from './components/AnterosApp';
 import store from "./store";
 import {Provider} from "react-redux";
+import "./components/temp.css";
 
 ReactDOM.render(<Provider store={store}>
     <AnterosApp />

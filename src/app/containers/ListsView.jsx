@@ -9,7 +9,7 @@ import {AnterosProgressBar} from 'anteros-react';
 import {AnterosStatusMark} from 'anteros-react';
 import {AnterosCheckbox} from 'anteros-react';
 import { If, Then, Else } from "anteros-react";
-import {isArray, isUndefined} from "anteros-react"
+import {AnterosUtils, isUndefined} from "anteros-react"
 
 
 var userList = [
@@ -922,7 +922,7 @@ class CustomComponentTodo extends Component {
         //     }
         // ]
 
-        let hasPerson = (isArray(this.props.recordData.person) && this.props.recordData.person.length > 0);
+        let hasPerson = (AnterosUtils.isArray(this.props.recordData.person) && this.props.recordData.person.length > 0);
         return (
             <div style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "15px" }} className={className} onClick={this.onClick}>
                 <div className="d-flex">
