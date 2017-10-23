@@ -47,7 +47,7 @@ export default class NestableView extends Component {
 
     isCollapsed() {
         const form = document.forms[0] || null;
-        return form && form.elements["collapsed"].checked;
+        return form != undefined && form != null && form.elements["collapsed"].checked;
     };
 
     renderItem({ item, collapseIcon, handler }) {
