@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import {AnterosCard,HeaderActions} from "anteros-react";
-import {AnterosPageControl} from "anteros-react";
-import {AnterosTab} from "anteros-react";
-import {AnterosButton} from "anteros-react";
-import {AnterosImage} from "anteros-react";
-import {AnterosAccordion,  AnterosAccordionItem } from "anteros-react";
+import {AnterosCard,HeaderActions,AnterosPageControl,AnterosTab, 
+    AnterosCollapseContent} from "anteros-react-containers";
+import { AnterosAccordion,  AnterosAccordionItem } from "anteros-react-menu";   
+import {AnterosButton} from "anteros-react-buttons";
+import {AnterosImage} from "anteros-react-image";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
-import {AnterosCollapseContent} from 'anteros-react';
+
 
 
 export default class TabsView extends Component {
@@ -19,7 +18,7 @@ export default class TabsView extends Component {
         return (
             <div>
                 <AnterosCard caption="Default tabs">
-                    <AnterosPageControl height="200px">
+                    <AnterosPageControl height="350px">
                         <AnterosTab id="tab1" caption="Home" active>
                             <div className="row">
                                 <div className="col-md-2"> <AnterosImage src={require("../assets/img/1.jpg")} width={"256px"} height={"256px"} /> </div>
@@ -49,7 +48,7 @@ export default class TabsView extends Component {
                     </AnterosPageControl>
                 </AnterosCard>                
                 <AnterosCard caption="Custom design 1 tabs">
-                    <AnterosPageControl height="200px" custom1>
+                    <AnterosPageControl height="350px" custom1>
                         <AnterosTab id="tab11" caption="Home" active>
                             <div className="row">
                                 <div className="col-md-2"> <AnterosImage src={require("../assets/img/2.jpg")} width={"256px"} height={"256px"} /> </div>
@@ -79,7 +78,7 @@ export default class TabsView extends Component {
                     </AnterosPageControl>
                 </AnterosCard>
                 <AnterosCard caption="Vertical tabs custom design 1">
-                    <AnterosPageControl height="200px" vertical>
+                    <AnterosPageControl height="350px" vertical>
                         <AnterosTab id="tab111" caption="Home" active>
                             <div className="row">
                                 <div className="col-md-3"> <AnterosImage src={require("../assets/img/4.jpg")} width={"256px"} height={"256px"} /> </div>
@@ -109,7 +108,7 @@ export default class TabsView extends Component {
                     </AnterosPageControl>
                 </AnterosCard>
                 <AnterosCard caption="Vertical tabs custom design 1">
-                    <AnterosPageControl height="200px" vertical custom1>
+                    <AnterosPageControl height="350px" vertical custom1>
                         <AnterosTab id="tab1115" caption="Home" active>
                             <div className="p-20">
                                 <h3>Best Clean Tab ever</h3>
@@ -138,7 +137,7 @@ export default class TabsView extends Component {
 
 
                 <AnterosCard caption="Custom design 2 tabs">
-                    <AnterosPageControl height="200px" custom2>
+                    <AnterosPageControl height="350px" custom2>
                         <AnterosTab id="tab113" caption="Home" active>
                             <div className="p-20">
                                 <h3>Best Clean Tab ever</h3>
@@ -166,7 +165,7 @@ export default class TabsView extends Component {
                 </AnterosCard>
 
                 <AnterosCard caption="Pills tabs">
-                    <AnterosPageControl height="200px" pill>
+                    <AnterosPageControl height="350px" pill>
                         <AnterosTab id="tab1134" caption="Home" active>
                             <div className="p-20">
                                 <h3>Best Clean Tab ever</h3>
@@ -195,7 +194,7 @@ export default class TabsView extends Component {
                 <AnterosCard caption="Tabs with icons and images">
                     <div className="row">
                         <div className="col-6">
-                            <AnterosPageControl height="200px">
+                            <AnterosPageControl height="350px">
                                 <AnterosTab id="tab19" caption="Home" active icon="fa fa-home">
                                     <div className="p-20">
                                         <h3>Best Clean Tab ever</h3>
@@ -222,7 +221,7 @@ export default class TabsView extends Component {
                             </AnterosPageControl>
                         </div>
                         <div className="col-6">
-                            <AnterosPageControl height="200px">
+                            <AnterosPageControl height="350px">
                                 <AnterosTab id="tab17" caption="Home" active image={require('../assets/img/home_1.png')}>
                                     <div className="p-20">
                                         <h3>Best Clean Tab ever</h3>
@@ -253,7 +252,7 @@ export default class TabsView extends Component {
 
 
                 <AnterosCard caption="Vertical tabs with icons and images">
-                    <AnterosPageControl height="200px" vertical>
+                    <AnterosPageControl height="350px" vertical>
                         <AnterosTab id="tab1112" caption="Home" active icon="fa fa-home">
                             <div className="p-20">
                                 <h3>Best Clean Tab ever</h3>
@@ -279,7 +278,7 @@ export default class TabsView extends Component {
                         </AnterosTab>
                     </AnterosPageControl>
                     <p></p>
-                    <AnterosPageControl height="200px" vertical custom1>
+                    <AnterosPageControl height="350px" vertical custom1>
                         <AnterosTab id="tab1113" caption="Home" active image={require('../assets/img/home_1.png')}>
                             <div className="p-20">
                                 <h3>Best Clean Tab ever</h3>

@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
-import {AnterosCard, AnterosCardDeck, HeaderActions } from "anteros-react";
-import {AnterosButton} from 'anteros-react';
-import {AnterosButtonGroup} from 'anteros-react';
-import {AnterosDropdownButton} from 'anteros-react';
-import {AnterosDropdownMenu} from 'anteros-react';
-import {AnterosDropdownMenuItem} from 'anteros-react';
-import {AnterosFloatingButton, AnterosFloatingButtonItem } from "anteros-react";
-// import {AnterosRadialButton} from "anteros-react";
-import {AnterosDropdownDivider} from "anteros-react";
+import {AnterosCard, AnterosCardDeck, HeaderActions, AnterosCollapseContent } from "anteros-react-containers";
+import {AnterosButton, AnterosButtonGroup, AnterosDropdownButton, AnterosDropdownMenu, 
+    AnterosFloatingButton, AnterosFloatingButtonItem, AnterosDropdownMenuItem, 
+    AnterosDropdownDivider} from 'anteros-react-buttons';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
-import {AnterosCollapseContent} from 'anteros-react';
+
 
 const BUTTONS_COLORS = '<AnterosButton primary caption="Primary" />\n\
 <AnterosButton secondary caption="Secondary" />\n\
@@ -30,9 +25,8 @@ const BUTTONS_OUTLINE = '<AnterosButton primary outline caption="Primary" />\n\
 export default class ButtonsView extends Component {
     render() {
         return (<AnterosCard caption="Buttons">
-
             <AnterosCardDeck>
-                <AnterosCard caption="Button colors">
+                 <AnterosCard caption="Button colors">
                     <HeaderActions>
                         <AnterosButton circle small link icon="fa fa-code"
                             hint="Show code" hintPosition="left"
@@ -73,7 +67,7 @@ export default class ButtonsView extends Component {
                         <br></br>
                         <SyntaxHighlighter style={docco}>{BUTTONS_OUTLINE}</SyntaxHighlighter>
                     </AnterosCollapseContent>
-                </AnterosCard>
+                </AnterosCard> 
             </AnterosCardDeck>
 
 
@@ -211,7 +205,7 @@ export default class ButtonsView extends Component {
                         </div>
                     </div>
                 </AnterosCard>
-
+ 
                 <AnterosCard caption="Button dropdowns">
                     <AnterosCard caption="Dropdowns" height="250px">
                         <HeaderActions>
@@ -268,7 +262,7 @@ export default class ButtonsView extends Component {
                         </AnterosDropdownButton>
 
                     </AnterosCard>
-                </AnterosCard>
+                </AnterosCard> 
             </AnterosCardDeck>
             <AnterosCardDeck>
                 <AnterosCard caption="Buttons group">
@@ -348,9 +342,8 @@ export default class ButtonsView extends Component {
                                     <AnterosDropdownMenuItem caption="Separated link" />
                                 </AnterosDropdownMenu>
                             </AnterosDropdownButton>
-                        </AnterosButtonGroup>
+                        </AnterosButtonGroup> 
                     </section>
-
                 </AnterosCard>
 
                 <AnterosCard caption="Social buttons">
@@ -410,33 +403,6 @@ export default class ButtonsView extends Component {
                     <AnterosButton secondary pillLeft image={require('../assets/img/mail_1.png')}>E-mail</AnterosButton>
                 </AnterosCard>
             </AnterosCardDeck>
-
-
-
-            <AnterosCardDeck>
-                <AnterosCard height="250px" caption="Floating button">
-                    <HeaderActions>
-                        <AnterosButton circle small link icon="fa fa-code"
-                            hint="Show code" hintPosition="left"
-                            collapseContent="idShowButtonsColors" />
-                    </HeaderActions>
-                    <AnterosFloatingButton icon="fa fa-plus" hint="Menu" autoClose={true} openMode="click">
-                        <AnterosFloatingButtonItem icon="fa fa-pencil" hint="Editar" backgroundColor="#f1c40f" onButtonClick={() => console.log("Clicou no botão editar")} />
-                        <AnterosFloatingButtonItem icon="fa fa-eraser" hint="Remover" backgroundColor="#e74c3c" onButtonClick={() => console.log("Clicou no botão remover")} />
-                        <AnterosFloatingButtonItem icon="fa fa-search" hint="Localizar" backgroundColor="#7cb342" onButtonClick={() => console.log("Clicou no botão localizar")} />
-                        <AnterosFloatingButtonItem icon="fa fa-print" hint="Imprimir" onButtonClick={() => console.log("Clicou no botão imprimir")} />
-                    </AnterosFloatingButton>
-                </AnterosCard>
-                <AnterosCard height="250px" caption="Radial button">
-                    <HeaderActions>
-                        <AnterosButton circle small link icon="fa fa-code"
-                            hint="Show code" hintPosition="left"
-                            collapseContent="idShowButtonsColors" />
-                    </HeaderActions>
-                    {/*<AnterosRadialButton />*/}
-                </AnterosCard>
-            </AnterosCardDeck>
-
         </AnterosCard >);
     }
 }

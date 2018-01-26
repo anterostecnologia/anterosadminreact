@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { loadScript } from 'anteros-react';
+import { loadScript } from 'anteros-react-core';
 
 let readyCheck;
 
@@ -96,8 +96,8 @@ export default class AnterosRecaptcha extends Component {
       return (
         <div id={this.props.elementID}
           data-onloadcallbackname={this.props.onloadCallbackName}
-          data-verifycallbackname={this.props.verifyCallbackName}
-        />
+          data-verifycallbackname={this.props.verifyCallbackName}>
+        </div>
       );
     }
 

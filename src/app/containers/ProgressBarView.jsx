@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import {AnterosCard, HeaderActions, AnterosCardDeck } from "anteros-react";
-import {AnterosProgressBar} from 'anteros-react';
-import {AnterosKnob} from 'anteros-react';
+import {AnterosCard, HeaderActions, AnterosCardDeck, AnterosCollapseContent } from "anteros-react-containers";
+import {AnterosProgressBar, AnterosKnob} from 'anteros-react-misc';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
-import {AnterosCollapseContent} from 'anteros-react';
 
 export default class ButtonView extends Component {
     render() {

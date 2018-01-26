@@ -1,24 +1,18 @@
 import React, { Component } from 'react';
-import { AnterosHeader } from 'anteros-react';
-import { AnterosMenu } from 'anteros-react';
-import { AnterosMenuItem } from 'anteros-react';
-import { AnterosFooter } from 'anteros-react';
-import { AnterosMainContainer } from 'anteros-react';
-import { AnterosNotFound } from 'anteros-react';
-import { AnterosFullScreen } from 'anteros-react';
-import { AnterosNavigatorLinkDropdown } from "anteros-react";
-import { AnterosNavigatorLink } from "anteros-react";
-import { AnterosDropdownMenu } from "anteros-react";
-import { AnterosDropdownMenuItem } from "anteros-react";
-import { AnterosDropdownDivider } from "anteros-react";
-import { AnterosBadge } from "anteros-react";
+import { AnterosMainContainer } from 'anteros-react-containers';
+import { AnterosFullScreen, AnterosHeader, AnterosFooter } from "anteros-react-layout";
+import { AnterosNotFound, AnterosError } from 'anteros-react-core';
+import { AnterosNavigatorLinkDropdown, AnterosNavigatorLink, AnterosMenu, AnterosMenuItem  } from "anteros-react-menu";
+import { AnterosDropdownMenu, AnterosDropdownMenuItem, AnterosDropdownDivider} from "anteros-react-buttons";         
+import { AnterosBadge } from "anteros-react-label";
+import { AnterosSecurityRoute } from "anteros-react-security";
 import { connect } from "react-redux";
 import { handleLogout } from '../actions/authenticationActions';
 import 'font-awesome/css/font-awesome.min.css';
 import {
   Route, Link, Switch, NavLink
 } from 'react-router-dom';
-import { AnterosSecurityRoute } from "anteros-react";
+
 import ImagesView from "../containers/ImagesView";
 import ButtonsView from "../containers/ButtonsView";
 import CardsView from "../containers/CardsView";
@@ -45,6 +39,11 @@ import NestableView from "../containers/NestableView";
 import IconsAwesomeView from "../containers/IconsAwesomeView";
 import IconsIcoFontsView from "../containers/IconsIcoFontsView";
 import WizardsView from "../containers/WizardsView";
+import FlexContainerView from "../containers/FlexContainerView";
+// import AceEditorView from "../containers/AceEditorView";
+import AbsoluteGridView from "../containers/AbsoluteGridView";
+import CarouselSlickView from "../containers/CarouselSlickView";
+import SparkLinesView from "../containers/SparkLinesView";
 
 
 class AnterosMainLayout extends Component {
@@ -114,6 +113,10 @@ class AnterosMainLayout extends Component {
             <AnterosMenuItem id="mniAdvancedUI" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-home blue" caption="Advanced UI"> </AnterosMenuItem>
             <AnterosMenuItem id="mniForms" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-address-card-o blue" caption="Forms"> </AnterosMenuItem>
             <AnterosMenuItem id="mniLayouts" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-home" caption="Layouts"> </AnterosMenuItem>
+            <AnterosMenuItem id="mniLayoutsFlex" route="/home/layoutflex" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-home" caption="Layouts flex"> </AnterosMenuItem>
+            {/* <AnterosMenuItem id="mniAceEditor" route="/home/aceeditor" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-home" caption="Ace editor"> </AnterosMenuItem> */}
+            <AnterosMenuItem id="mniGrid" route="/home/grid" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-home" caption="Absolute grid"> </AnterosMenuItem>
+            <AnterosMenuItem id="mniCarousel" route="/home/carousel" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-home" caption="Carousel"> </AnterosMenuItem>
             <AnterosMenuItem id="mniIcons" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-star" caption="Icons">
               <AnterosMenuItem id="mniIconsAwesome" route="/home/iconsawesome" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-star" caption="Font awesome" />
               <AnterosMenuItem id="mniIconsIcoFonts" route="/home/iconsicofonts" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-star" caption="Ico fonts" />
@@ -127,6 +130,7 @@ class AnterosMainLayout extends Component {
             <AnterosMenuItem id="mniKanbanBoard" route="/home/kanbanboard" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-home blue" caption="Kanban board"></AnterosMenuItem>
             <AnterosMenuItem id="mniMisc" route="/home/miscellaneous" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-home blue" caption="Miscellaneous"></AnterosMenuItem>
             <AnterosMenuItem id="mniSplitters" route="/home/splitters" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-columns blue" caption="Splitters"></AnterosMenuItem>
+            <AnterosMenuItem id="mniSparklines" route="/home/sparklines" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-columns blue" caption="Sparklines"></AnterosMenuItem>
             <AnterosMenuItem id="mniNestable" route="/home/nestable" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-columns blue" caption="Nestable"></AnterosMenuItem>
             <AnterosMenuItem id="mniCharts" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-line-chart" caption="Charts">
               <AnterosMenuItem id="mniECharts" route="/home/echarts" onSelectMenuItem={this.onSelectMenuItem} icon="fa fa-line-chart blue" caption="ECharts"></AnterosMenuItem>
@@ -152,6 +156,10 @@ class AnterosMainLayout extends Component {
               <Route path='/home/fButtons' component={FloatingButtonsView} isLoggedIn={true} />
               <Route path='/home/lists' component={ListsView} isLoggedIn={true} />
               <Route path='/home/labels' component={LabelsView} isLoggedIn={true} />
+              <Route path='/home/layoutflex' component={FlexContainerView} isLoggedIn={true} />
+              {/* <Route path='/home/aceeditor' component={AceEditorView} isLoggedIn={true} /> */}
+              <Route path='/home/grid' component={AbsoluteGridView} isLoggedIn={true} />
+              <Route path='/home/carousel' component={CarouselSlickView} isLoggedIn={true} />
               <Route path='/home/salerts' component={SweetAlertView} isLoggedIn={true} />
               <Route path='/home/tooltips' component={TooltipsView} isLoggedIn={true} />
               <Route path='/home/notifications' component={NotificationsView} isLoggedIn={true} />
@@ -167,6 +175,7 @@ class AnterosMainLayout extends Component {
               <Route path='/home/iconsawesome' component={IconsAwesomeView} isLoggedIn={true} />
               <Route path='/home/iconsicofonts' component={IconsIcoFontsView} isLoggedIn={true} />
               <Route path='/home/wizards' component={WizardsView} isLoggedIn={true} />
+              <Route path='/home/sparklines' component={SparkLinesView} isLoggedIn={true} />
             </Switch>
             {this.props.children}
           </AnterosMainContainer>

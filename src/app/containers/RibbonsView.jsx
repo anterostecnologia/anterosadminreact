@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import {AnterosCard,HeaderActions} from "anteros-react";
-import {AnterosRibbon} from "anteros-react";
-import {AnterosImage} from "anteros-react";
+import {AnterosCard,HeaderActions, AnterosCollapseContent} from "anteros-react-containers";
+import {AnterosRibbon} from "anteros-react-misc";
+import {AnterosImage} from "anteros-react-image";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
-import {AnterosCollapseContent} from 'anteros-react';
+
 
 export default class RibbonView extends Component {
     render() {

@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import {AnterosCard, HeaderActions } from "anteros-react";
-import {AnterosFloatingButton, AnterosFloatingButtonItem } from "anteros-react";
-import {AnterosDropdownMenu} from "anteros-react";
-import {AnterosDropdownMenuItem} from "anteros-react";
-import {AnterosBadge} from "anteros-react";
-import {AnterosStatusMark} from "anteros-react";
+import {AnterosCard, HeaderActions, AnterosCollapseContent } from "anteros-react-containers";
+import {AnterosFloatingButton, AnterosFloatingButtonItem, AnterosDropdownMenu, AnterosDropdownMenuItem } from "anteros-react-buttons";
+import {AnterosBadge, AnterosStatusMark} from "anteros-react-label";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
-import {AnterosCollapseContent} from 'anteros-react';
-import {AnterosButton} from "anteros-react";
+import {AnterosButton} from "anteros-react-buttons";
 
 
 export default class FloatingButtonsView extends Component {
@@ -42,8 +38,8 @@ export default class FloatingButtonsView extends Component {
                         <h5>Open menu on click</h5>
                         <p className="text-muted">Example of clickable menu</p>
                         <AnterosFloatingButton hint="Menu" autoClose={true} openMode="click" primary>
-                            <AnterosFloatingButtonItem color="white" icon="icon-pencil" hint="Edit" backgroundColor="#f1c40f" onButtonClick={() => console.log("Clicou no botão editar")} />
-                            <AnterosFloatingButtonItem color="white" icon="icon-bubbles7" hint="Remove" backgroundColor="#e74c3c" onButtonClick={() => console.log("Clicou no botão remover")} />
+                            <AnterosFloatingButtonItem color="white" icon="fa fa-pencil" hint="Edit" backgroundColor="#f1c40f" onButtonClick={() => console.log("Clicou no botão editar")} />
+                            <AnterosFloatingButtonItem color="white" icon="fa fa-trash" hint="Remove" backgroundColor="#e74c3c" onButtonClick={() => console.log("Clicou no botão remover")} />
                         </AnterosFloatingButton>
                     </div>
                 </div>
@@ -241,7 +237,7 @@ export default class FloatingButtonsView extends Component {
                 </div>
             </AnterosCard>
 
-            <AnterosFloatingButton hint="Menu" autoClose={true} openMode="hover" bottomRight fixed backgroundColor="yellow" color="black" iconOpen="icon-paragraph-justify3">
+            <AnterosFloatingButton hint="Menu" autoClose={true} openMode="hover" bottomRight fixed backgroundColor="yellow" color="black" iconOpen="fa fa-align-justify">
                 <AnterosFloatingButtonItem color="white" icon="fa fa-pencil" hint="Edit" backgroundColor="#f1c40f" onButtonClick={() => console.log("Clicou no botão editar")} />
                 <AnterosFloatingButtonItem color="white" icon="fa fa-eraser" hint="Remove" backgroundColor="#e74c3c" onButtonClick={() => console.log("Clicou no botão remover")} />
                 <AnterosFloatingButtonItem color="white" icon="fa fa-search" hint="Search" backgroundColor="#7cb342" onButtonClick={() => console.log("Clicou no botão localizar")} />

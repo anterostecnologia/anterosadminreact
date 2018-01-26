@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import 'anteros-react/lib/anteros-react.css';
 import AnterosMainLayout from './AnterosMainLayout';
-import {AnterosNotFound} from 'anteros-react';
+import {AnterosNotFound} from 'anteros-react-core';
 import AnterosLogin from './AnterosLogin';
-import {AnterosSecurityRoute} from 'anteros-react';
+import {AnterosSecurityRoute} from 'anteros-react-security';
 import {
     BrowserRouter as Router,
     Switch,

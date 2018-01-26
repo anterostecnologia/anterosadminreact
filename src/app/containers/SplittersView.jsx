@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { AnterosCard, HeaderActions } from "anteros-react";
+import { AnterosCard, HeaderActions } from "anteros-react-containers";
 import AnterosSplitter from "../components/AnterosSplitter";
-import AnterosPanel from "../components/AnterosPanel";
+import {AnterosPanel} from "anteros-react-containers";
 
 export default class SplittersView extends Component {
     render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import AnterosNestable from '../components/AnterosNestable';
-import {AnterosCard} from "anteros-react";
+import { AnterosNestable } from 'anteros-react-nestable';
+import { AnterosCard } from "anteros-react-containers";
 
 const styles = {
     position: "relative",

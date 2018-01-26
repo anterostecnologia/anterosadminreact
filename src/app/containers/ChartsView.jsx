@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { AnterosCard, HeaderActions, FooterActions, AnterosCardGroup, AnterosCardDeck } from "anteros-react";
-import { AnterosImage } from "anteros-react";
-import { AnterosButton } from "anteros-react";
+import { AnterosCard, HeaderActions, FooterActions, AnterosCardGroup, 
+         AnterosCardDeck, AnterosCollapseContent} from "anteros-react-containers";
+import { AnterosImage } from "anteros-react-image";
+import { AnterosButton } from "anteros-react-buttons";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
-import { AnterosCollapseContent } from 'anteros-react';
-import { AnterosEChart } from "../components/AnterosEChart";
-import { AnterosChart, Bar } from "../components/AnterosChart";
+import { AnterosEChart, AnterosChart, Bar } from "anteros-react-charts";
 
 import { bubleData, bubleOptions } from "./chartData/buble";
 

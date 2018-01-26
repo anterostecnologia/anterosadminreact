@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
-import { AnterosCard, HeaderActions, AnterosButton } from "anteros-react";
-import { AnterosFormSteps, AnterosFormStep } from "../components/AnterosFormSteps";
+import { AnterosButton } from "anteros-react-core";
+import { AnterosCard, HeaderActions, AnterosFormSteps, AnterosFormStep } from "anteros-react-containers";
 import "./Wizard.css";
 
 export default class WizardsView extends Component {
